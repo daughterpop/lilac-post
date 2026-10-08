@@ -50,6 +50,20 @@ function DispatchPage() {
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
+        {post.corrections?.length ? (
+          <section className="mt-8 border-t border-line pt-4" aria-labelledby="corrections">
+            <h2 id="corrections" className="text-sm font-semibold tracking-widest text-muted uppercase">
+              Corrections
+            </h2>
+            <ul className="mt-2 space-y-2 text-fg">
+              {post.corrections.map((item) => (
+                <li key={`${item.date}-${item.note}`}>
+                  <span className="font-semibold">{formatLong(item.date)}:</span> {item.note}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
         <section className="mt-8 border-t border-line pt-4">
           <h2 className="text-sm font-semibold tracking-widest text-muted uppercase">Sources</h2>
           <ul className="mt-2 space-y-1">
