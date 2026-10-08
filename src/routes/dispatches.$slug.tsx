@@ -1,10 +1,15 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getPost, relatedPosts } from "@/data/posts";
 import { SaveButton } from "@/components/save-button";
 import { Shell } from "@/components/shell";
 import { formatLong } from "@/lib/when";
 
 export const Route = createFileRoute("/dispatches/$slug")({
+  // Unknown slugs throw notFound() so the server responds with HTTP 404.
+  loader: ({ params }) => {
+    if (!getPost(params.slug)) throw notFound();
+  },
+  notFoundComponent: MissingDispatch,
   head: ({ params }) => {
     const post = getPost(params.slug);
     return {
@@ -18,17 +23,7 @@ function DispatchPage() {
   const { slug } = Route.useParams();
   const post = getPost(slug);
 
-  if (!post) {
-    return (
-      <Shell>
-        <h1 className="font-display text-4xl text-ink">Not in this edition</h1>
-        <p className="mt-3 text-muted">That dispatch isn’t in the paper.</p>
-        <Link to="/dispatches" className="mt-4 inline-flex min-h-11 items-center font-semibold text-lilac">
-          All dispatches
-        </Link>
-      </Shell>
-    );
-  }
+  if (!post) return <MissingDispatch />;
 
   const more = relatedPosts(post.slug);
 
@@ -89,6 +84,18 @@ function DispatchPage() {
           ))}
         </ul>
       </section>
+    </Shell>
+  );
+}
+
+function MissingDispatch() {
+  return (
+    <Shell>
+      <h1 className="font-display text-4xl text-ink">Not in this edition</h1>
+      <p className="mt-3 text-muted">That dispatch isn’t in the paper.</p>
+      <Link to="/dispatches" className="mt-4 inline-flex min-h-11 items-center font-semibold text-lilac">
+        All dispatches
+      </Link>
     </Shell>
   );
 }

@@ -1,8 +1,17 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Shell } from "@/components/shell";
 
+// Throwing notFound() from the loader marks the match as not-found, which makes
+// TanStack Start answer the SSR request with HTTP 404 instead of 200.
 export const Route = createFileRoute("/$")({
+  loader: () => {
+    throw notFound();
+  },
+  head: () => ({
+    meta: [{ title: "Not found — The Lilac Post" }, { name: "robots", content: "noindex" }],
+  }),
   component: Missing,
+  notFoundComponent: Missing,
 });
 
 function Missing() {
