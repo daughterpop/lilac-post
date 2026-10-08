@@ -7,7 +7,7 @@ import { Shell } from "@/components/shell";
 import { StoryCard } from "@/components/story-card";
 import { useClips, useHydrated } from "@/lib/clips";
 
-export const Route = createFileRoute("/dispatches")({
+export const Route = createFileRoute("/dispatches/")({
   head: () => ({
     meta: [{ title: "The paper — The Lilac Post" }],
   }),

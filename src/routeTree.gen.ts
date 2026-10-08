@@ -13,11 +13,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as BreakingRouteImport } from './routes/breaking'
 import { Route as CalendarRouteImport } from './routes/calendar'
-import { Route as DispatchesRouteImport } from './routes/dispatches'
 import { Route as ParishRouteImport } from './routes/parish'
 import { Route as SubscribeRouteImport } from './routes/subscribe'
 import { Route as VillageRouteImport } from './routes/village'
 import { Route as ApiCalendarDoticsRouteImport } from './routes/api/calendar[.]ics'
+import { Route as DispatchesIndexRouteImport } from './routes/dispatches.index'
 import { Route as DispatchesSlugRouteImport } from './routes/dispatches.$slug'
 import { Route as ApiEventsIdDoticsRouteImport } from './routes/api/events/$id[.]ics'
 
@@ -41,11 +41,6 @@ const CalendarRoute = CalendarRouteImport.update({
   path: '/calendar',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DispatchesRoute = DispatchesRouteImport.update({
-  id: '/dispatches',
-  path: '/dispatches',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ParishRoute = ParishRouteImport.update({
   id: '/parish',
   path: '/parish',
@@ -66,10 +61,15 @@ const ApiCalendarDoticsRoute = ApiCalendarDoticsRouteImport.update({
   path: '/api/calendar.ics',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DispatchesIndexRoute = DispatchesIndexRouteImport.update({
+  id: '/dispatches/',
+  path: '/dispatches/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DispatchesSlugRoute = DispatchesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => DispatchesRoute,
+  id: '/dispatches/$slug',
+  path: '/dispatches/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiEventsIdDoticsRoute = ApiEventsIdDoticsRouteImport.update({
   id: '/api/events/$id.ics',
@@ -82,12 +82,12 @@ export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/breaking': typeof BreakingRoute
   '/calendar': typeof CalendarRoute
-  '/dispatches': typeof DispatchesRouteWithChildren
   '/parish': typeof ParishRoute
   '/subscribe': typeof SubscribeRoute
   '/village': typeof VillageRoute
   '/api/calendar.ics': typeof ApiCalendarDoticsRoute
   '/dispatches/$slug': typeof DispatchesSlugRoute
+  '/dispatches/': typeof DispatchesIndexRoute
   '/api/events/$id.ics': typeof ApiEventsIdDoticsRoute
 }
 export interface FileRoutesByTo {
@@ -95,12 +95,12 @@ export interface FileRoutesByTo {
   '/$': typeof SplatRoute
   '/breaking': typeof BreakingRoute
   '/calendar': typeof CalendarRoute
-  '/dispatches': typeof DispatchesRouteWithChildren
   '/parish': typeof ParishRoute
   '/subscribe': typeof SubscribeRoute
   '/village': typeof VillageRoute
   '/api/calendar.ics': typeof ApiCalendarDoticsRoute
   '/dispatches/$slug': typeof DispatchesSlugRoute
+  '/dispatches': typeof DispatchesIndexRoute
   '/api/events/$id.ics': typeof ApiEventsIdDoticsRoute
 }
 export interface FileRoutesById {
@@ -109,12 +109,12 @@ export interface FileRoutesById {
   '/$': typeof SplatRoute
   '/breaking': typeof BreakingRoute
   '/calendar': typeof CalendarRoute
-  '/dispatches': typeof DispatchesRouteWithChildren
   '/parish': typeof ParishRoute
   '/subscribe': typeof SubscribeRoute
   '/village': typeof VillageRoute
   '/api/calendar.ics': typeof ApiCalendarDoticsRoute
   '/dispatches/$slug': typeof DispatchesSlugRoute
+  '/dispatches/': typeof DispatchesIndexRoute
   '/api/events/$id.ics': typeof ApiEventsIdDoticsRoute
 }
 export interface FileRouteTypes {
@@ -124,12 +124,12 @@ export interface FileRouteTypes {
     | '/$'
     | '/breaking'
     | '/calendar'
-    | '/dispatches'
     | '/parish'
     | '/subscribe'
     | '/village'
     | '/api/calendar.ics'
     | '/dispatches/$slug'
+    | '/dispatches/'
     | '/api/events/$id.ics'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -137,12 +137,12 @@ export interface FileRouteTypes {
     | '/$'
     | '/breaking'
     | '/calendar'
-    | '/dispatches'
     | '/parish'
     | '/subscribe'
     | '/village'
     | '/api/calendar.ics'
     | '/dispatches/$slug'
+    | '/dispatches'
     | '/api/events/$id.ics'
   id:
     | '__root__'
@@ -150,12 +150,12 @@ export interface FileRouteTypes {
     | '/$'
     | '/breaking'
     | '/calendar'
-    | '/dispatches'
     | '/parish'
     | '/subscribe'
     | '/village'
     | '/api/calendar.ics'
     | '/dispatches/$slug'
+    | '/dispatches/'
     | '/api/events/$id.ics'
   fileRoutesById: FileRoutesById
 }
@@ -164,11 +164,12 @@ export interface RootRouteChildren {
   SplatRoute: typeof SplatRoute
   BreakingRoute: typeof BreakingRoute
   CalendarRoute: typeof CalendarRoute
-  DispatchesRoute: typeof DispatchesRouteWithChildren
   ParishRoute: typeof ParishRoute
   SubscribeRoute: typeof SubscribeRoute
   VillageRoute: typeof VillageRoute
   ApiCalendarDoticsRoute: typeof ApiCalendarDoticsRoute
+  DispatchesSlugRoute: typeof DispatchesSlugRoute
+  DispatchesIndexRoute: typeof DispatchesIndexRoute
   ApiEventsIdDoticsRoute: typeof ApiEventsIdDoticsRoute
 }
 
@@ -202,13 +203,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalendarRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/dispatches': {
-      id: '/dispatches'
-      path: '/dispatches'
-      fullPath: '/dispatches'
-      preLoaderRoute: typeof DispatchesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/parish': {
       id: '/parish'
       path: '/parish'
@@ -237,12 +231,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiCalendarDoticsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dispatches/': {
+      id: '/dispatches/'
+      path: '/dispatches'
+      fullPath: '/dispatches/'
+      preLoaderRoute: typeof DispatchesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dispatches/$slug': {
       id: '/dispatches/$slug'
-      path: '/$slug'
+      path: '/dispatches/$slug'
       fullPath: '/dispatches/$slug'
       preLoaderRoute: typeof DispatchesSlugRouteImport
-      parentRoute: typeof DispatchesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/api/events/$id.ics': {
       id: '/api/events/$id.ics'
@@ -254,28 +255,17 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface DispatchesRouteChildren {
-  DispatchesSlugRoute: typeof DispatchesSlugRoute
-}
-
-const DispatchesRouteChildren: DispatchesRouteChildren = {
-  DispatchesSlugRoute: DispatchesSlugRoute,
-}
-
-const DispatchesRouteWithChildren = DispatchesRoute._addFileChildren(
-  DispatchesRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
   BreakingRoute: BreakingRoute,
   CalendarRoute: CalendarRoute,
-  DispatchesRoute: DispatchesRouteWithChildren,
   ParishRoute: ParishRoute,
   SubscribeRoute: SubscribeRoute,
   VillageRoute: VillageRoute,
   ApiCalendarDoticsRoute: ApiCalendarDoticsRoute,
+  DispatchesSlugRoute: DispatchesSlugRoute,
+  DispatchesIndexRoute: DispatchesIndexRoute,
   ApiEventsIdDoticsRoute: ApiEventsIdDoticsRoute,
 }
 export const routeTree = rootRouteImport
