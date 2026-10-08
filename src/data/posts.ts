@@ -47,7 +47,7 @@ export const posts: Post[] = [
     order: 1,
     image: "/images/market.jpg",
     imageAlt: "Apples, a jar of honey, and chrysanthemums on a wooden table.",
-    imageCaption: "The last Tuesdays, up close: produce, honey, and flowers under the Arch.",
+    imageCaption: "Illustration. Produce, honey, and flowers as you might find under the Arch on a Tuesday.",
     body: [
       "The 2026 Lombard Farmers Market has one Tuesday left. October 6, 3 to 7 p.m., under the Arch at South Park Avenue and West St. Charles Road.",
       "Inversion Jazz Band closes the published music lineup. The chamber’s season ran every Tuesday from May 19, with Great American Exteriors as presenting sponsor. The tables are the mix neighbors already know: produce, honey, tamales, gelato, kettle corn, kolaczki, olive oil, lemonade, and a shared spotlight for a chamber business and a nonprofit.",
@@ -80,7 +80,7 @@ export const posts: Post[] = [
     order: 0,
     image: "/images/lilacs.jpg",
     imageAlt: "Pale and deep purple lilac blooms in morning light.",
-    imageCaption: "The flowers are a May event. The park is a daily one.",
+    imageCaption: "Illustration. Lilacs in bloom — the flowers are a May event; the park is a daily one.",
     body: [
       "Lilacia Park is open every day from dawn to dusk, and the village does not charge to walk in. The address neighbors use is 150 South Park Avenue.",
       "Lilac Time 2026 ran May 1 through May 17. October is lawn, brick, and whatever the gardeners left standing. With the library now at 411 South Main, the park district has fenced the old corner at Maple and Park as open green space, and said that land is meant to fold into the park.",
@@ -101,7 +101,7 @@ export const posts: Post[] = [
     order: 0,
     image: "/images/path.jpg",
     imageAlt: "A limestone trail under trees turning gold and rust.",
-    imageCaption: "The Illinois Prairie Path through early October.",
+    imageCaption: "Illustration. The Illinois Prairie Path in early October light.",
     body: [
       "The Illinois Prairie Path crosses Lombard on the old Chicago, Aurora & Elgin right-of-way. It is crushed limestone, flat, and honest about the weather. In October the canopy is the reason to go — gold over the trail before the path goes gray.",
       "Toward Villa Park and Elmhurst one way, Glen Ellyn and Wheaton the other, you can ride without living on St. Charles Road the whole time. The Great Western Trail is a different line, farther north. A map pin that merges them is wrong.",
@@ -148,7 +148,7 @@ export const posts: Post[] = [
     order: 1,
     image: "/images/downtown.jpg",
     imageAlt: "A quiet downtown block in autumn light, with a civic arch in the distance.",
-    imageCaption: "Downtown is a short walk from the platform.",
+    imageCaption: "Illustration. A downtown block with the Arch in the distance — a short walk from the Metra platform.",
     body: [
       "Lombard station is on Metra’s Union Pacific West line, downtown at St. Charles Road. The useful fact is how short the rest of the walk is.",
       "The Arch, and the farmers market when it is on, sit at Park and St. Charles. Lilacia is a few blocks south on Park. Helen Plum is at 411 South Main. The Peck Homestead is east on St. Charles at Grace.",

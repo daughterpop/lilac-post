@@ -261,7 +261,7 @@ export const events: VillageEvent[] = [
     image: "/images/downtown.jpg",
     imageAlt: "A quiet downtown block in autumn light, with a civic arch in the distance.",
     imageCaption:
-      "October light. The market’s last Tuesday is under the Arch at Park and St. Charles.",
+      "Illustration. October light under the Arch at Park and St. Charles — the market’s last Tuesday.",
   },
   {
     id: "senior-fair",
