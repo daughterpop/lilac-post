@@ -14,6 +14,8 @@ import { Route as SplatRouteImport } from './routes/$'
 import { Route as BreakingRouteImport } from './routes/breaking'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as ParishRouteImport } from './routes/parish'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SubscribeRouteImport } from './routes/subscribe'
 import { Route as VillageRouteImport } from './routes/village'
 import { Route as ApiCalendarDoticsRouteImport } from './routes/api/calendar[.]ics'
@@ -44,6 +46,16 @@ const CalendarRoute = CalendarRouteImport.update({
 const ParishRoute = ParishRouteImport.update({
   id: '/parish',
   path: '/parish',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SubscribeRoute = SubscribeRouteImport.update({
@@ -83,6 +95,8 @@ export interface FileRoutesByFullPath {
   '/breaking': typeof BreakingRoute
   '/calendar': typeof CalendarRoute
   '/parish': typeof ParishRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/subscribe': typeof SubscribeRoute
   '/village': typeof VillageRoute
   '/api/calendar.ics': typeof ApiCalendarDoticsRoute
@@ -96,6 +110,8 @@ export interface FileRoutesByTo {
   '/breaking': typeof BreakingRoute
   '/calendar': typeof CalendarRoute
   '/parish': typeof ParishRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/subscribe': typeof SubscribeRoute
   '/village': typeof VillageRoute
   '/api/calendar.ics': typeof ApiCalendarDoticsRoute
@@ -110,6 +126,8 @@ export interface FileRoutesById {
   '/breaking': typeof BreakingRoute
   '/calendar': typeof CalendarRoute
   '/parish': typeof ParishRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/subscribe': typeof SubscribeRoute
   '/village': typeof VillageRoute
   '/api/calendar.ics': typeof ApiCalendarDoticsRoute
@@ -125,6 +143,8 @@ export interface FileRouteTypes {
     | '/breaking'
     | '/calendar'
     | '/parish'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/subscribe'
     | '/village'
     | '/api/calendar.ics'
@@ -138,6 +158,8 @@ export interface FileRouteTypes {
     | '/breaking'
     | '/calendar'
     | '/parish'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/subscribe'
     | '/village'
     | '/api/calendar.ics'
@@ -151,6 +173,8 @@ export interface FileRouteTypes {
     | '/breaking'
     | '/calendar'
     | '/parish'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/subscribe'
     | '/village'
     | '/api/calendar.ics'
@@ -165,6 +189,8 @@ export interface RootRouteChildren {
   BreakingRoute: typeof BreakingRoute
   CalendarRoute: typeof CalendarRoute
   ParishRoute: typeof ParishRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SubscribeRoute: typeof SubscribeRoute
   VillageRoute: typeof VillageRoute
   ApiCalendarDoticsRoute: typeof ApiCalendarDoticsRoute
@@ -208,6 +234,20 @@ declare module '@tanstack/react-router' {
       path: '/parish'
       fullPath: '/parish'
       preLoaderRoute: typeof ParishRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/subscribe': {
@@ -261,6 +301,8 @@ const rootRouteChildren: RootRouteChildren = {
   BreakingRoute: BreakingRoute,
   CalendarRoute: CalendarRoute,
   ParishRoute: ParishRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SubscribeRoute: SubscribeRoute,
   VillageRoute: VillageRoute,
   ApiCalendarDoticsRoute: ApiCalendarDoticsRoute,
