@@ -35,6 +35,8 @@ export type Post = {
   imageAlt?: string;
   imageCaption?: string;
   sources: Source[];
+  /** Dated correction notes shown at the end of the story (see /about#corrections). */
+  corrections?: { date: string; note: string }[];
 };
 
 export type VillageEvent = {

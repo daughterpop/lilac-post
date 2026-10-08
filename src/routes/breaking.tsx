@@ -20,7 +20,7 @@ function BreakingPage() {
       <p className="text-xs font-semibold tracking-widest text-lilac uppercase">As it happens</p>
       <h1 className="mt-2 font-display text-4xl text-ink sm:text-5xl">Breaking news</h1>
       <p className="mt-3 max-w-xl text-lg text-fg">
-        Short items from the village. The weekly paper is the longer read. Subscribe covers both.
+        Short items from the village. The weekly paper is the longer read.
       </p>
       <ul className="mt-6 divide-y divide-line border-t border-line">
         {items.map((wire) => (
@@ -35,8 +35,11 @@ function BreakingPage() {
           </li>
         ))}
       </ul>
-      <Link to="/subscribe" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-lilac">
-        Subscribe to breaking news and the weekly paper
+      <Link
+        to="/subscribe"
+        className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-lilac"
+      >
+        Join the reader list
       </Link>
     </Shell>
   );

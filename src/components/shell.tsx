@@ -10,7 +10,8 @@ const NAV = [
   { to: "/dispatches", label: "The paper", exact: false },
   { to: "/calendar", label: "Calendar", exact: false },
   { to: "/parish", label: "Catholic corner", exact: false },
-  { to: "/village", label: "About", exact: false },
+  { to: "/village", label: "Lombard", exact: false },
+  { to: "/about", label: "About us", exact: false },
 ] as const;
 
 function NavLink({
@@ -91,6 +92,12 @@ export function Shell({ children }: { children: ReactNode }) {
             Times come from their public listings and can change — check the host before you go.
           </p>
           <p className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+            <Link className="font-semibold underline decoration-line underline-offset-4 hover:text-lilac" to="/about">
+              About the paper
+            </Link>
+            <a className="underline decoration-line underline-offset-4 hover:text-lilac" href="/about#corrections">
+              Corrections
+            </a>
             <a className="underline decoration-line underline-offset-4 hover:text-lilac" href="https://www.helenplum.org/">
               Helen Plum Library
             </a>
