@@ -255,11 +255,13 @@ export const events: VillageEvent[] = [
     href: "https://www.lombardchamber.com/farmers-market",
     featured: true,
     frontTitle: "One last Tuesday under the Arch",
-    frontDek: "The farmers market closes the 2026 season October 6, from 3 to 7, with Inversion Jazz Band.",
+    frontDek:
+      "The farmers market closes the 2026 season October 6, from 3 to 7, with Inversion Jazz Band.",
     story: "last-tuesday-under-the-arch",
     image: "/images/downtown.jpg",
     imageAlt: "A quiet downtown block in autumn light, with a civic arch in the distance.",
-    imageCaption: "October light. The market’s last Tuesday is under the Arch at Park and St. Charles.",
+    imageCaption:
+      "October light. The market’s last Tuesday is under the Arch at Park and St. Charles.",
   },
   {
     id: "senior-fair",
@@ -274,7 +276,8 @@ export const events: VillageEvent[] = [
     href: "https://villageoflombard.org/calendar.aspx",
     featured: true,
     frontTitle: "The Senior Fair turns twenty",
-    frontDek: "Wednesday morning at Madison Meadow, 9 to 1. Screenings, programs, and a room full of neighbors.",
+    frontDek:
+      "Wednesday morning at Madison Meadow, 9 to 1. Screenings, programs, and a room full of neighbors.",
     story: "senior-fair-twenty",
   },
   {
@@ -306,7 +309,8 @@ export const events: VillageEvent[] = [
     href: "https://villageoflombard.org/m/newsflash/Home/Detail/1123",
     featured: true,
     frontTitle: "Open house at Station 45",
-    frontDek: "Wednesday, 6 to 8 p.m. The fire department is showing the trucks and talking about battery charging.",
+    frontDek:
+      "Wednesday, 6 to 8 p.m. The fire department is showing the trucks and talking about battery charging.",
   },
   {
     id: "coffee-president",
@@ -317,19 +321,23 @@ export const events: VillageEvent[] = [
     place: "Yorktown Center",
     desk: "Village",
     origin: "Village",
-    blurb: "Residents are invited. Listed on the village site for Saturday morning.",
-    href: "https://villageoflombard.org/",
+    // Source: Village of Lombard meetings calendar (Yorktown, The Square entrance).
+    blurb:
+      "Ask questions of Village President Anthony Puccio and District 3 Trustee Bernie Dudek about village initiatives and development. The Square entrance.",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
   },
   {
     id: "village-board",
     title: "Village Board of Trustees",
     date: "2026-10-15",
+    start: "18:00",
     place: "Village Hall",
     address: "255 E Wilson Ave",
     desk: "Village",
     origin: "Village",
-    blurb: "On the October village calendar. The agenda has the time.",
-    href: "https://villageoflombard.org/",
+    // Source: Village of Lombard meetings calendar (6 p.m., Board Room).
+    blurb: "Board Room, Village Hall, 6 p.m. On the village meetings calendar.",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
   },
   {
     id: "mom-prom",
@@ -354,9 +362,10 @@ export const events: VillageEvent[] = [
     place: "Sunset Knoll Recreation Center",
     desk: "Park",
     origin: "Park District",
-    blurb:
-      "Costume games and treats. The park district homepage lists Oct. 22; a program page also prints Oct. 28. Confirm before you go.",
-    href: "https://lombardparks.com/project_category/special-events/",
+    // Source: lombardparks.com/events (Thu Oct 22, 2026). The special-events page still shows an older
+    // year's "Thursday, October 28" (a 2021 weekday), so it is not used.
+    blurb: "Costume games and treats for little ones. Wear a costume.",
+    href: "https://lombardparks.com/events/",
   },
   {
     id: "pumpkin-smash",
@@ -370,20 +379,11 @@ export const events: VillageEvent[] = [
     origin: "Park District",
     blurb:
       "Free. Bring the Halloween pumpkin to be composted. The village lists presenters as the Lombard Junior Women’s Club, Lombard Park District, the village, Kiwanis, Waste Management, and SCARCE.",
-    href: "https://villageoflombard.org/m/newsflash/Home/Detail/1126",
+    // Also confirmed on lombardparks.com/pumpkin-smash (Sat Nov 7, 9 a.m.–noon).
+    href: "https://lombardparks.com/pumpkin-smash/",
   },
-  {
-    id: "turkey-shoot",
-    title: "Turkey Shoot",
-    date: "2026-11-13",
-    start: "15:00",
-    end: "17:30",
-    place: "Madison Meadow Athletic Center",
-    desk: "Park",
-    origin: "Park District",
-    blurb: "10th annual shooting contest. Register by age division. A turkey is among the prizes.",
-    href: "https://lombardparks.com/project_category/special-events/",
-  },
+  // Removed "Turkey Shoot" (Nov 13): its only source is a stale park district page that prints
+  // "Saturday, November 13" (a 2021 weekday). Not on the park district's 2026 events calendar.
   {
     id: "madman-woods",
     title: "Madman in the Woods",
@@ -420,7 +420,8 @@ export const events: VillageEvent[] = [
     address: "23 W Maple St",
     desk: "History",
     origin: "Historical Society",
-    blurb: "Women-only evening at the historical society: food, music, and after-dark cottage tours. Costumes welcome.",
+    blurb:
+      "Women-only evening at the historical society: food, music, and after-dark cottage tours. Costumes welcome.",
     href: "https://www.lombardhistory.org/new-events-1",
   },
   {
@@ -433,7 +434,8 @@ export const events: VillageEvent[] = [
     address: "S Main St",
     desk: "History",
     origin: "Historical Society",
-    blurb: "Daytime tour of the cemetery on Main Street. Victorian markers, and the people who built the town.",
+    blurb:
+      "Daytime tour of the cemetery on Main Street. Victorian markers, and the people who built the town.",
     href: "https://www.lombardhistory.org/new-events-1",
   },
   {
@@ -579,7 +581,8 @@ export const events: VillageEvent[] = [
     address: "1501 S Main St",
     desk: "Village",
     origin: "Parish",
-    blurb: "Second day of the weekend the Council of Catholic Women listed. Hours were not printed.",
+    blurb:
+      "Second day of the weekend the Council of Catholic Women listed. Hours were not printed.",
     href: "https://www.ctklombard.org/",
   },
   {
@@ -605,7 +608,8 @@ export const events: VillageEvent[] = [
     address: "114 S Elizabeth St",
     desk: "Village",
     origin: "Parish",
-    blurb: "Fr. Boecker Council 6090. Fifth Thursday of a month that has one. No end time on the council page.",
+    blurb:
+      "Fr. Boecker Council 6090. Fifth Thursday of a month that has one. No end time on the council page.",
     href: "https://www.uknight.org/CouncilSite/about.asp?CNO=6090",
   },
   {
@@ -826,7 +830,8 @@ export const events: VillageEvent[] = [
     address: "203 Yorktown Shopping Center",
     desk: "Market",
     origin: "Yorktown",
-    blurb: "Hometown Vendor Market, second day, 10 to 5. Same host as Friday. Not a Yorktown Center production.",
+    blurb:
+      "Hometown Vendor Market, second day, 10 to 5. Same host as Friday. Not a Yorktown Center production.",
     href: "https://yorktowncenter.com/events/spooktacular-craft-vendor-market/",
   },
   {
@@ -839,7 +844,8 @@ export const events: VillageEvent[] = [
     address: "203 Yorktown Shopping Center",
     desk: "Market",
     origin: "Yorktown",
-    blurb: "Hometown Vendor Market, last day. Sunday hours are 11 to 5, later than Friday and Saturday.",
+    blurb:
+      "Hometown Vendor Market, last day. Sunday hours are 11 to 5, later than Friday and Saturday.",
     href: "https://yorktowncenter.com/events/spooktacular-craft-vendor-market/",
   },
   {
@@ -893,6 +899,542 @@ export const events: VillageEvent[] = [
     blurb:
       "Lombard Lilac Parade Committee, on its own since 1929. Steps off at 1:30. Theme: Happy 250th Birthday America. The village posted the parking rules. Phone (630) 415-2079.",
     href: "https://lombardlilacparade.com/",
+  },
+  // --- Mid-Oct through Dec 2026 refresh (launch-prep, researched 2026-10-08). Each href is the public source. ---
+  {
+    // Source: Village of Lombard meetings calendar
+    id: "pw-committee-oct",
+    title: "Public Works & Environmental Concerns Committee",
+    date: "2026-10-13",
+    start: "18:00",
+    place: "Public Works Building",
+    address: "1051 Hammerschmidt Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Public Works Building, 6 p.m..",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
+  },
+  {
+    // Source: Village of Lombard meetings calendar
+    id: "community-relations-oct",
+    title: "Community Relations Committee",
+    date: "2026-10-19",
+    start: "18:00",
+    place: "Village Hall",
+    address: "255 E Wilson Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Board Room, Village Hall, 6 p.m..",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
+  },
+  {
+    // Source: Village of Lombard meetings calendar
+    id: "plan-commission-oct",
+    title: "Plan Commission",
+    date: "2026-10-19",
+    start: "19:00",
+    place: "Village Hall",
+    address: "255 E Wilson Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Board Room, Village Hall, 7 p.m..",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
+  },
+  {
+    // Source: Village of Lombard meetings calendar
+    id: "historic-preservation-oct",
+    title: "Historic Preservation Commission",
+    date: "2026-10-20",
+    start: "19:00",
+    place: "Village Hall",
+    address: "255 E Wilson Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Community Room, Village Hall, 7 p.m..",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
+  },
+  {
+    // Source: Village of Lombard events calendar
+    id: "montini-open-house-oct",
+    title: "Montini Catholic open house",
+    date: "2026-10-25",
+    start: "10:30",
+    end: "12:30",
+    place: "Montini Catholic High School",
+    desk: "Village",
+    origin: "School",
+    blurb: "Fall open house. Listed on the village events calendar.",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
+  },
+  {
+    // Source: helenplum.org event listing
+    id: "zazz-jazz",
+    title: "Sunday Music Series: Zazz Jazz",
+    date: "2026-10-25",
+    start: "14:00",
+    end: "15:00",
+    place: "Helen Plum Library",
+    address: "411 S Main St",
+    desk: "Library",
+    origin: "Library",
+    blurb: "Autumn Serenade: jazz favorites and smooth melodies. Registration through the library.",
+    href: "https://www.helenplum.org/event/sunday-music-series-autumn-serenade-zazz-jazz-108782",
+  },
+  {
+    // Source: Village of Lombard meetings calendar
+    id: "finance-committee-oct",
+    title: "Finance & Administration Committee",
+    date: "2026-10-26",
+    start: "18:00",
+    place: "Village Hall",
+    address: "255 E Wilson Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Board Room, Village Hall, 6 p.m..",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
+  },
+  {
+    // Source: helenplum.org event listing
+    id: "genealogy-native",
+    title: "Genealogy: We the Native People",
+    date: "2026-10-26",
+    start: "19:00",
+    end: "20:00",
+    place: "Helen Plum Library",
+    address: "411 S Main St",
+    desk: "Library",
+    origin: "Library",
+    blurb:
+      "Ojibwa author Kim Sigafus on how the Declaration of Independence affected Native American people, with stories, music, and recipes. Registration through the library.",
+    href: "https://www.helenplum.org/event/genealogy-we-native-people-107551",
+  },
+  {
+    // Source: helenplum.org event listing
+    id: "monster-mash-dance",
+    title: "Drop-in & Dance: Monster Mash",
+    date: "2026-10-29",
+    start: "10:30",
+    end: "11:00",
+    place: "Helen Plum Library",
+    address: "411 S Main St",
+    desk: "Library",
+    origin: "Library",
+    blurb:
+      "Ages 1–5 with an adult. Props and a silly, spooky playlist; costumes encouraged. Repeats at 1:30 p.m.",
+    href: "https://www.helenplum.org/event/drop-dance-monster-mash-117369",
+  },
+  {
+    // Source: Village of Lombard events calendar
+    id: "leaf-pickup",
+    title: "Free leaf pick-up begins",
+    date: "2026-11-02",
+    place: "Village of Lombard",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Village leaf pick-up runs Nov. 2 through Dec. 11.",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
+  },
+  {
+    // Source: Village of Lombard events calendar
+    id: "election-day",
+    title: "Election Day",
+    date: "2026-11-03",
+    place: "Village of Lombard",
+    desk: "Village",
+    origin: "Village",
+    blurb: "General election. Helen Plum Library is a DuPage County polling place, 6 a.m.–7 p.m.",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
+  },
+  {
+    // Source: District 44 2026–27 calendar (sd44.org; dates as listed on educounty.net)
+    id: "d44-election",
+    title: "District 44: no school",
+    date: "2026-11-03",
+    place: "District 44 schools",
+    desk: "Village",
+    origin: "School",
+    blurb: "General Election Day.",
+    href: "https://www.sd44.org/resources/calendars",
+  },
+  {
+    // Source: Village of Lombard events calendar
+    id: "montini-open-house-nov",
+    title: "Montini Catholic open house",
+    date: "2026-11-05",
+    start: "17:00",
+    end: "19:00",
+    place: "Montini Catholic High School",
+    desk: "Village",
+    origin: "School",
+    blurb: "Evening fall open house. Listed on the village events calendar.",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
+  },
+  {
+    // Source: Village of Lombard meetings calendar
+    id: "village-board-nov-5",
+    title: "Village Board of Trustees",
+    date: "2026-11-05",
+    start: "18:00",
+    place: "Village Hall",
+    address: "255 E Wilson Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Board Room, Village Hall, 6 p.m..",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
+  },
+  {
+    // Source: stjohnslombard.org (Christmas Mart craft sale, Sat Nov 7, 9 a.m.–2 p.m.)
+    id: "christmas-mart",
+    title: "Lombard Christmas Mart",
+    date: "2026-11-07",
+    start: "09:00",
+    end: "14:00",
+    place: "Downtown Lombard",
+    desk: "Village",
+    origin: "Village",
+    blurb:
+      "Holiday craft sales at downtown churches and the Historical Society, including St. John’s Lutheran School west gym.",
+    href: "https://www.stjohnslombard.org/attic-and-craft-sale.html",
+  },
+  {
+    // Source: Village of Lombard calendar
+    id: "blood-drive-nov",
+    title: "Blood drive",
+    date: "2026-11-10",
+    start: "08:00",
+    end: "19:00",
+    place: "First Church of Lombard",
+    address: "220 S Main St",
+    desk: "Village",
+    origin: "Village",
+    blurb:
+      "The village listing names First Church of Lombard Fellowship Hall and also the lower level of Yorktown outside Von Maur. Check the listing for the site.",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
+  },
+  {
+    // Source: Village of Lombard events calendar
+    id: "veterans-day",
+    title: "Veterans Day",
+    date: "2026-11-11",
+    place: "Village of Lombard",
+    desk: "Village",
+    origin: "Village",
+    blurb: "On the village events calendar.",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
+  },
+  {
+    // Source: helenplum.org event listing
+    id: "thanksgiving-anatomy",
+    title: "Thanksgiving: Anatomy of a Holiday",
+    date: "2026-11-11",
+    start: "19:00",
+    end: "20:00",
+    place: "Helen Plum Library",
+    address: "411 S Main St",
+    desk: "Library",
+    origin: "Library",
+    blurb:
+      "Lecturer Joyce Haworth on the holiday’s origins, the pilgrims, and the changing menu. Registration through the library.",
+    href: "https://www.helenplum.org/event/thanksgiving-anatomy-holiday-107333",
+  },
+  {
+    // Source: helenplum.org event listing
+    id: "preschool-fair",
+    title: "Preschool Fair",
+    date: "2026-11-14",
+    start: "10:00",
+    end: "12:00",
+    place: "Helen Plum Library",
+    address: "411 S Main St",
+    desk: "Library",
+    origin: "Library",
+    blurb:
+      "Drop-in for caregivers of children birth–5. Meet Lombard preschool programs and take home enrollment information.",
+    href: "https://www.helenplum.org/event/preschool-fair-111435",
+  },
+  {
+    // Source: helenplum.org event listing
+    id: "senior-social-nov",
+    title: "Senior Social: The American Cash Band",
+    date: "2026-11-16",
+    start: "13:00",
+    end: "14:00",
+    place: "Helen Plum Library",
+    address: "411 S Main St",
+    desk: "Library",
+    origin: "Library",
+    blurb: "Johnny Cash tribute band. Registration through the library.",
+    href: "https://www.helenplum.org/event/senior-social-89819",
+  },
+  {
+    // Source: Village of Lombard meetings calendar
+    id: "plan-commission-nov",
+    title: "Plan Commission",
+    date: "2026-11-16",
+    start: "19:00",
+    place: "Village Hall",
+    address: "255 E Wilson Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Board Room, Village Hall, 7 p.m..",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
+  },
+  {
+    // Source: helenplum.org event listing
+    id: "morbid-history",
+    title: "Morbid History: Murder Mystery Edition",
+    date: "2026-11-17",
+    start: "13:00",
+    end: "14:00",
+    place: "Helen Plum Library",
+    address: "411 S Main St",
+    desk: "Library",
+    origin: "Library",
+    blurb:
+      "Actress Lorrisa Julianus on true whodunits, from ancient Rome to Old Hollywood. Registration through the library.",
+    href: "https://www.helenplum.org/event/morbid-history-murder-mystery-edition-114651",
+  },
+  {
+    // Source: Village of Lombard meetings calendar
+    id: "village-board-nov-19",
+    title: "Village Board of Trustees",
+    date: "2026-11-19",
+    start: "18:00",
+    place: "Village Hall",
+    address: "255 E Wilson Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Board Room, Village Hall, 6 p.m..",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
+  },
+  {
+    // Source: District 44 2026–27 calendar
+    id: "d44-thanksgiving",
+    title: "District 44: Thanksgiving break",
+    date: "2026-11-23",
+    place: "District 44 schools",
+    desk: "Village",
+    origin: "School",
+    blurb: "No school Nov. 23–27. Parent/teacher conferences Nov. 23–24.",
+    href: "https://www.sd44.org/resources/calendars",
+  },
+  {
+    // Source: Village of Lombard events calendar
+    id: "holiday-lights-recycling",
+    title: "Holiday lights recycling opens",
+    date: "2026-11-25",
+    place: "Public Works Building",
+    address: "1051 Hammerschmidt Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Drop off old holiday lights at Public Works through Jan. 18.",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
+  },
+  {
+    // Source: Village of Lombard events calendar
+    id: "thanksgiving-closed",
+    title: "Village offices closed",
+    date: "2026-11-26",
+    place: "Village Hall",
+    address: "255 E Wilson Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Closed Nov. 26–27 for Thanksgiving.",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
+  },
+  {
+    // Source: helenplum.org event listing
+    id: "armchair-solar",
+    title: "An Armchair Tour of the Solar System",
+    date: "2026-11-30",
+    start: "19:00",
+    end: "20:00",
+    place: "Helen Plum Library",
+    address: "411 S Main St",
+    desk: "Library",
+    origin: "Library",
+    blurb:
+      "Michelle Nichols of the Adler Planetarium shows recent NASA spacecraft images. Registration through the library.",
+    href: "https://www.helenplum.org/event/armchair-tour-solar-system-107576",
+  },
+  {
+    // Source: Village of Lombard meetings calendar
+    id: "village-board-dec-3",
+    title: "Village Board of Trustees",
+    date: "2026-12-03",
+    start: "18:00",
+    place: "Village Hall",
+    address: "255 E Wilson Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Board Room, Village Hall, 6 p.m..",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=12",
+  },
+  {
+    // Source: lombardparks.com events calendar
+    id: "daddy-daughter",
+    title: "Daddy Daughter Dance",
+    date: "2026-12-04",
+    start: "18:30",
+    end: "20:30",
+    place: "Lombard Community Building",
+    address: "433 E St. Charles Rd",
+    desk: "Park",
+    origin: "Park District",
+    blurb:
+      "Dancing, games, and a dessert table. Order a corsage by Dec. 2. Register with the park district.",
+    href: "https://lombardparks.com/events/",
+  },
+  {
+    // Source: lombardchamber.com/candy-cane-lane
+    id: "candy-cane-lane",
+    title: "Candy Cane Lane Holiday Market",
+    date: "2026-12-05",
+    start: "15:00",
+    end: "19:00",
+    place: "S Park Ave, downtown",
+    desk: "Market",
+    origin: "Chamber",
+    blurb:
+      "Lombard Area Chamber and The Schiller Team. Vendors, hot cocoa, photo booth, food truck. Park Ave between St. Charles Rd and the train station.",
+    href: "https://www.lombardchamber.com/candy-cane-lane",
+  },
+  {
+    // Source: lombardparks.com/jubilee
+    id: "jingle-bell-jubilee",
+    title: "Jingle Bell Jubilee & tree lighting",
+    date: "2026-12-05",
+    start: "17:30",
+    end: "20:00",
+    place: "Lilacia Park",
+    address: "150 S Park Ave",
+    desk: "Park",
+    origin: "Park District",
+    blurb:
+      "Tree lighting and Santa’s arrival at 5:30. Downtown partners (library, Historical Society, churches, Candy Cane Lane) start earlier in the afternoon. Free trolley 4:30–8:30. Schedule subject to change.",
+    href: "https://lombardparks.com/jubilee/",
+  },
+  {
+    // Source: lombardparks.com/holiday-lights
+    id: "holiday-lights-lilacia",
+    title: "Holiday Lights in Lilacia Park",
+    date: "2026-12-06",
+    start: "16:30",
+    end: "22:00",
+    place: "Lilacia Park",
+    address: "150 S Park Ave",
+    desk: "Park",
+    origin: "Park District",
+    blurb:
+      "Nightly 4:30–10 p.m. through Jan. 3. Free Santa visits on set evenings Dec. 6–20; see the park district schedule.",
+    href: "https://lombardparks.com/holiday-lights/",
+  },
+  {
+    // Source: helenplum.org event listing
+    id: "home-energy-savings",
+    title: "Home Energy Savings with CUB",
+    date: "2026-12-07",
+    start: "19:00",
+    end: "20:00",
+    place: "Helen Plum Library",
+    address: "411 S Main St",
+    desk: "Library",
+    origin: "Library",
+    blurb:
+      "Citizens Utility Board on reading your bills, efficiency programs, and solar options. Registration through the library.",
+    href: "https://www.helenplum.org/event/home-energy-savings-citizens-utility-board-107208",
+  },
+  {
+    // Source: lombardparks.com events calendar
+    id: "senior-holiday-lunch",
+    title: "Senior Holiday Lunch",
+    date: "2026-12-10",
+    start: "11:30",
+    end: "13:30",
+    place: "Lombard Community Building",
+    address: "433 E St. Charles Rd",
+    desk: "Park",
+    origin: "Park District",
+    blurb: "Catered lunch and entertainment. Register early with the park district.",
+    href: "https://lombardparks.com/events/",
+  },
+  {
+    // Source: helenplum.org event listing
+    id: "board-game-night-dec",
+    title: "Board Game Night",
+    date: "2026-12-11",
+    start: "17:00",
+    end: "20:00",
+    place: "Helen Plum Library",
+    address: "411 S Main St",
+    desk: "Library",
+    origin: "Library",
+    blurb: "Open gaming. Some games provided; bring one to share.",
+    href: "https://www.helenplum.org/event/board-game-night-114461",
+  },
+  {
+    // Source: Village of Lombard meetings calendar
+    id: "village-board-dec-17",
+    title: "Village Board of Trustees",
+    date: "2026-12-17",
+    start: "18:00",
+    place: "Village Hall",
+    address: "255 E Wilson Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Board Room, Village Hall, 6 p.m..",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=12",
+  },
+  {
+    // Source: lombardparks.com events calendar
+    id: "holly-jolly-trolley",
+    title: "Holly Jolly Trolley",
+    date: "2026-12-19",
+    start: "11:00",
+    end: "17:00",
+    place: "Lombard Community Building",
+    address: "433 E St. Charles Rd",
+    desk: "Park",
+    origin: "Park District",
+    blurb:
+      "Crafts with Mrs. Claus, then a trolley to the Log Cabin to meet Santa. Trolleys every 30 minutes, noon–4. Registration required; seats limited.",
+    href: "https://lombardparks.com/events/",
+  },
+  {
+    // Source: District 44 2026–27 calendar
+    id: "d44-winter-break",
+    title: "District 44: winter break begins",
+    date: "2026-12-21",
+    place: "District 44 schools",
+    desk: "Village",
+    origin: "School",
+    blurb: "Winter break Dec. 21 through Jan. 1.",
+    href: "https://www.sd44.org/resources/calendars",
+  },
+  {
+    // Source: Village of Lombard meetings calendar
+    id: "plan-commission-dec",
+    title: "Plan Commission",
+    date: "2026-12-21",
+    start: "19:00",
+    place: "Village Hall",
+    address: "255 E Wilson Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Board Room, Village Hall, 7 p.m..",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=12",
+  },
+  {
+    // Source: Village of Lombard events calendar
+    id: "christmas-closed",
+    title: "Village offices closed",
+    date: "2026-12-24",
+    place: "Village Hall",
+    address: "255 E Wilson Ave",
+    desk: "Village",
+    origin: "Village",
+    blurb: "Closed Dec. 24–25 for Christmas.",
+    href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=12",
   },
   {
     id: "lilac-marshall",
