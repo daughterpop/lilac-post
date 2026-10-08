@@ -32,4 +32,4 @@ export const CONTACT_EMAIL_IS_PLACEHOLDER = CONTACT_EMAIL.endsWith("@example.com
  * FormSubmit's email also gives a random alias string; swapping it in here in
  * place of the address keeps the address out of the page source.
  */
-export const SUBSCRIBE_ENDPOINT = "https://formsubmit.co/ajax/dustin.himmerich@protonmail.com";
+export const SUBSCRIBE_ENDPOINT = "https://formsubmit.co/ajax/dhimmer1@gmail.com";
