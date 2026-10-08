@@ -1,0 +1,27 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+node_modules
+dist
+dist-ssr
+.output
+.nitro
+.tanstack
+.vercel
+.grok
+screenshots
+artifacts
+*.local
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+
+# Secrets
+.env
+.env.*
+!.env.example
