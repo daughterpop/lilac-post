@@ -7,8 +7,10 @@ import { chicagoNow } from "@/lib/when";
 const NAV = [
   { to: "/", label: "Home", exact: true },
   { to: "/breaking", label: "Breaking", exact: false },
-  { to: "/dispatches", label: "The paper", exact: false },
-  { to: "/calendar", label: "Calendar", exact: false },
+  { to: "/sunday", label: "Sunday Edition", exact: false },
+  { to: "/dispatches", label: "Stories", exact: false },
+  { to: "/calendar", label: "Events", exact: false },
+  { to: "/sports", label: "Sports", exact: false },
   { to: "/parish", label: "Catholic corner", exact: false },
   { to: "/village", label: "Lombard", exact: false },
   { to: "/about", label: "About us", exact: false },
@@ -24,7 +26,11 @@ function NavLink({
   exact: boolean;
 }) {
   const path = useRouterState({ select: (state) => state.location.pathname });
-  const on = exact ? path === to : path === to || path.startsWith(`${to}/`);
+  const on = exact
+    ? path === to
+    : path === to ||
+      path.startsWith(`${to}/`) ||
+      (to === "/sunday" && (path.startsWith("/edition/") || path === "/editions"));
 
   return (
     <Link

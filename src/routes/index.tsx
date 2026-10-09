@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { events } from "@/data/events";
+import { latestEdition } from "@/data/editions";
 import { allPosts } from "@/data/posts";
 import { AddToCalendar } from "@/components/add-calendar";
 import { Shell } from "@/components/shell";
@@ -7,11 +8,13 @@ import { SponsorSlot } from "@/components/sponsor-slot";
 import { StoryCard } from "@/components/story-card";
 import { WireLink } from "@/components/wire-link";
 import { breakingItems } from "@/lib/breaking";
-import { byDateTime, chicagoNow, formatShort, formatSpan, isUpcoming } from "@/lib/when";
+import { canonical } from "@/lib/seo";
+import { byDateTime, chicagoNow, formatLong, formatShort, formatSpan, isUpcoming } from "@/lib/when";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [{ title: "The Lilac Post — Lombard, Illinois" }],
+    links: [canonical("/")],
   }),
   component: Home,
 });
@@ -26,6 +29,7 @@ function plusDays(iso: string, days: number) {
 function Home() {
   const now = chicagoNow();
   const breaking = breakingItems(now.date).slice(0, 2);
+  const edition = latestEdition();
   const stories = allPosts()
     .filter((post) => post.slug !== "st-regis-fire")
     .slice(0, 3);
@@ -62,12 +66,45 @@ function Home() {
         )}
       </section>
 
+      {edition ? (
+        <section className="mt-8 border-2 border-ink bg-paper p-5 sm:p-6" aria-labelledby="sunday-edition">
+          <p className="text-xs font-semibold tracking-widest text-lilac uppercase">
+            This week’s Sunday Lilac Post · {formatLong(edition.date)}
+          </p>
+          <h2 id="sunday-edition" className="mt-2 font-display text-3xl leading-tight text-ink sm:text-4xl">
+            <Link to="/edition/$date" params={{ date: edition.date }} className="hover:text-lilac">
+              {edition.headline}
+            </Link>
+          </h2>
+          <p className="mt-3 max-w-3xl text-lg text-fg">{edition.lede}</p>
+          <ul className="mt-4 grid gap-x-8 gap-y-2 border-t border-line pt-3 sm:grid-cols-2">
+            {edition.news.slice(0, 4).map((item) => (
+              <li key={item.headline} className="font-display text-lg text-ink">
+                {item.headline}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-4 flex flex-wrap gap-x-6">
+            <Link
+              to="/edition/$date"
+              params={{ date: edition.date }}
+              className="inline-flex min-h-11 items-center bg-lilac px-4 text-sm font-semibold text-paper"
+            >
+              Read the Sunday edition
+            </Link>
+            <Link to="/editions" className="inline-flex min-h-11 items-center text-sm font-semibold text-lilac">
+              Past editions
+            </Link>
+          </div>
+        </section>
+      ) : null}
+
       <div className="mt-10 grid gap-10 lg:grid-cols-12">
         <section className="lg:col-span-7">
           <div className="flex items-baseline justify-between gap-3">
-            <h2 className="font-display text-3xl text-ink">From this week’s paper</h2>
+            <h2 className="font-display text-3xl text-ink">Latest stories</h2>
             <Link to="/dispatches" className="inline-flex min-h-11 items-center text-sm font-semibold text-lilac">
-              The paper
+              All stories
             </Link>
           </div>
           <div className="mt-2">
@@ -79,9 +116,9 @@ function Home() {
 
         <aside className="lg:col-span-5">
           <div className="flex items-baseline justify-between gap-3">
-            <h2 className="font-display text-3xl text-ink">Upcoming</h2>
+            <h2 className="font-display text-3xl text-ink">Upcoming events</h2>
             <Link to="/calendar" className="inline-flex min-h-11 items-center text-sm font-semibold text-lilac">
-              Calendar
+              All events
             </Link>
           </div>
           <p className="mt-2 text-sm text-muted">The next seven days around town. Church dates are on the Catholic corner page.</p>
