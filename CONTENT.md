@@ -1,77 +1,99 @@
-# Content: Notion → site
+# Editing events and stories on GitHub
 
-Dustin edits events and stories in Notion. A daily Grok automation copies rows
-marked **Ready** into `src/data/events.ts` and `src/data/posts.ts` through a pull
-request, merges it after the Vercel preview passes, and marks the rows
-**Published**. There is no Notion token in the app or in Vercel; the site still
-builds from the TypeScript files in this repo.
+You can add or change events and stories right on github.com, from a computer or your phone. No code tools needed.
 
-Notion (page "Lilac Post"):
+- **Events** (the calendar): [`src/data/events.ts`](src/data/events.ts)
+- **Stories** (dispatches): [`src/data/posts.ts`](src/data/posts.ts)
 
-- **Lilac Post Events**: https://app.notion.com/p/ca3c4b923a5a4bb59905f966dba32216 (data source `collection://fba1825e-835d-48a1-8ef3-acee9000c306`)
-- **Lilac Post Stories**: https://app.notion.com/p/8861969fb085463d8d6c97eba3e9e6b3 (data source `collection://2ec31b34-c5e5-4e5f-819b-d9080de31010`)
+Leave every other file alone. The breaking-news automation edits `src/data/wires.ts` and `src/lib/breaking.ts`, and the weekly events automation also edits `events.ts`.
 
-## Rules for the sync
+## How to make a change
 
-1. **Only `Status = Ready` rows change the site.** Draft, Published, and blank rows are ignored.
-2. **Ready + empty Site ID → add.** Make a new id/slug (see below), add the object, then set the row's `Site ID` and `Status = Published` and clear `Sync note`.
-3. **Ready + Site ID → update** the object with that `id` (events) or `slug` (stories) in place. Replace only the fields the row maps to; keep anything Notion doesn't carry. Then set `Status = Published`.
-4. **`Status = Archived` with a Site ID that is still in the file → remove** that object. Leave the row Archived. Never remove anything that isn't Archived in Notion.
-5. If a Ready row can't be used (missing required field, bad URL, id clash, or sensitive content that needs Dustin), **don't touch the file for it**. Leave it Ready and write the reason in `Sync note`.
-6. **Never edit `src/data/wires.ts` or `src/lib/breaking.ts`.** The hourly breaking-news automation owns them. Don't edit any other file either, except `public/images/` if a future prompt says so.
-7. Ids and slugs are permanent. Never rename one, and never reuse one for something else.
-8. Keep the arrays as plain object literals in the existing style (double quotes, trailing commas, curly quotes in prose as typed). Add new events in date order near events with the same date; add new stories at the top of `posts`.
-9. `npm run build` runs `scripts/check-content.mjs` first, so the Vercel preview fails on duplicate ids, bad dates or times, unknown desk/origin values, missing required fields, a `story` that isn't a post slug, or an `/images/...` file that doesn't exist. A failed preview means **do not merge**.
+1. Go to https://github.com/daughterpop/lilac-post and tap the file (`src` → `data` → `events.ts` or `posts.ts`). On a phone, if you don't see the pencil, switch to desktop view in your browser menu.
+2. Tap the **pencil** (Edit this file).
+3. At the top of the file is a template. To add an entry, copy an existing entry (or the template) from its `{` through its `},` and paste it right below another entry. Then change the values.
+   - Add new events next to other events on the same date.
+   - Add new stories at the top of the list, just after `export const posts: Post[] = [`.
+4. Tap **Commit changes...** and write a short message, like "Add library book sale".
+5. Pick one:
+   - **Safest: "Create a new branch for this commit and start a pull request"** (GitHub calls this "propose changes"). Vercel builds a preview and checks your entry. If the check passes, tap **Merge pull request**, then **Confirm**. If it fails, nothing goes live; open the failed check to see the reason, fix it, and commit again.
+   - **Faster: "Commit directly to the main branch."** This also works. The site rebuilds in about a minute. If the entry has a mistake, the build stops and the live site stays as it was until you fix it.
 
-### New ids
+To fix a typo, open the file, tap the pencil, change the text, and commit the same way.
 
-- Event `id`: lowercase kebab-case from the title, plus a short date or month suffix when needed to stay unique (e.g. `plan-commission-jan`, `vocations-rosary-1101`).
-- Story `slug`: the row's `Slug` if filled, else kebab-case of the headline (max ~6 words). It must be unique in `posts.ts`.
+## Typing tips
 
-## Events: Notion → `VillageEvent` (`src/data/events.ts`)
+- Put every value in straight double quotes: `"like this"`. End each line with a comma.
+- To use a double quote inside a value, type `\"`, or use curly quotes (“ ”). Apostrophes (’ or ') are fine.
+- Dates are `YYYY-MM-DD`, like `"2026-10-24"`.
+- Times are 24-hour `HH:MM`, Chicago time: `"09:30"`, `"18:00"` for 6 p.m.
+- Lines starting with `//` are notes for editors. They don't show on the site.
 
-| Notion property                       | Code field                            | Notes                                                                                                                                                                    |
-| ------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Name (title)                          | `title`                               | required                                                                                                                                                                 |
-| Date (start)                          | `date`                                | required. `YYYY-MM-DD` **in America/Chicago**. Notion returns datetimes in UTC (e.g. 6 p.m. CST = `00:00Z` the next day), so convert before taking the date.             |
-| Date (start time, if "Include time")  | `start`                               | `HH:MM` 24-hour, America/Chicago. Omit when the date has no time.                                                                                                        |
-| Date (end time)                       | `end`                                 | `HH:MM`, same day, Chicago time. Only when there's a start.                                                                                                              |
-| Place                                 | `place`                               | required                                                                                                                                                                 |
-| Address                               | `address`                             | optional                                                                                                                                                                 |
-| Category                              | `desk`                                | one of `Market`, `Library`, `Village`, `Park`, `History`, `Outdoors`. Blank → `Village`.                                                                                 |
-| Organizer                             | `origin`                              | one of `Village`, `Park District`, `Butterfield`, `York Center`, `Yorktown`, `Chamber`, `Historical Society`, `Library`, `School`, `Parish`, `Lilac`. Blank → `Village`. |
-| Summary                               | `blurb`                               | required, 1–2 plain sentences                                                                                                                                            |
-| Source URL                            | `href`                                | required, http(s)                                                                                                                                                        |
-| Featured                              | `featured: true`                      | only when checked; then Front title + Front dek are required                                                                                                             |
-| Front title                           | `frontTitle`                          |                                                                                                                                                                          |
-| Front dek                             | `frontDek`                            |                                                                                                                                                                          |
-| Story slug                            | `story`                               | must be an existing post slug                                                                                                                                            |
-| Image URL / Image alt / Image caption | `image` / `imageAlt` / `imageCaption` | image is `https://…` or an existing `/images/…`; alt required with an image                                                                                              |
-| Image credit                          | `imageCredit`                         | optional. Format: `Credit text \| https://source-url`. Split on the first ` \| `; left → `text`, right → `href` (strip Notion markdown links like `[url](url)` to the bare URL). Blank → omit `imageCredit`. Both parts required when set. |
-| Site ID                               | `id`                                  | written by the sync                                                                                                                                                      |
+## Event fields (`events.ts`)
 
-Also add a `// Source: <Source URL>` comment above each new event, like the existing entries.
+| Field            | Required? | What to put                                                                                                                                                        |
+| ---------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`             | yes       | Short and unique, lowercase with dashes: `"book-sale-oct"`. Never change or reuse one.                                                                             |
+| `title`          | yes       | Event name.                                                                                                                                                        |
+| `date`           | yes       | `"YYYY-MM-DD"`                                                                                                                                                     |
+| `start` / `end`  | optional  | `"HH:MM"`. Use `end` only if there's a `start`. Leave both out for all-day events.                                                                                 |
+| `place`          | yes       | Venue name.                                                                                                                                                        |
+| `address`        | optional  | Street address.                                                                                                                                                    |
+| `desk`           | yes       | One of: `Market`, `Library`, `Village`, `Park`, `History`, `Outdoors`                                                                                              |
+| `origin`         | yes       | Who runs it. One of: `Village`, `Park District`, `Butterfield`, `York Center`, `Yorktown`, `Chamber`, `Historical Society`, `Library`, `School`, `Parish`, `Lilac` |
+| `blurb`          | yes       | One or two plain sentences.                                                                                                                                        |
+| `href`           | yes       | Link to the official page, starting with `https://`.                                                                                                               |
+| `featured: true` | optional  | Puts it on the front page. Then `frontTitle` and `frontDek` are required.                                                                                          |
+| `story`          | optional  | The `slug` of a story about this event.                                                                                                                            |
+| image fields     | optional  | See "Photos" below.                                                                                                                                                |
 
-## Stories: Notion → `Post` (`src/data/posts.ts`)
+## Story fields (`posts.ts`)
 
-| Notion property                       | Code field                            | Notes                                                                                                         |
-| ------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| Name (title)                          | `title`                               | required                                                                                                      |
-| Dek                                   | `dek`                                 | required                                                                                                      |
-| Date                                  | `date`                                | `YYYY-MM-DD`. Blank → the sync date (Chicago).                                                                |
-| Desk                                  | `desk`                                | same values as events. Blank → `Village`.                                                                     |
-| Page body                             | `body`                                | required. One string per paragraph, in order. Plain text only: drop formatting, keep curly quotes and dashes. |
-| Source URL + Source name              | `sources[0]`                          | `{ name, href }`. URL required; blank name → the site's name (e.g. "Village of Lombard").                     |
-| Extra sources                         | `sources[1..]`                        | one per line, `Name \| https://…`                                                                             |
-| Slug                                  | used for a new `slug`                 | ignored once Site ID is set                                                                                   |
-| Order                                 | `order`                               | integer, blank → 0                                                                                            |
-| Image URL / Image alt / Image caption | `image` / `imageAlt` / `imageCaption` | same rules as events. AI-made images must have a caption starting "Illustration."                             |
-| Image credit                          | `imageCredit`                         | same format as events (`Credit text \| https://…` → `{ text, href }`).                                        |
-| Correction                            | `corrections[]`                       | when filled on an update, append `{ date: <today>, note }` and then clear the Notion field                    |
-| Site ID                               | `slug`                                | written by the sync                                                                                           |
+| Field         | Required? | What to put                                                                                                                        |
+| ------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `slug`        | yes       | Short and unique, lowercase with dashes. It becomes the web address (`/dispatches/<slug>`). Never change it after the story is up. |
+| `title`       | yes       | Headline.                                                                                                                          |
+| `dek`         | yes       | One-sentence summary under the headline.                                                                                           |
+| `date`        | yes       | `"YYYY-MM-DD"`                                                                                                                     |
+| `desk`        | yes       | Same choices as events.                                                                                                            |
+| `order`       | yes       | Usually `0`. A higher number moves a story up among stories with the same date.                                                    |
+| `body`        | yes       | A list of paragraphs, each in its own quotes and ending with a comma.                                                              |
+| `sources`     | yes       | At least one: `{ name: "Village of Lombard", href: "https://..." },`                                                               |
+| `corrections` | optional  | `[{ date: "2026-10-09", note: "An earlier version gave the wrong time." }],`                                                       |
+| image fields  | optional  | See "Photos" below.                                                                                                                |
 
-## Not synced (edit in code)
+## Photos
 
-`src/data/places.ts`, `src/data/parishes.ts`, `src/data/wires.ts`, `src/lib/breaking.ts`, and everything outside `src/data`.
+An image needs `image` and `imageAlt`. `imageCaption` and `imageCredit` are optional.
 
-Run `npm run check:content` locally to validate the data files without a full build.
+- `image`: either a full `https://` link to a photo, or a file in the repo's `public/images` folder, written as `"/images/file-name.webp"` (leave `public` out). To add a file, open `public/images` on GitHub, tap **Add file → Upload files**, and commit it before you use it.
+- `imageAlt`: a plain description of the photo for screen readers.
+- `imageCaption`: the line shown under the photo. Mark stand-in photos ("Representative photo, ...") and AI images ("Illustration. ...").
+- `imageCredit`: the photographer and license, linked to where you found it:
+  ```ts
+  imageCredit: {
+    text: "Photo: Jane Doe / Flickr, CC BY 2.0",
+    href: "https://www.flickr.com/photos/...",
+  },
+  ```
+
+Use photos you're allowed to use, such as public domain, Creative Commons, or your own, and credit them.
+
+## The content check
+
+Every build runs `scripts/check-content.mjs` first. If an entry is broken, the check stops the deploy and lists what's wrong, so a bad entry can't reach the live site. It catches:
+
+- a missing required field
+- a duplicate `id` or `slug`
+- a date or time in the wrong format
+- a `desk` or `origin` that isn't on the list
+- a link that doesn't start with `http`
+- a `story` that doesn't match a story's `slug`
+- an `/images/...` file that doesn't exist, or a photo with no `imageAlt`
+- a featured event without `frontTitle` and `frontDek`
+
+A missing comma or quote fails the build too. When a check fails, open it from the pull request or from the commit's red ✗ to see which entry needs fixing. Developers can run `npm run check:content` to check locally.
+
+## Not edited here
+
+`src/data/places.ts`, `src/data/parishes.ts`, `src/data/wires.ts`, `src/lib/breaking.ts`, and everything outside `src/data` are code. Ask before changing them.
