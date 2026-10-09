@@ -47,6 +47,7 @@ Notion (page "Lilac Post"):
 | Front dek                             | `frontDek`                            |                                                                                                                                                                          |
 | Story slug                            | `story`                               | must be an existing post slug                                                                                                                                            |
 | Image URL / Image alt / Image caption | `image` / `imageAlt` / `imageCaption` | image is `https://…` or an existing `/images/…`; alt required with an image                                                                                              |
+| Image credit                          | `imageCredit`                         | optional. Format: `Credit text \| https://source-url`. Split on the first ` \| `; left → `text`, right → `href` (strip Notion markdown links like `[url](url)` to the bare URL). Blank → omit `imageCredit`. Both parts required when set. |
 | Site ID                               | `id`                                  | written by the sync                                                                                                                                                      |
 
 Also add a `// Source: <Source URL>` comment above each new event, like the existing entries.
@@ -65,6 +66,7 @@ Also add a `// Source: <Source URL>` comment above each new event, like the exis
 | Slug                                  | used for a new `slug`                 | ignored once Site ID is set                                                                                   |
 | Order                                 | `order`                               | integer, blank → 0                                                                                            |
 | Image URL / Image alt / Image caption | `image` / `imageAlt` / `imageCaption` | same rules as events. AI-made images must have a caption starting "Illustration."                             |
+| Image credit                          | `imageCredit`                         | same format as events (`Credit text \| https://…` → `{ text, href }`).                                        |
 | Correction                            | `corrections[]`                       | when filled on an update, append `{ date: <today>, note }` and then clear the Notion field                    |
 | Site ID                               | `slug`                                | written by the sync                                                                                           |
 
