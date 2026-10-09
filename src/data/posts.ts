@@ -1,7 +1,31 @@
 /**
- * Stories ("dispatches"). `slug` is the stable Site ID used by the Notion sync
- * (see CONTENT.md) and the story URL (/dispatches/<slug>). Never change a
- * published slug. Checked by scripts/check-content.mjs on every build.
+ * STORIES ("dispatches"). Field rules and publishing flow: see CONTENT.md.
+ *
+ * To add a story, copy this template (or any entry below), paste it at the top
+ * of the list, and fill it in. The slug is the story's web address
+ * (/dispatches/<slug>), so never change it once published. Every build checks
+ * this file (scripts/check-content.mjs), and a bad entry won't deploy.
+ *
+ *   {
+ *     slug: "short-unique-slug",             // lowercase-with-dashes
+ *     title: "Headline",
+ *     dek: "One-sentence summary.",
+ *     date: "2026-10-24",                    // YYYY-MM-DD
+ *     desk: "Village",                       // Market, Library, Village, Park, History, Outdoors
+ *     order: 0,
+ *     image: "https://upload.wikimedia.org/...", // optional; real, freely licensed photo
+ *     imageAlt: "What the photo shows.",     // required with an image
+ *     imageCaption: "What and where.",       // say so if it is a stand-in photo
+ *     imageCredit: {                         // required with an image
+ *       text: "Photo: Jane Doe / Flickr, CC BY 2.0",
+ *       href: "https://link-to-the-photo-page",
+ *     },
+ *     body: [
+ *       "First paragraph.",
+ *       "Second paragraph.",
+ *     ],
+ *     sources: [{ name: "Village of Lombard", href: "https://villageoflombard.org/..." }],
+ *   },
  */
 import type { Post } from "@/data/types";
 

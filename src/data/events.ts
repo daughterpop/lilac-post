@@ -1,7 +1,26 @@
 /**
- * Calendar events. One object per event; `id` is the stable Site ID used by the
- * Notion sync (see CONTENT.md). Keep ids unique and never reuse one.
- * Checked by scripts/check-content.mjs on every build.
+ * CALENDAR EVENTS. Field rules and publishing flow: see CONTENT.md.
+ *
+ * To add an event, copy this template (or any entry below), paste it next to
+ * events on the same date, and fill it in. Leave out optional lines you don't
+ * need. Every build checks this file (scripts/check-content.mjs), and a bad
+ * entry won't deploy.
+ *
+ *   // Source: https://link-to-the-official-page
+ *   {
+ *     id: "short-unique-id",                 // lowercase-with-dashes; never reuse
+ *     title: "Event name",
+ *     date: "2026-10-24",                    // YYYY-MM-DD
+ *     start: "10:00",                        // optional, 24-hour Chicago time
+ *     end: "12:00",                          // optional, needs a start
+ *     place: "Helen Plum Library",
+ *     address: "411 S Main St",              // optional
+ *     desk: "Library",                       // Market, Library, Village, Park, History, Outdoors
+ *     origin: "Library",                     // Village, Park District, Butterfield, York Center, Yorktown,
+ *                                            // Chamber, Historical Society, Library, School, Parish, Lilac
+ *     blurb: "One or two plain sentences.",
+ *     href: "https://link-to-the-official-page",
+ *   },
  */
 import type { Origin, VillageEvent } from "@/data/types";
 import { byDateTime } from "@/lib/when";
