@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Shell } from "@/components/shell";
-import { CONTACT_EMAIL, CONTACT_EMAIL_IS_PLACEHOLDER } from "@/lib/site";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -68,8 +68,15 @@ function AboutPage() {
             explaining what changed. We don’t quietly rewrite the record.
           </p>
           <p>
-            If you spot a mistake, tell us what it is and, if you can, where the right information lives. We’ll
-            check it against the source and update the story or the calendar.
+            If you spot a mistake, email{" "}
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="font-semibold text-lilac underline decoration-line underline-offset-4"
+            >
+              {CONTACT_EMAIL}
+            </a>{" "}
+            and tell us what it is and, if you can, where the right information lives. We’ll check it against the
+            source and update the story or the calendar.
           </p>
         </section>
 
@@ -77,20 +84,16 @@ function AboutPage() {
           <h2 id="contact" className="font-display text-2xl text-ink">
             Contact
           </h2>
-          {CONTACT_EMAIL_IS_PLACEHOLDER ? (
-            <p>Have a tip, a correction, or an event to list? Our contact email will be posted here soon.</p>
-          ) : (
-            <p>
-              Tips, corrections, and event listings:{" "}
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="font-semibold text-lilac underline decoration-line underline-offset-4"
-              >
-                {CONTACT_EMAIL}
-              </a>
-              .
-            </p>
-          )}
+          <p>
+            Tips, corrections, and event listings:{" "}
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="font-semibold text-lilac underline decoration-line underline-offset-4"
+            >
+              {CONTACT_EMAIL}
+            </a>
+            .
+          </p>
           <p>
             For village services, event registration, or library accounts, please contact the village, the event
             host, or the library directly. We can’t help with those.
