@@ -15,14 +15,18 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AdvertiseRouteImport } from './routes/advertise'
 import { Route as BreakingRouteImport } from './routes/breaking'
 import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as EditionsRouteImport } from './routes/editions'
 import { Route as ParishRouteImport } from './routes/parish'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SportsRouteImport } from './routes/sports'
 import { Route as SubscribeRouteImport } from './routes/subscribe'
+import { Route as SundayRouteImport } from './routes/sunday'
 import { Route as VillageRouteImport } from './routes/village'
 import { Route as ApiCalendarDoticsRouteImport } from './routes/api/calendar[.]ics'
 import { Route as DispatchesIndexRouteImport } from './routes/dispatches.index'
 import { Route as DispatchesSlugRouteImport } from './routes/dispatches.$slug'
+import { Route as EditionDateRouteImport } from './routes/edition.$date'
 import { Route as ApiEventsIdDoticsRouteImport } from './routes/api/events/$id[.]ics'
 
 const IndexRoute = IndexRouteImport.update({
@@ -55,6 +59,11 @@ const CalendarRoute = CalendarRouteImport.update({
   path: '/calendar',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EditionsRoute = EditionsRouteImport.update({
+  id: '/editions',
+  path: '/editions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ParishRoute = ParishRouteImport.update({
   id: '/parish',
   path: '/parish',
@@ -70,9 +79,19 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SportsRoute = SportsRouteImport.update({
+  id: '/sports',
+  path: '/sports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SubscribeRoute = SubscribeRouteImport.update({
   id: '/subscribe',
   path: '/subscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SundayRoute = SundayRouteImport.update({
+  id: '/sunday',
+  path: '/sunday',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VillageRoute = VillageRouteImport.update({
@@ -95,6 +114,11 @@ const DispatchesSlugRoute = DispatchesSlugRouteImport.update({
   path: '/dispatches/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EditionDateRoute = EditionDateRouteImport.update({
+  id: '/edition/$date',
+  path: '/edition/$date',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiEventsIdDoticsRoute = ApiEventsIdDoticsRouteImport.update({
   id: '/api/events/$id.ics',
   path: '/api/events/$id.ics',
@@ -108,13 +132,17 @@ export interface FileRoutesByFullPath {
   '/advertise': typeof AdvertiseRoute
   '/breaking': typeof BreakingRoute
   '/calendar': typeof CalendarRoute
+  '/editions': typeof EditionsRoute
   '/parish': typeof ParishRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sports': typeof SportsRoute
   '/subscribe': typeof SubscribeRoute
+  '/sunday': typeof SundayRoute
   '/village': typeof VillageRoute
   '/api/calendar.ics': typeof ApiCalendarDoticsRoute
   '/dispatches/$slug': typeof DispatchesSlugRoute
+  '/edition/$date': typeof EditionDateRoute
   '/dispatches/': typeof DispatchesIndexRoute
   '/api/events/$id.ics': typeof ApiEventsIdDoticsRoute
 }
@@ -125,13 +153,17 @@ export interface FileRoutesByTo {
   '/advertise': typeof AdvertiseRoute
   '/breaking': typeof BreakingRoute
   '/calendar': typeof CalendarRoute
+  '/editions': typeof EditionsRoute
   '/parish': typeof ParishRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sports': typeof SportsRoute
   '/subscribe': typeof SubscribeRoute
+  '/sunday': typeof SundayRoute
   '/village': typeof VillageRoute
   '/api/calendar.ics': typeof ApiCalendarDoticsRoute
   '/dispatches/$slug': typeof DispatchesSlugRoute
+  '/edition/$date': typeof EditionDateRoute
   '/dispatches': typeof DispatchesIndexRoute
   '/api/events/$id.ics': typeof ApiEventsIdDoticsRoute
 }
@@ -143,13 +175,17 @@ export interface FileRoutesById {
   '/advertise': typeof AdvertiseRoute
   '/breaking': typeof BreakingRoute
   '/calendar': typeof CalendarRoute
+  '/editions': typeof EditionsRoute
   '/parish': typeof ParishRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sports': typeof SportsRoute
   '/subscribe': typeof SubscribeRoute
+  '/sunday': typeof SundayRoute
   '/village': typeof VillageRoute
   '/api/calendar.ics': typeof ApiCalendarDoticsRoute
   '/dispatches/$slug': typeof DispatchesSlugRoute
+  '/edition/$date': typeof EditionDateRoute
   '/dispatches/': typeof DispatchesIndexRoute
   '/api/events/$id.ics': typeof ApiEventsIdDoticsRoute
 }
@@ -162,13 +198,17 @@ export interface FileRouteTypes {
     | '/advertise'
     | '/breaking'
     | '/calendar'
+    | '/editions'
     | '/parish'
     | '/robots.txt'
     | '/sitemap.xml'
+    | '/sports'
     | '/subscribe'
+    | '/sunday'
     | '/village'
     | '/api/calendar.ics'
     | '/dispatches/$slug'
+    | '/edition/$date'
     | '/dispatches/'
     | '/api/events/$id.ics'
   fileRoutesByTo: FileRoutesByTo
@@ -179,13 +219,17 @@ export interface FileRouteTypes {
     | '/advertise'
     | '/breaking'
     | '/calendar'
+    | '/editions'
     | '/parish'
     | '/robots.txt'
     | '/sitemap.xml'
+    | '/sports'
     | '/subscribe'
+    | '/sunday'
     | '/village'
     | '/api/calendar.ics'
     | '/dispatches/$slug'
+    | '/edition/$date'
     | '/dispatches'
     | '/api/events/$id.ics'
   id:
@@ -196,13 +240,17 @@ export interface FileRouteTypes {
     | '/advertise'
     | '/breaking'
     | '/calendar'
+    | '/editions'
     | '/parish'
     | '/robots.txt'
     | '/sitemap.xml'
+    | '/sports'
     | '/subscribe'
+    | '/sunday'
     | '/village'
     | '/api/calendar.ics'
     | '/dispatches/$slug'
+    | '/edition/$date'
     | '/dispatches/'
     | '/api/events/$id.ics'
   fileRoutesById: FileRoutesById
@@ -214,13 +262,17 @@ export interface RootRouteChildren {
   AdvertiseRoute: typeof AdvertiseRoute
   BreakingRoute: typeof BreakingRoute
   CalendarRoute: typeof CalendarRoute
+  EditionsRoute: typeof EditionsRoute
   ParishRoute: typeof ParishRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SportsRoute: typeof SportsRoute
   SubscribeRoute: typeof SubscribeRoute
+  SundayRoute: typeof SundayRoute
   VillageRoute: typeof VillageRoute
   ApiCalendarDoticsRoute: typeof ApiCalendarDoticsRoute
   DispatchesSlugRoute: typeof DispatchesSlugRoute
+  EditionDateRoute: typeof EditionDateRoute
   DispatchesIndexRoute: typeof DispatchesIndexRoute
   ApiEventsIdDoticsRoute: typeof ApiEventsIdDoticsRoute
 }
@@ -269,6 +321,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CalendarRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/editions': {
+      id: '/editions'
+      path: '/editions'
+      fullPath: '/editions'
+      preLoaderRoute: typeof EditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/parish': {
       id: '/parish'
       path: '/parish'
@@ -290,11 +349,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sports': {
+      id: '/sports'
+      path: '/sports'
+      fullPath: '/sports'
+      preLoaderRoute: typeof SportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/subscribe': {
       id: '/subscribe'
       path: '/subscribe'
       fullPath: '/subscribe'
       preLoaderRoute: typeof SubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sunday': {
+      id: '/sunday'
+      path: '/sunday'
+      fullPath: '/sunday'
+      preLoaderRoute: typeof SundayRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/village': {
@@ -325,6 +398,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DispatchesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/edition/$date': {
+      id: '/edition/$date'
+      path: '/edition/$date'
+      fullPath: '/edition/$date'
+      preLoaderRoute: typeof EditionDateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/events/$id.ics': {
       id: '/api/events/$id.ics'
       path: '/api/events/$id.ics'
@@ -342,13 +422,17 @@ const rootRouteChildren: RootRouteChildren = {
   AdvertiseRoute: AdvertiseRoute,
   BreakingRoute: BreakingRoute,
   CalendarRoute: CalendarRoute,
+  EditionsRoute: EditionsRoute,
   ParishRoute: ParishRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SportsRoute: SportsRoute,
   SubscribeRoute: SubscribeRoute,
+  SundayRoute: SundayRoute,
   VillageRoute: VillageRoute,
   ApiCalendarDoticsRoute: ApiCalendarDoticsRoute,
   DispatchesSlugRoute: DispatchesSlugRoute,
+  EditionDateRoute: EditionDateRoute,
   DispatchesIndexRoute: DispatchesIndexRoute,
   ApiEventsIdDoticsRoute: ApiEventsIdDoticsRoute,
 }

@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { allEditions } from "@/data/editions";
 import { allPosts } from "@/data/posts";
 import { siteUrl } from "@/lib/site";
 
 // Top-level pages. Add new static routes here so they land in the sitemap.
-const STATIC_PATHS = ["/", "/breaking", "/dispatches", "/calendar", "/parish", "/village", "/about", "/subscribe", "/advertise"];
+const STATIC_PATHS = ["/", "/breaking", "/editions", "/dispatches", "/sports", "/calendar", "/parish", "/village", "/about", "/subscribe", "/advertise"];
 
 function escapeXml(value: string) {
   return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -12,6 +13,7 @@ function escapeXml(value: string) {
 function sitemapXml() {
   const entries = [
     ...STATIC_PATHS.map((path) => ({ loc: siteUrl(path), lastmod: undefined as string | undefined })),
+    ...allEditions().map((edition) => ({ loc: siteUrl(`/edition/${edition.date}`), lastmod: edition.date })),
     ...allPosts().map((post) => ({ loc: siteUrl(`/dispatches/${post.slug}`), lastmod: post.date })),
   ];
   const urls = entries

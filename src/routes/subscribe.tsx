@@ -75,7 +75,7 @@ function SubscribePage() {
       <p className="text-xs font-semibold tracking-widest text-lilac uppercase">The Lilac Post</p>
       <h1 className="mt-2 font-display text-4xl text-ink sm:text-5xl">Subscribe</h1>
       <p className="mt-3 max-w-xl text-lg text-fg">
-        Leave your email to join The Lilac Post’s reader list.
+        Leave your email to join The Lilac Post’s reader list. The Sunday Lilac Post, our weekly edition, will start arriving by email soon. Until then, read it any time at thelilacpost.com/sunday.
       </p>
 
       <div className="mt-6 max-w-md border border-line bg-paper p-5">
@@ -176,10 +176,10 @@ function SubscribePage() {
             <p className="text-sm text-muted">The latest from around Lombard, as it happens.</p>
           </li>
           <li>
-            <Link to="/dispatches" className="font-semibold text-ink hover:text-lilac">
-              The weekly paper
+            <Link to="/sunday" className="font-semibold text-ink hover:text-lilac">
+              The Sunday Lilac Post
             </Link>
-            <p className="text-sm text-muted">The longer stories, once a week.</p>
+            <p className="text-sm text-muted">The week in Lombard every Sunday: news, stories, events, and scores.</p>
           </li>
         </ul>
       </div>
