@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Shell } from "@/components/shell";
-import { ADVERTISE_ENDPOINT } from "@/lib/site";
+import { ADVERTISE_ENDPOINT, CONTACT_EMAIL } from "@/lib/site";
 
 export const Route = createFileRoute("/advertise")({
   head: () => ({
@@ -144,7 +144,13 @@ function AdvertisePage() {
               </li>
             ))}
           </ul>
-          <p className="mt-4 font-semibold text-ink">Get in touch for rates.</p>
+          <p className="mt-4 font-semibold text-ink">
+            Get in touch for rates: use the form below or email{" "}
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-lilac underline decoration-line underline-offset-4">
+              {CONTACT_EMAIL}
+            </a>
+            .
+          </p>
         </section>
 
         <section className="mt-10 border-l-4 border-lilac bg-paper p-4" aria-labelledby="ethics">

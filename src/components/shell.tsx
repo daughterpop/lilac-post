@@ -3,6 +3,7 @@ import { Flower2 } from "lucide-react";
 import { useEffect, type ReactNode } from "react";
 import { useClips, useHydrated } from "@/lib/clips";
 import { chicagoNow } from "@/lib/when";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 const NAV = [
   { to: "/", label: "Home", exact: true },
@@ -104,6 +105,9 @@ export function Shell({ children }: { children: ReactNode }) {
             </Link>
             <a className="underline decoration-line underline-offset-4 hover:text-lilac" href="/about#corrections">
               Corrections
+            </a>
+            <a className="underline decoration-line underline-offset-4 hover:text-lilac" href={`mailto:${CONTACT_EMAIL}`}>
+              {CONTACT_EMAIL}
             </a>
             <Link className="font-semibold underline decoration-line underline-offset-4 hover:text-lilac" to="/advertise">
               Advertise with us

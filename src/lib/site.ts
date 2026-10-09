@@ -12,13 +12,10 @@ export function siteUrl(path: string) {
 }
 
 /**
- * CONTACT_EMAIL: where readers send tips and corrections. PLACEHOLDER — replace
- * with a real inbox before launch. While it ends in "@example.com" the About
- * page hides the address and says contact details are coming.
+ * CONTACT_EMAIL: where readers send tips, corrections, and ad inquiries.
+ * Forwarded by ImprovMX to the editor's inbox.
  */
-export const CONTACT_EMAIL = "CONTACT_EMAIL@example.com";
-
-export const CONTACT_EMAIL_IS_PLACEHOLDER = CONTACT_EMAIL.endsWith("@example.com");
+export const CONTACT_EMAIL = "editor@thelilacpost.com";
 
 /**
  * SUBSCRIBE_ENDPOINT: where the Subscribe form sends each new reader. It uses
