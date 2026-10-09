@@ -3,6 +3,7 @@ import { events } from "@/data/events";
 import { allPosts } from "@/data/posts";
 import { AddToCalendar } from "@/components/add-calendar";
 import { Shell } from "@/components/shell";
+import { SponsorSlot } from "@/components/sponsor-slot";
 import { StoryCard } from "@/components/story-card";
 import { WireLink } from "@/components/wire-link";
 import { breakingItems } from "@/lib/breaking";
@@ -105,6 +106,8 @@ function Home() {
           )}
         </aside>
       </div>
+
+      <SponsorSlot slot="home" className="mt-10" />
     </Shell>
   );
 }

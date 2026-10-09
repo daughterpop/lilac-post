@@ -33,3 +33,10 @@ export const CONTACT_EMAIL_IS_PLACEHOLDER = CONTACT_EMAIL.endsWith("@example.com
  * place of the address keeps the address out of the page source.
  */
 export const SUBSCRIBE_ENDPOINT = "https://formsubmit.co/ajax/dhimmer1@gmail.com";
+
+/**
+ * ADVERTISE_ENDPOINT: where the /advertise inquiry form sends each request.
+ * Same FormSubmit inbox as SUBSCRIBE_ENDPOINT; swap both together if the
+ * address changes.
+ */
+export const ADVERTISE_ENDPOINT = SUBSCRIBE_ENDPOINT;

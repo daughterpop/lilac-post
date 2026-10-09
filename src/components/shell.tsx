@@ -98,6 +98,9 @@ export function Shell({ children }: { children: ReactNode }) {
             <a className="underline decoration-line underline-offset-4 hover:text-lilac" href="/about#corrections">
               Corrections
             </a>
+            <Link className="font-semibold underline decoration-line underline-offset-4 hover:text-lilac" to="/advertise">
+              Advertise with us
+            </Link>
             <a className="underline decoration-line underline-offset-4 hover:text-lilac" href="https://www.helenplum.org/">
               Helen Plum Library
             </a>

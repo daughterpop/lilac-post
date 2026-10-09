@@ -50,7 +50,12 @@ function AboutPage() {
           </p>
           <p>
             Nobody outside the paper approves stories before they run. We don’t take payment in exchange for
-            coverage, and we will say so plainly if that ever changes.
+            coverage. Local businesses can{" "}
+            <Link to="/advertise" className="font-semibold text-lilac underline decoration-line underline-offset-4">
+              sponsor the paper
+            </Link>
+            , and anything sponsored is always labeled “Sponsored.” Sponsors don’t influence what we cover or how we
+            cover it.
           </p>
         </section>
 
