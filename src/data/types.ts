@@ -34,6 +34,8 @@ export type Post = {
   image?: string;
   imageAlt?: string;
   imageCaption?: string;
+  /** Photo credit shown under the caption, e.g. "Photo: Jane Doe / Flickr, CC BY 2.0", linked to the source page. */
+  imageCredit?: { text: string; href: string };
   sources: Source[];
   /** Dated correction notes shown at the end of the story (see /about#corrections). */
   corrections?: { date: string; note: string }[];
@@ -58,6 +60,8 @@ export type VillageEvent = {
   image?: string;
   imageAlt?: string;
   imageCaption?: string;
+  /** Photo credit shown under the caption, e.g. "Photo: Jane Doe / Flickr, CC BY 2.0", linked to the source page. */
+  imageCredit?: { text: string; href: string };
 };
 
 export type Place = {

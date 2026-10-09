@@ -50,9 +50,14 @@ export const posts: Post[] = [
     date: "2026-10-03",
     desk: "Market",
     order: 1,
-    image: "/images/market.jpg",
-    imageAlt: "Apples, a jar of honey, and chrysanthemums on a wooden table.",
-    imageCaption: "Illustration. Produce, honey, and flowers as you might find under the Arch on a Tuesday.",
+    image: "/images/lincoln-square-market.webp",
+    imageAlt: "Peaches and green and red grapes stacked on a farmers market table, with shoppers behind.",
+    imageCaption:
+      "Peaches and grapes at a farmers market stand. Representative photo, taken at Chicago’s Lincoln Square Farmers Market, not the Lombard market.",
+    imageCredit: {
+      text: "Photo: Tony Bailey / Wikimedia Commons, CC BY 2.0",
+      href: "https://commons.wikimedia.org/wiki/File:Lincoln_Square_Farmers_Market.jpg",
+    },
     body: [
       "The 2026 Lombard Farmers Market has one Tuesday left. October 6, 3 to 7 p.m., under the Arch at South Park Avenue and West St. Charles Road.",
       "Inversion Jazz Band closes out the season’s music lineup. The chamber’s season ran every Tuesday from May 19, with Great American Exteriors as presenting sponsor. The tables are the mix neighbors already know: produce, honey, tamales, gelato, kettle corn, kolaczki, olive oil, lemonade, and a shared spotlight for a chamber business and a nonprofit.",
@@ -83,9 +88,13 @@ export const posts: Post[] = [
     date: "2026-09-28",
     desk: "Park",
     order: 0,
-    image: "/images/lilacs.jpg",
-    imageAlt: "Pale and deep purple lilac blooms in morning light.",
-    imageCaption: "Illustration. Lilacs in bloom — the flowers are a May event; the park is a daily one.",
+    image: "/images/lilacia-park-autumn.webp",
+    imageAlt: "The arched Lilacia Park sign over a brick path, with trees in fall color and two people walking in.",
+    imageCaption: "The Lilacia Park entrance arch in October, long after the lilacs have finished.",
+    imageCredit: {
+      text: "Photo: Daniel X. O’Neil / Flickr, CC BY 2.0",
+      href: "https://www.flickr.com/photos/36521980095@N01/15014226963/",
+    },
     body: [
       "Lilacia Park is open every day from dawn to dusk, and the village does not charge to walk in. The park’s address is 150 South Park Avenue.",
       "Lilac Time 2026 ran May 1 through May 17. October is lawn, brick, and whatever the gardeners left standing. With the library now at 411 South Main, the park district has fenced the old corner at Maple and Park as open green space, and said that land is meant to fold into the park.",
@@ -104,9 +113,13 @@ export const posts: Post[] = [
     date: "2026-09-20",
     desk: "Outdoors",
     order: 0,
-    image: "/images/path.jpg",
-    imageAlt: "A limestone trail under trees turning gold and rust.",
-    imageCaption: "Illustration. The Illinois Prairie Path in early October light.",
+    image: "/images/prairie-path-glen-ellyn.webp",
+    imageAlt: "A crushed-limestone trail covered in fallen yellow leaves under a canopy of trees.",
+    imageCaption: "The Illinois Prairie Path in October, just west of Lombard in Glen Ellyn.",
+    imageCredit: {
+      text: "Photo: Cole Jackson / Flickr, public domain",
+      href: "https://www.flickr.com/photos/192165560@N04/51686693127/",
+    },
     body: [
       "The Illinois Prairie Path crosses Lombard on the old Chicago, Aurora & Elgin right-of-way. It is crushed limestone, flat, and honest about the weather. In October the canopy is the reason to go — gold over the trail before the path goes gray.",
       "Toward Villa Park and Elmhurst one way, Glen Ellyn and Wheaton the other, you can ride without living on St. Charles Road the whole time. The Great Western Trail is a different trail, farther north, so don’t mix the two up on a map.",
@@ -151,9 +164,13 @@ export const posts: Post[] = [
     date: "2026-08-15",
     desk: "Outdoors",
     order: 1,
-    image: "/images/downtown.jpg",
-    imageAlt: "A quiet downtown block in autumn light, with a civic arch in the distance.",
-    imageCaption: "Illustration. A downtown block with the Arch in the distance — a short walk from the Metra platform.",
+    image: "/images/lombard-metra-station.webp",
+    imageAlt: "The red-brick Lombard Metra station with its clock tower, beside the platform and tracks at dusk.",
+    imageCaption: "Lombard’s Metra station on the Union Pacific West line, a short walk from St. Charles Road.",
+    imageCredit: {
+      text: "Photo: Jacob J Mackenzie / Wikimedia Commons, CC BY-SA 4.0",
+      href: "https://commons.wikimedia.org/wiki/File:Lombard_Metra_Station_bldg_2023-10-01.jpg",
+    },
     body: [
       "Lombard station is on Metra’s Union Pacific West line, downtown at St. Charles Road. From the platform, the rest of downtown is a short walk.",
       "The Arch, and the farmers market when it is on, sit at Park and St. Charles. Lilacia is a few blocks south on Park. Helen Plum is at 411 South Main. The Peck Homestead is east on St. Charles at Grace.",

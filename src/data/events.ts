@@ -263,10 +263,14 @@ export const events: VillageEvent[] = [
     frontDek:
       "The farmers market closes the 2026 season October 6, from 3 to 7, with Inversion Jazz Band.",
     story: "last-tuesday-under-the-arch",
-    image: "/images/downtown.jpg",
-    imageAlt: "A quiet downtown block in autumn light, with a civic arch in the distance.",
+    image: "/images/lincoln-square-market.webp",
+    imageAlt: "Peaches and green and red grapes stacked on a farmers market table, with shoppers behind.",
     imageCaption:
-      "Illustration. October light under the Arch at Park and St. Charles — the market’s last Tuesday.",
+      "Peaches and grapes at a farmers market stand. Representative photo, taken at Chicago’s Lincoln Square Farmers Market, not the Lombard market.",
+    imageCredit: {
+      text: "Photo: Tony Bailey / Wikimedia Commons, CC BY 2.0",
+      href: "https://commons.wikimedia.org/wiki/File:Lincoln_Square_Farmers_Market.jpg",
+    },
   },
   {
     id: "senior-fair",
