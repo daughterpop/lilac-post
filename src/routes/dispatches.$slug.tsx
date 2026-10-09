@@ -14,7 +14,7 @@ export const Route = createFileRoute("/dispatches/$slug")({
   head: ({ params }) => {
     const post = getPost(params.slug);
     return {
-      meta: [{ title: post ? `${post.title} — The Lilac Post` : "Dispatch — The Lilac Post" }],
+      meta: [{ title: post ? `${post.title} — The Lilac Post` : "Story not found — The Lilac Post" }],
     };
   },
   component: DispatchPage,
@@ -107,10 +107,10 @@ function DispatchPage() {
 function MissingDispatch() {
   return (
     <Shell>
-      <h1 className="font-display text-4xl text-ink">Not in this edition</h1>
-      <p className="mt-3 text-muted">That dispatch isn’t in the paper.</p>
+      <h1 className="font-display text-4xl text-ink">We couldn’t find that story</h1>
+      <p className="mt-3 text-muted">It may have moved, or the link may be mistyped.</p>
       <Link to="/dispatches" className="mt-4 inline-flex min-h-11 items-center font-semibold text-lilac">
-        All dispatches
+        All stories
       </Link>
     </Shell>
   );

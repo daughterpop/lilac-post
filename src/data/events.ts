@@ -26,7 +26,7 @@ export const events: VillageEvent[] = [
     address: "220 S Main St",
     desk: "Village",
     origin: "Village",
-    blurb: "Morning drive listed on the Village of Lombard calendar.",
+    blurb: "A morning blood drive. Details are on the Village of Lombard calendar.",
     href: "https://villageoflombard.org/calendar.aspx",
   },
   {
@@ -445,7 +445,7 @@ export const events: VillageEvent[] = [
     place: "Lombard Elementary District 44",
     desk: "Village",
     origin: "School",
-    blurb: "No school. Taken from the district’s published 2026–27 calendar. Confirm at sd44.org.",
+    blurb: "No school, per District 44’s 2026–27 calendar. Confirm at sd44.org.",
     href: "https://www.sd44.org/",
   },
   {
@@ -455,7 +455,7 @@ export const events: VillageEvent[] = [
     place: "Lombard Elementary District 44",
     desk: "Village",
     origin: "School",
-    blurb: "Holiday on the published K–8 calendar. Confirm at sd44.org.",
+    blurb: "A holiday on the K–8 calendar. Confirm at sd44.org.",
     href: "https://www.sd44.org/",
   },
   {
@@ -465,7 +465,7 @@ export const events: VillageEvent[] = [
     place: "Lombard Elementary District 44",
     desk: "Village",
     origin: "School",
-    blurb: "On the published calendar as a school improvement day. Confirm at sd44.org.",
+    blurb: "A school improvement day. Confirm at sd44.org.",
     href: "https://www.sd44.org/",
   },
   {
@@ -492,7 +492,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Parish",
     blurb:
-      "Council of Catholic Women, in the church after the 11 a.m. Mass. The bulletin does not print a separate start time.",
+      "Council of Catholic Women, in the church after the 11 a.m. Mass.",
     href: "https://www.ctklombard.org/",
   },
   {
@@ -505,7 +505,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Parish",
     blurb:
-      "Feast of St. Francis. The Sept. 20 bulletin says 1 p.m. on the plaza. Children may bring stuffed animals.",
+      "Feast of St. Francis. 1 p.m. on the plaza. Children may bring stuffed animals.",
     href: "https://www.ctklombard.org/",
   },
   {
@@ -545,7 +545,7 @@ export const events: VillageEvent[] = [
     address: "1025 E Madison St",
     desk: "Village",
     origin: "Parish",
-    blurb: "Same Sunday rosary. The council calendar keeps the 7 p.m. listing through the month.",
+    blurb: "The same Sunday rosary, 7 p.m., continuing through the month.",
     href: "https://www.uknight.org/CouncilSite/index.asp?CNO=6090",
   },
   {
@@ -558,7 +558,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Parish",
     blurb:
-      "Fr. Boecker Council 6090, third Thursday. The council page puts meetings here and does not print an end time.",
+      "Fr. Boecker Council 6090, third Thursday of the month.",
     href: "https://www.uknight.org/CouncilSite/about.asp?CNO=6090",
   },
   {
@@ -570,7 +570,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Parish",
     blurb:
-      "Council of Catholic Women named Oct. 17 and 18. The bulletin does not give hours or a drop-off spot.",
+      "Council of Catholic Women, Oct. 17 and 18. Check the parish bulletin for times and drop-off details.",
     href: "https://www.ctklombard.org/",
   },
   {
@@ -582,7 +582,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Parish",
     blurb:
-      "Second day of the weekend the Council of Catholic Women listed. Hours were not printed.",
+      "Second day of the Council of Catholic Women’s weekend. Check the parish bulletin for times.",
     href: "https://www.ctklombard.org/",
   },
   {
@@ -596,7 +596,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Parish",
     blurb:
-      "Fourth Wednesday. Candlelight, music, and silence, as the parish bulletin describes the standing night.",
+      "Fourth Wednesday of the month. Candlelight, music, and silence.",
     href: "https://www.ctklombard.org/",
   },
   {
@@ -609,7 +609,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Parish",
     blurb:
-      "Fr. Boecker Council 6090. Fifth Thursday of a month that has one. No end time on the council page.",
+      "Fr. Boecker Council 6090. Held on the fifth Thursday, in months that have one.",
     href: "https://www.uknight.org/CouncilSite/about.asp?CNO=6090",
   },
   {
@@ -633,7 +633,7 @@ export const events: VillageEvent[] = [
     address: "1025 E Madison St",
     desk: "Village",
     origin: "Parish",
-    blurb: "First Friday of the month, 7 p.m., in Spanish. From the parish mass schedule.",
+    blurb: "First Friday of the month, 7 p.m., in Spanish.",
     href: "https://www.stpiuslombard.org/our-parish/mass-times-directions/",
   },
   {
@@ -644,7 +644,7 @@ export const events: VillageEvent[] = [
     address: "1501 S Main St",
     desk: "Village",
     origin: "Parish",
-    blurb: "Council of Catholic Women named Nov. 21 and 22. Hours were not in the notice.",
+    blurb: "Council of Catholic Women, Nov. 21 and 22. Hours haven’t been announced yet.",
     href: "https://www.ctklombard.org/",
   },
   {
@@ -655,7 +655,7 @@ export const events: VillageEvent[] = [
     address: "1501 S Main St",
     desk: "Village",
     origin: "Parish",
-    blurb: "Second day of the fair named by the Council of Catholic Women.",
+    blurb: "Second day of the Council of Catholic Women’s fair.",
     href: "https://www.ctklombard.org/",
   },
   {
@@ -736,7 +736,7 @@ export const events: VillageEvent[] = [
     desk: "Park",
     origin: "Butterfield",
     blurb:
-      "Second Thursday. The public is welcome. Agendas go up in the lobby 48 hours ahead. The page does not print an end time.",
+      "Second Thursday. The public is welcome. Agendas are posted in the lobby 48 hours ahead.",
     href: "https://butterfieldpd.com/index.php/about",
   },
   {
@@ -750,7 +750,7 @@ export const events: VillageEvent[] = [
     desk: "Park",
     origin: "Butterfield",
     blurb:
-      "District 44 institute day, ages 5–12, kindergarten through 5th. $50. Active says internet registration is closed and to call the district. Phone (630) 858-2229.",
+      "District 44 institute day, ages 5–12, kindergarten through 5th. $50. Online registration is closed, so call the district to sign up. Phone (630) 858-2229.",
     href: "https://www.activekids.com/lombard-il/parenting-and-family/classes/no-school-day-44-10-9-26-2026",
   },
   {
@@ -762,7 +762,7 @@ export const events: VillageEvent[] = [
     address: "21W730 Butterfield Rd",
     desk: "Park",
     origin: "Butterfield",
-    blurb: "Second Thursday, 6:30 p.m. Public welcome. No end time on the board page.",
+    blurb: "Second Thursday, 6:30 p.m. The public is welcome.",
     href: "https://butterfieldpd.com/index.php/about",
   },
   {
@@ -775,7 +775,7 @@ export const events: VillageEvent[] = [
     desk: "Park",
     origin: "York Center",
     blurb:
-      "A Daily Herald legal notice sets 9 a.m. and does not print an end time. This is York Center Park District, not the Lombard Park District.",
+      "9 a.m., per a legal notice in the Daily Herald. York Center is a separate park district from the Lombard Park District.",
     href: "https://marketplace.dailyherald.com/il/legals/notice-of-committee-meeting-fo/AC1E05EE16b6209CC10pl8A38373",
   },
   {
@@ -789,7 +789,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "Free craft on the second floor, near Fine Jewelry. Oct. 10 is a Dalmatian fireman. The mall holds it the second Saturday of the month.",
+      "Free craft on the second floor, near Fine Jewelry. Oct. 10 is a Dalmatian fireman. Held the second Saturday of every month.",
     href: "https://yorktowncenter.com/events/jc-penney-kids-zone/",
   },
   {
@@ -803,7 +803,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "The Reptile Den, at the arcade, not a mall-produced show. $20. Reptile and bug show at 6. Free arcade play. Costumes welcome.",
+      "The Reptile Den, hosted by the arcade rather than the mall. $20. Reptile and bug show at 6. Free arcade play. Costumes welcome.",
     href: "https://allevents.in/lombard/reptile-takeover-5-4-30pm-8pm-game-show-arcade-yorktown-mall/200030738631555",
   },
   {
@@ -817,7 +817,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "Hometown Vendor Market hosts this. It is at the mall, not run by the mall. Friday hours are 10 to 5.",
+      "Hosted by Hometown Vendor Market inside Yorktown Center. Friday hours are 10 to 5.",
     href: "https://yorktowncenter.com/events/spooktacular-craft-vendor-market/",
   },
   {
@@ -831,7 +831,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "Hometown Vendor Market, second day, 10 to 5. Same host as Friday. Not a Yorktown Center production.",
+      "Hometown Vendor Market, second day, 10 to 5.",
     href: "https://yorktowncenter.com/events/spooktacular-craft-vendor-market/",
   },
   {
@@ -884,7 +884,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Lilac",
     blurb:
-      "Lombard Junior Women’s Club. First Saturday in May, 1 p.m. The club’s page names 2025 queen Marisa Olas and does not name the 2026 queen.",
+      "Lombard Junior Women’s Club. First Saturday in May, 1 p.m. The 2025 queen was Marisa Olas.",
     href: "https://www.lombardjrs.com/lilac-princess-program",
   },
   {
@@ -911,7 +911,7 @@ export const events: VillageEvent[] = [
     address: "1051 Hammerschmidt Ave",
     desk: "Village",
     origin: "Village",
-    blurb: "Public Works Building, 6 p.m..",
+    blurb: "Public Works Building, 6 p.m.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
   },
   {
@@ -924,7 +924,7 @@ export const events: VillageEvent[] = [
     address: "255 E Wilson Ave",
     desk: "Village",
     origin: "Village",
-    blurb: "Board Room, Village Hall, 6 p.m..",
+    blurb: "Board Room, Village Hall, 6 p.m.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
   },
   {
@@ -937,7 +937,7 @@ export const events: VillageEvent[] = [
     address: "255 E Wilson Ave",
     desk: "Village",
     origin: "Village",
-    blurb: "Board Room, Village Hall, 7 p.m..",
+    blurb: "Board Room, Village Hall, 7 p.m.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
   },
   {
@@ -950,7 +950,7 @@ export const events: VillageEvent[] = [
     address: "255 E Wilson Ave",
     desk: "Village",
     origin: "Village",
-    blurb: "Community Room, Village Hall, 7 p.m..",
+    blurb: "Community Room, Village Hall, 7 p.m.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
   },
   {
@@ -990,7 +990,7 @@ export const events: VillageEvent[] = [
     address: "255 E Wilson Ave",
     desk: "Village",
     origin: "Village",
-    blurb: "Board Room, Village Hall, 6 p.m..",
+    blurb: "Board Room, Village Hall, 6 p.m.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=10",
   },
   {
@@ -1079,7 +1079,7 @@ export const events: VillageEvent[] = [
     address: "255 E Wilson Ave",
     desk: "Village",
     origin: "Village",
-    blurb: "Board Room, Village Hall, 6 p.m..",
+    blurb: "Board Room, Village Hall, 6 p.m.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
   },
   {
@@ -1108,7 +1108,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Village",
     blurb:
-      "The village listing names First Church of Lombard Fellowship Hall and also the lower level of Yorktown outside Von Maur. Check the listing for the site.",
+      "The village lists two possible sites: First Church of Lombard Fellowship Hall and the lower level of Yorktown outside Von Maur. Check the listing before you go.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
   },
   {
@@ -1176,7 +1176,7 @@ export const events: VillageEvent[] = [
     address: "255 E Wilson Ave",
     desk: "Village",
     origin: "Village",
-    blurb: "Board Room, Village Hall, 7 p.m..",
+    blurb: "Board Room, Village Hall, 7 p.m.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
   },
   {
@@ -1204,7 +1204,7 @@ export const events: VillageEvent[] = [
     address: "255 E Wilson Ave",
     desk: "Village",
     origin: "Village",
-    blurb: "Board Room, Village Hall, 6 p.m..",
+    blurb: "Board Room, Village Hall, 6 p.m.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
   },
   {
@@ -1267,7 +1267,7 @@ export const events: VillageEvent[] = [
     address: "255 E Wilson Ave",
     desk: "Village",
     origin: "Village",
-    blurb: "Board Room, Village Hall, 6 p.m..",
+    blurb: "Board Room, Village Hall, 6 p.m.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=12",
   },
   {
@@ -1382,7 +1382,7 @@ export const events: VillageEvent[] = [
     address: "255 E Wilson Ave",
     desk: "Village",
     origin: "Village",
-    blurb: "Board Room, Village Hall, 6 p.m..",
+    blurb: "Board Room, Village Hall, 6 p.m.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=12",
   },
   {
@@ -1421,7 +1421,7 @@ export const events: VillageEvent[] = [
     address: "255 E Wilson Ave",
     desk: "Village",
     origin: "Village",
-    blurb: "Board Room, Village Hall, 7 p.m..",
+    blurb: "Board Room, Village Hall, 7 p.m.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=12",
   },
   {
@@ -1438,14 +1438,14 @@ export const events: VillageEvent[] = [
   },
   {
     id: "lilac-marshall",
-    title: "Parade marshall meeting",
+    title: "Parade marshal meeting",
     date: "2027-05-13",
     start: "19:00",
     place: "Log Cabin",
     desk: "Village",
     origin: "Lilac",
     blurb:
-      "Lombard Lilac Parade Committee. May 13, 2027, 7 p.m. The site names the Log Cabin and does not print a street. It does not print a 2027 parade date.",
+      "Lombard Lilac Parade Committee. May 13, 2027, 7 p.m., at the Log Cabin. The 2027 parade date hasn’t been announced yet.",
     href: "https://lombardlilacparade.com/",
   },
 ];

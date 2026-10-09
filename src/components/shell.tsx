@@ -88,8 +88,9 @@ export function Shell({ children }: { children: ReactNode }) {
         <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-muted sm:px-6">
           <p className="font-display text-lg text-ink">The Lilac Post</p>
           <p className="mt-2 max-w-xl">
-            A neighborhood edition for Lombard. Not the village, the library, or the park district.
-            Times come from their public listings and can change — check the host before you go.
+            An independent neighborhood paper for Lombard. We aren’t part of the village, the library, or
+            the park district. Event times come from public listings and can change, so check with the host
+            before you go.
           </p>
           <p className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
             <Link className="font-semibold underline decoration-line underline-offset-4 hover:text-lilac" to="/about">

@@ -28,11 +28,11 @@ export const CONTACT_EMAIL_IS_PLACEHOLDER = CONTACT_EMAIL.endsWith("@example.com
  *
  * FormSubmit asks the inbox owner to confirm once (an "Activate Form" email)
  * the first time a form on a new site submits. Submissions made before then
- * are held for 30 days and delivered after activation. After activating,
- * FormSubmit's email also gives a random alias string; swapping it in here in
- * place of the address keeps the address out of the page source.
+ * are held for 30 days and delivered after activation. The form is activated
+ * for www.thelilacpost.com; the path below is the alias FormSubmit issued, so
+ * the editor's inbox address stays out of the page source.
  */
-export const SUBSCRIBE_ENDPOINT = "https://formsubmit.co/ajax/dhimmer1@gmail.com";
+export const SUBSCRIBE_ENDPOINT = "https://formsubmit.co/ajax/8fdc92dc126ca27d7e5251e2a22f202b";
 
 /**
  * ADVERTISE_ENDPOINT: where the /advertise inquiry form sends each request.

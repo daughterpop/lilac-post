@@ -1,0 +1,15 @@
+{
+  "name": "The Lilac Post",
+  "short_name": "Lilac Post",
+  "description": "Local news, events, and the village calendar for Lombard, Illinois.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f3eee6",
+  "theme_color": "#6a3d78",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

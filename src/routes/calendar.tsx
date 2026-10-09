@@ -50,11 +50,11 @@ function CalendarPage() {
       <h1 className="mt-2 font-display text-4xl text-ink sm:text-5xl">What’s on</h1>
       <p className="mt-3 max-w-xl text-lg text-fg">
         Library programs, the three park districts, Yorktown, the chamber, the historical society, village
-        meetings, school days, and the lilac parade calendar. Parish dates stay on the Catholic corner, and
-        you can still filter them here. Tap a day, then add it to the calendar on your phone.
+        meetings, school days, and lilac parade dates, all in one place. Church dates are here too under
+        “Parish.” Tap a day to see what’s on, then add anything to your own calendar.
       </p>
       <a href="/api/calendar.ics" className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-lilac">
-        Add these dates to your phone
+        Subscribe to this calendar
       </a>
 
       <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Filter events">
@@ -160,7 +160,7 @@ function CalendarPage() {
                     href={event.href}
                     className="inline-flex min-h-11 items-center text-sm font-semibold text-lilac"
                   >
-                    Listing
+                    Details
                   </a>
                   <AddToCalendar id={event.id} />
                 </div>

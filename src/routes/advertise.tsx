@@ -28,7 +28,7 @@ const OPTIONS = [
     id: "listing",
     title: "Featured business listing",
     detail:
-      "A featured spot for your business among the places neighbors use, with your hours, address, and a link.",
+      "A featured spot for your business in our guide to Lombard, with your hours, address, and a link.",
   },
   {
     id: "event",

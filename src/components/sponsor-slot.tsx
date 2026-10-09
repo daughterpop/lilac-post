@@ -8,7 +8,7 @@ const HOUSE_COPY: Record<SponsorSlotId, { title: string; blurb: string }> = {
   },
   weekend: {
     title: "Sponsor the weekend in Lombard",
-    blurb: "One local business a week can sponsor the weekend listings.",
+    blurb: "Reach neighbors planning their weekend. One local business sponsors the weekend listings each week.",
   },
   story: {
     title: "Sponsor this spot",

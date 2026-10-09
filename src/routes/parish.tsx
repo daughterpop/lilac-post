@@ -23,9 +23,9 @@ function ParishPage() {
       <p className="text-xs font-semibold tracking-widest text-lilac uppercase">In town</p>
       <h1 className="mt-2 font-display text-4xl text-ink sm:text-5xl">Catholic corner</h1>
       <p className="mt-3 max-w-xl text-lg text-fg">
-        Sacred Heart, St. Pius X, and Christ the King, and the Knights of Columbus councils that belong to
-        them. This page is only those parishes. Times come from parish pages and bulletins. Check before you
-        go.
+        Mass times and news from Lombard’s three Catholic parishes, Sacred Heart, St. Pius X, and Christ the
+        King, and their Knights of Columbus councils. Times come from parish websites and bulletins, so check
+        with the parish before you go.
       </p>
 
       <ul className="mt-8 divide-y divide-line border-t border-line">
@@ -57,7 +57,7 @@ function ParishPage() {
       </ul>
 
       <section className="mt-10">
-        <h2 className="font-display text-3xl text-ink">Knights</h2>
+        <h2 className="font-display text-3xl text-ink">Knights of Columbus</h2>
         <ul className="mt-4 divide-y divide-line border-t border-line">
           {knights.map((council) => (
             <li key={council.id} className="py-5">
@@ -77,14 +77,14 @@ function ParishPage() {
 
       <section className="mt-10">
         <div className="flex items-baseline justify-between gap-3">
-          <h2 className="font-display text-3xl text-ink">Dated</h2>
+          <h2 className="font-display text-3xl text-ink">Coming up</h2>
           <Link to="/calendar" className="inline-flex min-h-11 items-center text-sm font-semibold text-lilac">
             Calendar
           </Link>
         </div>
         {upcoming.length === 0 ? (
           <p className="mt-3 max-w-xl text-muted">
-            Nothing ahead with a printed date. The Mass times above still hold.
+            No special parish events are scheduled right now. Regular Mass times are listed above.
           </p>
         ) : (
           <ul className="mt-2 divide-y divide-line">

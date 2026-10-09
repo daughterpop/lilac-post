@@ -17,7 +17,7 @@ export const parishes: ParishCard[] = [
     lines: [
       "Saturday 5 p.m. Sunday 8:30 and 11 a.m. Monday through Friday at noon.",
       "Confession Saturday 3 to 4 p.m.",
-      "The adoration chapel is for parishioners. The site says to get the code through Flocknote.",
+      "The adoration chapel is open to parishioners, who can get the door code through Flocknote.",
     ],
   },
   {
@@ -53,7 +53,7 @@ export const knights = [
     serves: "Sacred Heart and St. Pius X",
     href: "https://www.uknight.org/CouncilSite/index.asp?CNO=6090",
     detail:
-      "Founded in 1968 and named for Sacred Heart’s first pastor. The council’s own page says meetings are at the Sacred Heart social center: business meeting the first Thursday at 7 p.m., planning meeting the third Thursday at 7 p.m., and a social meeting the fifth Thursday at 7:30 p.m. when a month has one. Sunday evening the vocations rosary is at St. Pius X, 7 to 7:30. The same calendar also prints a 7:15 a.m. rosary. Saturday at 7 a.m. is listed as Cor, for prayer and formation. That line does not name a room.",
+      "Founded in 1968 and named for Sacred Heart’s first pastor. Meetings are at the Sacred Heart social center: business meeting the first Thursday at 7 p.m., planning meeting the third Thursday at 7 p.m., and a social meeting the fifth Thursday at 7:30 p.m. when a month has one. Sunday evening the vocations rosary is at St. Pius X, 7 to 7:30. The council calendar also lists a 7:15 a.m. rosary. Saturday at 7 a.m. is Cor, a gathering for prayer and formation; check with the council for the location.",
   },
   {
     id: "ctk-knights",
@@ -61,6 +61,6 @@ export const knights = [
     serves: "Christ the King",
     href: "https://www.ctklombard.org/knights",
     detail:
-      "Founded in 1993. The parish page names the council and the 2025–26 officers. It does not post a regular meeting night, so none is printed here. The September bulletin said the intellectual-disabilities drive would keep taking gifts online through November.",
+      "Founded in 1993. The parish website lists the council’s 2025–26 officers. Contact the council for meeting times. The September bulletin said the intellectual-disabilities drive would keep taking gifts online through November.",
   },
 ];

@@ -41,8 +41,8 @@ function Dispatches() {
       <p className="text-xs font-semibold tracking-widest text-lilac uppercase">The weekly paper</p>
       <h1 className="mt-2 font-display text-4xl text-ink sm:text-5xl">The paper</h1>
       <p className="mt-3 max-w-xl text-lg text-fg">
-        The weekly paper. Big stories from this issue also sit on the front page. Breaking news is its own
-        section. Clip a story and it stays on this phone.
+        Our longer stories, published weekly. Search by topic, or tap “Clip” on any story to save it for
+        later on this device.
       </p>
 
       <label htmlFor="dispatch-search" className="mt-6 block text-sm font-semibold text-ink">
@@ -73,7 +73,7 @@ function Dispatches() {
       <div className="mt-6">
         {list.length === 0 ? (
           <p className="border-t border-line py-8 text-muted">
-            {clippedOnly ? "Nothing clipped on this device yet." : "No dispatches match that."}
+            {clippedOnly ? "You haven’t clipped any stories on this device yet." : "No stories match that search."}
           </p>
         ) : (
           list.map((post) => <StoryCard key={post.slug} post={post} />)
@@ -81,9 +81,9 @@ function Dispatches() {
       </div>
 
       <section className="mt-12">
-        <h2 className="font-display text-3xl text-ink">Public posts</h2>
+        <h2 className="font-display text-3xl text-ink">From social media</h2>
         <p className="mt-2 max-w-xl text-muted">
-          Only the X, Facebook, and Instagram posts that were actually readable. Not a live feed.
+          A few recent public posts from Lombard groups on X, Facebook, and Instagram.
         </p>
         <ul className="mt-4 divide-y divide-line border-t border-line">
           {wires

@@ -12,7 +12,7 @@ export function PorchNotes() {
     return (
       <section className="border border-line bg-paper p-4">
         <h2 className="font-display text-2xl text-ink">Porch notes</h2>
-        <p className="mt-1 text-sm text-muted">A scrap for this device only. It does not publish.</p>
+        <p className="mt-1 text-sm text-muted">Jot down a reminder for yourself. Notes stay private on this device.</p>
       </section>
     );
   }
@@ -20,7 +20,7 @@ export function PorchNotes() {
     <section className="border border-line bg-paper p-4">
       <h2 className="font-display text-2xl text-ink">Porch notes</h2>
       <p className="mt-1 text-sm text-muted">
-        A scrap for this device only. It does not publish, and it does not leave the phone.
+        Jot down a reminder for yourself. Notes stay private on this device and are never posted.
       </p>
       <form
         className="mt-4"
