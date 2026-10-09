@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getPost, relatedPosts } from "@/data/posts";
 import { SaveButton } from "@/components/save-button";
 import { Shell } from "@/components/shell";
+import { SponsorSlot } from "@/components/sponsor-slot";
 import { formatLong } from "@/lib/when";
 
 export const Route = createFileRoute("/dispatches/$slug")({
@@ -79,6 +80,7 @@ function DispatchPage() {
             ))}
           </ul>
         </section>
+        <SponsorSlot slot="story" className="mt-8" />
       </article>
 
       <section className="mx-auto mt-12 max-w-2xl">

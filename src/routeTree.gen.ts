@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdvertiseRouteImport } from './routes/advertise'
 import { Route as BreakingRouteImport } from './routes/breaking'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as ParishRouteImport } from './routes/parish'
@@ -37,6 +38,11 @@ const SplatRoute = SplatRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvertiseRoute = AdvertiseRouteImport.update({
+  id: '/advertise',
+  path: '/advertise',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BreakingRoute = BreakingRouteImport.update({
@@ -99,6 +105,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/about': typeof AboutRoute
+  '/advertise': typeof AdvertiseRoute
   '/breaking': typeof BreakingRoute
   '/calendar': typeof CalendarRoute
   '/parish': typeof ParishRoute
@@ -115,6 +122,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/about': typeof AboutRoute
+  '/advertise': typeof AdvertiseRoute
   '/breaking': typeof BreakingRoute
   '/calendar': typeof CalendarRoute
   '/parish': typeof ParishRoute
@@ -132,6 +140,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/about': typeof AboutRoute
+  '/advertise': typeof AdvertiseRoute
   '/breaking': typeof BreakingRoute
   '/calendar': typeof CalendarRoute
   '/parish': typeof ParishRoute
@@ -150,6 +159,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/about'
+    | '/advertise'
     | '/breaking'
     | '/calendar'
     | '/parish'
@@ -166,6 +176,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/about'
+    | '/advertise'
     | '/breaking'
     | '/calendar'
     | '/parish'
@@ -182,6 +193,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/about'
+    | '/advertise'
     | '/breaking'
     | '/calendar'
     | '/parish'
@@ -199,6 +211,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
   AboutRoute: typeof AboutRoute
+  AdvertiseRoute: typeof AdvertiseRoute
   BreakingRoute: typeof BreakingRoute
   CalendarRoute: typeof CalendarRoute
   ParishRoute: typeof ParishRoute
@@ -233,6 +246,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advertise': {
+      id: '/advertise'
+      path: '/advertise'
+      fullPath: '/advertise'
+      preLoaderRoute: typeof AdvertiseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/breaking': {
@@ -319,6 +339,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
   AboutRoute: AboutRoute,
+  AdvertiseRoute: AdvertiseRoute,
   BreakingRoute: BreakingRoute,
   CalendarRoute: CalendarRoute,
   ParishRoute: ParishRoute,

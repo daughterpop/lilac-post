@@ -5,6 +5,7 @@ import { ORIGINS, type Origin } from "@/data/types";
 import { datesWithEvents, eventsOn } from "@/data/events";
 import { AddToCalendar } from "@/components/add-calendar";
 import { Shell } from "@/components/shell";
+import { SponsorSlot } from "@/components/sponsor-slot";
 import { chicagoNow, formatLong, formatSpan } from "@/lib/when";
 
 export const Route = createFileRoute("/calendar")({
@@ -168,6 +169,8 @@ function CalendarPage() {
           </ul>
         )}
       </section>
+
+      <SponsorSlot slot="weekend" className="mt-10 max-w-2xl" />
     </Shell>
   );
 }
