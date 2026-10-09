@@ -1,3 +1,8 @@
+/**
+ * Calendar events. One object per event; `id` is the stable Site ID used by the
+ * Notion sync (see CONTENT.md). Keep ids unique and never reuse one.
+ * Checked by scripts/check-content.mjs on every build.
+ */
 import type { Origin, VillageEvent } from "@/data/types";
 import { byDateTime } from "@/lib/when";
 
