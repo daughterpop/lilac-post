@@ -5,7 +5,6 @@ import { siteUrl } from "@/lib/site";
 const ROBOTS = `User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /__grok/
 
 Sitemap: ${siteUrl("/sitemap.xml")}
 `;

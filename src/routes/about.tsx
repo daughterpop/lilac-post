@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Shell } from "@/components/shell";
 import { CONTACT_EMAIL, CONTACT_EMAIL_IS_PLACEHOLDER } from "@/lib/site";
 
-// Policy wording below is a draft for the publisher to review before launch.
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
@@ -28,8 +27,9 @@ function AboutPage() {
             What this is
           </h2>
           <p>
-            The Lilac Post is a neighborhood paper for Lombard, Illinois. It carries short breaking items, a weekly
-            set of longer stories, a calendar of what’s on around the village, and notes on the places people use.
+            The Lilac Post is a neighborhood paper for Lombard, Illinois. We publish short breaking-news items, a
+            weekly set of longer stories, a calendar of what’s happening around the village, and a guide to local
+            parks, landmarks, and other favorite spots.
           </p>
           <p>
             Most of what we print starts with public sources: village and park district calendars, the library’s
@@ -78,7 +78,7 @@ function AboutPage() {
             Contact
           </h2>
           {CONTACT_EMAIL_IS_PLACEHOLDER ? (
-            <p>Contact details are coming soon.</p>
+            <p>Have a tip, a correction, or an event to list? Our contact email will be posted here soon.</p>
           ) : (
             <p>
               Tips, corrections, and event listings:{" "}
@@ -92,8 +92,8 @@ function AboutPage() {
             </p>
           )}
           <p>
-            For a village service, an event registration, or a library account, contact the host directly — the
-            paper can’t act on those.
+            For village services, event registration, or library accounts, please contact the village, the event
+            host, or the library directly. We can’t help with those.
           </p>
         </section>
 

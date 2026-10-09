@@ -75,7 +75,7 @@ function SubscribePage() {
       <p className="text-xs font-semibold tracking-widest text-lilac uppercase">The Lilac Post</p>
       <h1 className="mt-2 font-display text-4xl text-ink sm:text-5xl">Subscribe</h1>
       <p className="mt-3 max-w-xl text-lg text-fg">
-        Leave your email and the editor will add you to The Lilac Post’s reader list.
+        Leave your email to join The Lilac Post’s reader list.
       </p>
 
       <div className="mt-6 max-w-md border border-line bg-paper p-5">
@@ -84,8 +84,8 @@ function SubscribePage() {
             <p className="font-semibold text-ink">You’re on the list.</p>
             <p className="mt-2 text-sm text-muted">
               {status === "done"
-                ? "Your address went to the editor. Thanks for reading."
-                : "You signed up from this device earlier."}
+                ? "Thanks for signing up, and thanks for reading."
+                : "You’ve already signed up from this device."}
             </p>
             <button
               type="button"
@@ -161,9 +161,8 @@ function SubscribePage() {
         )}
 
         <p className="mt-5 text-sm text-muted">
-          Your address goes only to the editor of The Lilac Post. It isn’t sold or shared. There’s
-          no set email schedule yet. To come off the list, reply to any email from the paper and say
-          so.
+          We’ll only use your address for The Lilac Post, and we never sell or share it. To leave the
+          list, just reply to any email from us and say so.
         </p>
       </div>
 
@@ -174,7 +173,7 @@ function SubscribePage() {
             <Link to="/breaking" className="font-semibold text-ink hover:text-lilac">
               Breaking news
             </Link>
-            <p className="text-sm text-muted">Short items as the village posts them.</p>
+            <p className="text-sm text-muted">The latest from around Lombard, as it happens.</p>
           </li>
           <li>
             <Link to="/dispatches" className="font-semibold text-ink hover:text-lilac">

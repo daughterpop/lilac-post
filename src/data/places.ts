@@ -7,7 +7,7 @@ export const places: Place[] = [
     kind: "Park",
     where: "150 S Park Ave",
     detail:
-      "Open every day, dawn to dusk, no entrance fee. The lilac collection is the May event. The paths are the rest of the year. The old library corner at Maple and Park is fenced green space for now, meant to become more park.",
+      "Open every day, dawn to dusk, no entrance fee. The lilac collection is the May event. The paths are the rest of the year. The old library corner at Maple and Park is fenced-off green space for now and is planned to become part of the park.",
     href: "http://www.lombardlilactime.com",
     hrefLabel: "Lilac Time",
   },
@@ -17,7 +17,7 @@ export const places: Place[] = [
     kind: "Library",
     where: "411 S Main St",
     detail:
-      "Sunday 1–5. Monday–Friday 9–9. Saturday 9–5. Storytime, Studio 411, and the meeting rooms do the village’s weekday programming. Phone (630) 627-0316.",
+      "Sunday 1–5. Monday–Friday 9–9. Saturday 9–5. Storytime, the Studio 411 makerspace, and programs in the meeting rooms fill the week. Phone (630) 627-0316.",
     href: "https://www.helenplum.org/",
     hrefLabel: "helenplum.org",
   },
@@ -85,16 +85,16 @@ export const places: Place[] = [
     kind: "History",
     where: "23 W. Maple St.",
     detail:
-      "The Victorian Cottage is the office. The museum is the Peck Homestead, east on St. Charles. The society’s history page is the short version of the town, and the village’s 2019 story map walks the same ground.",
+      "The society’s office is in the Victorian Cottage. Its museum is the Peck Homestead, east on St. Charles. The society’s history page tells the town’s story in brief, and the village’s 2019 story map covers the same ground.",
     href: "https://www.lombardhistory.org/localhistory",
-    hrefLabel: "Their history",
+    hrefLabel: "Local history",
   },
   {
     id: "hall",
     name: "Village Hall",
     kind: "Village",
     where: "255 E Wilson Ave",
-    detail: "Permits, the board, and the civic calendar live here. The Lilac Post is not the village’s site.",
+    detail: "Home of village government: permits, village board meetings, and the civic calendar.",
     href: "https://villageoflombard.org/",
     hrefLabel: "villageoflombard.org",
   },
@@ -104,7 +104,7 @@ export const places: Place[] = [
     kind: "Mall",
     where: "203 Yorktown Shopping Center",
     detail:
-      "JCPenney Kids Zone is Saturday, Oct. 10, 11 to noon, second floor near Fine Jewelry. Free. Hometown Vendor Market is in the center Oct. 23–25. That show is theirs, not the mall’s. Coffee with the village president is here Oct. 24. A 2026 family listing and a 2025 mall post disagree on Monster Mash hours, so that one is not on the calendar.",
+      "JCPenney Kids Zone is Saturday, Oct. 10, 11 to noon, second floor near Fine Jewelry. Free. Hometown Vendor Market is in the center Oct. 23–25; the market runs it, not the mall. Coffee with the village president is here Oct. 24.",
     href: "https://yorktowncenter.com/events/jc-penney-kids-zone/",
     hrefLabel: "Mall events",
   },
@@ -114,7 +114,7 @@ export const places: Place[] = [
     kind: "Parks",
     where: "21W730 Butterfield Rd",
     detail:
-      "Not the Lombard Park District. Offices weekdays 8:30 to 4:30. Phone (630) 858-2229. The board meets the second Thursday at 6:30 p.m. at the Recreation & Aquatic Center, same address. The public can attend. Next is Oct. 8. The 2026 pool season ended Labor Day weekend. Fall Fest was Oct. 3 at The Pavilion at The Glen, in Glen Ellyn.",
+      "A separate district from the Lombard Park District. Offices are open weekdays 8:30 to 4:30. Phone (630) 858-2229. The board meets the second Thursday at 6:30 p.m. at the Recreation & Aquatic Center, same address. The public can attend. Next is Oct. 8. The 2026 pool season ended Labor Day weekend. Fall Fest was Oct. 3 at The Pavilion at The Glen, in Glen Ellyn.",
     href: "https://www.butterfieldpd.com/",
     hrefLabel: "butterfieldpd.com",
   },
@@ -124,8 +124,8 @@ export const places: Place[] = [
     kind: "Parks",
     where: "1609 S Luther Ave",
     detail:
-      "Also not the Lombard Park District. Office weekdays 9 to 5. The finance committee meets Tuesday, Oct. 6, at 9 a.m. A Daily Herald legal notice set the time and did not print an end.",
+      "Also separate from the Lombard Park District. The office is open weekdays 9 to 5. The finance committee meets Tuesday, Oct. 6, at 9 a.m., according to a legal notice in the Daily Herald.",
     href: "https://marketplace.dailyherald.com/il/legals/notice-of-committee-meeting-fo/AC1E05EE16b6209CC10pl8A38373",
-    hrefLabel: "The notice",
+    hrefLabel: "Meeting notice",
   },
 ];

@@ -20,7 +20,7 @@ function BreakingPage() {
       <p className="text-xs font-semibold tracking-widest text-lilac uppercase">As it happens</p>
       <h1 className="mt-2 font-display text-4xl text-ink sm:text-5xl">Breaking news</h1>
       <p className="mt-3 max-w-xl text-lg text-fg">
-        Short items from the village. The weekly paper is the longer read.
+        The latest news from around Lombard, kept short. For longer stories, see the weekly paper.
       </p>
       <ul className="mt-6 divide-y divide-line border-t border-line">
         {items.map((wire) => (
