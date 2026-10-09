@@ -1,5 +1,5 @@
 /**
- * CALENDAR EVENTS. How to edit on github.com: see CONTENT.md.
+ * CALENDAR EVENTS. Field rules and publishing flow: see CONTENT.md.
  *
  * To add an event, copy this template (or any entry below), paste it next to
  * events on the same date, and fill it in. Leave out optional lines you don't

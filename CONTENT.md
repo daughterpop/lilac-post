@@ -1,99 +1,120 @@
-# Editing events and stories on GitHub
+# Content rules for automated editors
 
-You can add or change events and stories right on github.com, from a computer or your phone. No code tools needed.
+Grok automations write all events and stories on The Lilac Post. Dustin reviews only what they hold for him. This file is the contract they follow. If a prompt and this file disagree on field formats, follow this file.
 
-- **Events** (the calendar): [`src/data/events.ts`](src/data/events.ts)
-- **Stories** (dispatches): [`src/data/posts.ts`](src/data/posts.ts)
+## Files
 
-Leave every other file alone. The breaking-news automation edits `src/data/wires.ts` and `src/lib/breaking.ts`, and the weekly events automation also edits `events.ts`.
+| File                  | Who edits it                                |
+| --------------------- | ------------------------------------------- |
+| `src/data/events.ts`  | weekly events automation                    |
+| `src/data/posts.ts`   | stories automation                          |
+| `src/data/wires.ts`   | breaking-news automation only. Nobody else. |
+| `src/lib/breaking.ts` | breaking-news automation only. Nobody else. |
+| anything else         | not content. Don't touch it.                |
 
-## How to make a change
+Edit arrays in place. Never rewrite a file from scratch, and keep its header comment, imports, exports, and helper functions as they are. Use the existing style: double quotes, trailing commas, curly quotes (’ “ ”) in prose, and `\"` for any straight double quote inside a string.
 
-1. Go to https://github.com/daughterpop/lilac-post and tap the file (`src` → `data` → `events.ts` or `posts.ts`). On a phone, if you don't see the pencil, switch to desktop view in your browser menu.
-2. Tap the **pencil** (Edit this file).
-3. At the top of the file is a template. To add an entry, copy an existing entry (or the template) from its `{` through its `},` and paste it right below another entry. Then change the values.
-   - Add new events next to other events on the same date.
-   - Add new stories at the top of the list, just after `export const posts: Post[] = [`.
-4. Tap **Commit changes...** and write a short message, like "Add library book sale".
-5. Pick one:
-   - **Safest: "Create a new branch for this commit and start a pull request"** (GitHub calls this "propose changes"). Vercel builds a preview and checks your entry. If the check passes, tap **Merge pull request**, then **Confirm**. If it fails, nothing goes live; open the failed check to see the reason, fix it, and commit again.
-   - **Faster: "Commit directly to the main branch."** This also works. The site rebuilds in about a minute. If the entry has a mistake, the build stops and the live site stays as it was until you fix it.
+## Events: `VillageEvent` in `src/data/events.ts`
 
-To fix a typo, open the file, tap the pencil, change the text, and commit the same way.
+| Field          | Req. | Format                                                                                                                                        |
+| -------------- | ---- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`           | yes  | lowercase-kebab-case, unique, permanent. Title plus a short date suffix if needed (`book-sale-1024`). Never rename or reuse one.              |
+| `title`        | yes  | text                                                                                                                                          |
+| `date`         | yes  | `YYYY-MM-DD`, America/Chicago                                                                                                                 |
+| `start`, `end` | no   | `HH:MM` 24-hour, Chicago time. `end` requires `start`. Leave both out for all-day events.                                                     |
+| `place`        | yes  | venue name                                                                                                                                    |
+| `address`      | no   | street address                                                                                                                                |
+| `desk`         | yes  | `Market`, `Library`, `Village`, `Park`, `History`, `Outdoors`                                                                                 |
+| `origin`       | yes  | `Village`, `Park District`, `Butterfield`, `York Center`, `Yorktown`, `Chamber`, `Historical Society`, `Library`, `School`, `Parish`, `Lilac` |
+| `blurb`        | yes  | 1-2 plain sentences                                                                                                                           |
+| `href`         | yes  | official source page, `https://`                                                                                                              |
+| `featured`     | no   | `true` puts the event on the front page. Then `frontTitle` and `frontDek` are required.                                                       |
+| `story`        | no   | an existing post `slug`                                                                                                                       |
+| image fields   | no   | see Photos                                                                                                                                    |
 
-## Typing tips
+Put a `// Source: <url>` comment above each event, and keep the array in date order. Remove events only after their date has passed. Never remove one that is today or later.
 
-- Put every value in straight double quotes: `"like this"`. End each line with a comma.
-- To use a double quote inside a value, type `\"`, or use curly quotes (“ ”). Apostrophes (’ or ') are fine.
-- Dates are `YYYY-MM-DD`, like `"2026-10-24"`.
-- Times are 24-hour `HH:MM`, Chicago time: `"09:30"`, `"18:00"` for 6 p.m.
-- Lines starting with `//` are notes for editors. They don't show on the site.
+```ts
+  // Source: https://www.helenplum.org/events/...
+  {
+    id: "book-sale-1024",
+    title: "Friends of the Library Book Sale",
+    date: "2026-10-24",
+    start: "10:00",
+    end: "14:00",
+    place: "Helen Plum Library",
+    address: "411 S Main St",
+    desk: "Library",
+    origin: "Library",
+    blurb: "Used books, most a dollar or two. Proceeds support library programs.",
+    href: "https://www.helenplum.org/events/...",
+  },
+```
 
-## Event fields (`events.ts`)
+## Stories: `Post` in `src/data/posts.ts`
 
-| Field            | Required? | What to put                                                                                                                                                        |
-| ---------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`             | yes       | Short and unique, lowercase with dashes: `"book-sale-oct"`. Never change or reuse one.                                                                             |
-| `title`          | yes       | Event name.                                                                                                                                                        |
-| `date`           | yes       | `"YYYY-MM-DD"`                                                                                                                                                     |
-| `start` / `end`  | optional  | `"HH:MM"`. Use `end` only if there's a `start`. Leave both out for all-day events.                                                                                 |
-| `place`          | yes       | Venue name.                                                                                                                                                        |
-| `address`        | optional  | Street address.                                                                                                                                                    |
-| `desk`           | yes       | One of: `Market`, `Library`, `Village`, `Park`, `History`, `Outdoors`                                                                                              |
-| `origin`         | yes       | Who runs it. One of: `Village`, `Park District`, `Butterfield`, `York Center`, `Yorktown`, `Chamber`, `Historical Society`, `Library`, `School`, `Parish`, `Lilac` |
-| `blurb`          | yes       | One or two plain sentences.                                                                                                                                        |
-| `href`           | yes       | Link to the official page, starting with `https://`.                                                                                                               |
-| `featured: true` | optional  | Puts it on the front page. Then `frontTitle` and `frontDek` are required.                                                                                          |
-| `story`          | optional  | The `slug` of a story about this event.                                                                                                                            |
-| image fields     | optional  | See "Photos" below.                                                                                                                                                |
+| Field         | Req. | Format                                                                                            |
+| ------------- | ---- | ------------------------------------------------------------------------------------------------- |
+| `slug`        | yes  | lowercase-kebab-case, unique, permanent. It is the URL (`/dispatches/<slug>`). Max about 6 words. |
+| `title`       | yes  | headline                                                                                          |
+| `dek`         | yes  | one sentence                                                                                      |
+| `date`        | yes  | `YYYY-MM-DD` publish date, Chicago                                                                |
+| `desk`        | yes  | same values as events                                                                             |
+| `order`       | yes  | integer, normally `0`                                                                             |
+| `body`        | yes  | array of plain-text paragraphs. Name sources in the text ("the village said").                    |
+| `sources`     | yes  | at least one `{ name, href }` with an http(s) link                                                |
+| `corrections` | no   | `{ date: "YYYY-MM-DD", note }[]`. Append only; never delete one.                                  |
+| image fields  | no   | see Photos                                                                                        |
 
-## Story fields (`posts.ts`)
+Add new stories at the top of the array. Never change a published `slug`.
 
-| Field         | Required? | What to put                                                                                                                        |
-| ------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `slug`        | yes       | Short and unique, lowercase with dashes. It becomes the web address (`/dispatches/<slug>`). Never change it after the story is up. |
-| `title`       | yes       | Headline.                                                                                                                          |
-| `dek`         | yes       | One-sentence summary under the headline.                                                                                           |
-| `date`        | yes       | `"YYYY-MM-DD"`                                                                                                                     |
-| `desk`        | yes       | Same choices as events.                                                                                                            |
-| `order`       | yes       | Usually `0`. A higher number moves a story up among stories with the same date.                                                    |
-| `body`        | yes       | A list of paragraphs, each in its own quotes and ending with a comma.                                                              |
-| `sources`     | yes       | At least one: `{ name: "Village of Lombard", href: "https://..." },`                                                               |
-| `corrections` | optional  | `[{ date: "2026-10-09", note: "An earlier version gave the wrong time." }],`                                                       |
-| image fields  | optional  | See "Photos" below.                                                                                                                |
+```ts
+  {
+    slug: "leaf-pickup-2026",
+    title: "When the leaf vacuums come",
+    dek: "The village’s fall leaf collection runs in zones through November.",
+    date: "2026-10-12",
+    desk: "Village",
+    order: 0,
+    body: [
+      "First paragraph.",
+      "Second paragraph.",
+    ],
+    sources: [{ name: "Village of Lombard", href: "https://villageoflombard.org/..." }],
+  },
+```
 
 ## Photos
 
-An image needs `image` and `imageAlt`. `imageCaption` and `imageCredit` are optional.
+Use real photos only, and only when they are freely licensed (public domain, CC0, CC BY, CC BY-SA, or a U.S. government work) or the organizer has published them for press use. Don't use AI images. If you can't find a fitting free photo, leave the image fields out.
 
-- `image`: either a full `https://` link to a photo, or a file in the repo's `public/images` folder, written as `"/images/file-name.webp"` (leave `public` out). To add a file, open `public/images` on GitHub, tap **Add file → Upload files**, and commit it before you use it.
-- `imageAlt`: a plain description of the photo for screen readers.
-- `imageCaption`: the line shown under the photo. Mark stand-in photos ("Representative photo, ...") and AI images ("Illustration. ...").
-- `imageCredit`: the photographer and license, linked to where you found it:
-  ```ts
-  imageCredit: {
-    text: "Photo: Jane Doe / Flickr, CC BY 2.0",
-    href: "https://www.flickr.com/photos/...",
-  },
-  ```
+- `image`: an `https://` URL to the file (for example `upload.wikimedia.org`), or `/images/<file>` for a file committed to `public/images/` in the same PR.
+- `imageAlt`: required with an image. Plainly describe what the photo shows.
+- `imageCaption`: what and where. If the photo is a stand-in rather than the actual place or event, the caption must say so ("Representative photo, taken at ..., not ...").
+- `imageCredit`: required for every photo: `{ text: "Photo: <author> / <site>, <license>", href: "<source page URL>" }`.
 
-Use photos you're allowed to use, such as public domain, Creative Commons, or your own, and credit them.
+## Content check
 
-## The content check
+`npm run build` runs `scripts/check-content.mjs` first, so it gates every Vercel preview. To run it alone: `npm run check:content`. It fails on:
 
-Every build runs `scripts/check-content.mjs` first. If an entry is broken, the check stops the deploy and lists what's wrong, so a bad entry can't reach the live site. It catches:
-
-- a missing required field
-- a duplicate `id` or `slug`
-- a date or time in the wrong format
-- a `desk` or `origin` that isn't on the list
-- a link that doesn't start with `http`
-- a `story` that doesn't match a story's `slug`
-- an `/images/...` file that doesn't exist, or a photo with no `imageAlt`
+- duplicate or badly formed ids and slugs
+- missing required fields
+- dates or times in the wrong format
+- `desk` or `origin` values not on the list
+- `end` without `start`
+- non-http(s) links
+- a `story` that isn't a post slug
+- a missing `/images/...` file or missing `imageAlt`
 - a featured event without `frontTitle` and `frontDek`
 
-A missing comma or quote fails the build too. When a check fails, open it from the pull request or from the commit's red ✗ to see which entry needs fixing. Developers can run `npm run check:content` to check locally.
+A TypeScript syntax error also fails the build.
 
-## Not edited here
+## Publishing flow
 
-`src/data/places.ts`, `src/data/parishes.ts`, `src/data/wires.ts`, `src/lib/breaking.ts`, and everything outside `src/data` are code. Ask before changing them.
+1. Never push or commit to `main`.
+2. Branch from `main`: `events/<YYYY-MM-DD>` or `stories/<YYYY-MM-DD>`, adding `-2` and so on if the name is taken. Commit only the file you own, plus any new `public/images/` file.
+3. Open a PR into `main`. In the body, list each item and its source links.
+4. Wait until all checks pass, including the Vercel preview (check every minute, up to 15 minutes).
+5. Squash-merge and delete the branch. Then re-read the file on `main` to confirm the change is there and nothing else changed.
+6. If a check fails or never finishes, leave the PR open and don't merge. Email dhimmer1@gmail.com that the run failed.
+7. Hold for Dustin. Anything about a real private individual, a death, a crime, or an accident gets a PR that is opened but **not** merged, plus an email asking for his OK. Never name victims or minors. Never invent facts or quotes.

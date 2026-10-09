@@ -7,7 +7,7 @@
  * misspelled desk, a duplicate id, or a bad date would otherwise ship
  * silently. Any problem here fails the build with a readable list.
  *
- * See CONTENT.md for the field rules this enforces (written for editing on github.com).
+ * See CONTENT.md for the field rules this enforces.
  */
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";

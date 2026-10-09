@@ -1,5 +1,5 @@
 /**
- * STORIES ("dispatches"). How to edit on github.com: see CONTENT.md.
+ * STORIES ("dispatches"). Field rules and publishing flow: see CONTENT.md.
  *
  * To add a story, copy this template (or any entry below), paste it at the top
  * of the list, and fill it in. The slug is the story's web address
@@ -13,10 +13,10 @@
  *     date: "2026-10-24",                    // YYYY-MM-DD
  *     desk: "Village",                       // Market, Library, Village, Park, History, Outdoors
  *     order: 0,
- *     image: "/images/file-name.webp",       // optional; or an https:// link
+ *     image: "https://upload.wikimedia.org/...", // optional; real, freely licensed photo
  *     imageAlt: "What the photo shows.",     // required with an image
- *     imageCaption: "Caption under the photo.", // optional
- *     imageCredit: {                         // optional
+ *     imageCaption: "What and where.",       // say so if it is a stand-in photo
+ *     imageCredit: {                         // required with an image
  *       text: "Photo: Jane Doe / Flickr, CC BY 2.0",
  *       href: "https://link-to-the-photo-page",
  *     },
