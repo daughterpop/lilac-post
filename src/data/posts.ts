@@ -1,3 +1,8 @@
+/**
+ * Stories ("dispatches"). `slug` is the stable Site ID used by the Notion sync
+ * (see CONTENT.md) and the story URL (/dispatches/<slug>). Never change a
+ * published slug. Checked by scripts/check-content.mjs on every build.
+ */
 import type { Post } from "@/data/types";
 
 export const posts: Post[] = [
