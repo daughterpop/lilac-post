@@ -41,8 +41,23 @@ function DispatchPage() {
         {post.image ? (
           <figure className="mt-6">
             <img src={post.image} alt={post.imageAlt ?? ""} className="aspect-video w-full object-cover" />
-            {post.imageCaption ? (
-              <figcaption className="mt-2 text-sm text-muted">{post.imageCaption}</figcaption>
+            {post.imageCaption || post.imageCredit ? (
+              <figcaption className="mt-2 text-sm text-muted">
+                {post.imageCaption}
+                {post.imageCredit ? (
+                  <>
+                    {post.imageCaption ? " " : null}
+                    <a
+                      href={post.imageCredit.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-line underline-offset-2 hover:text-fg"
+                    >
+                      {post.imageCredit.text}
+                    </a>
+                  </>
+                ) : null}
+              </figcaption>
             ) : null}
           </figure>
         ) : null}
