@@ -1464,6 +1464,297 @@ export const events: VillageEvent[] = [
     blurb: "Closed Dec. 24–25 for Christmas.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=12",
   },
+  // Source: https://yorktowncenter.com/events/illinois-vintage-fest/
+  {
+    id: "yt-vintage-fest",
+    title: "Illinois Vintage Fest",
+    date: "2026-10-17",
+    start: "11:00",
+    end: "18:00",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "More than 70 vendors with vintage clothing, handmade goods, jewelry and collectibles. Free admission, all ages.",
+    href: "https://yorktowncenter.com/events/illinois-vintage-fest/",
+  },
+  // Source: https://yorktowncenter.com/events/monster-mash/
+  {
+    id: "yt-monster-mash",
+    title: "Monster Mash",
+    date: "2026-10-18",
+    start: "11:00",
+    end: "13:00",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Yorktown Center’s Halloween afternoon, with a trick-or-treat trail through the center, live music from School of Rock Naperville and crafts. Costumes encouraged; registration is on the mall’s page.",
+    href: "https://yorktowncenter.com/events/monster-mash/",
+  },
+  // Source: https://yorktowncenter.com/events/book-signings-events-at-barbaras-bookstore/
+  {
+    id: "yt-barbaras-1024-2pm",
+    title: "Book signing: Bose Akadari",
+    date: "2026-10-24",
+    start: "14:00",
+    place: "Barbara’s Bookstore, Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Barbara’s Bookstore hosts Bose Akadari, author of “The Stay Joyful Method.”",
+    href: "https://yorktowncenter.com/events/book-signings-events-at-barbaras-bookstore/",
+  },
+  // Source: https://yorktowncenter.com/events/book-signings-events-at-barbaras-bookstore/
+  {
+    id: "yt-barbaras-1024-4pm",
+    title: "Book signing: Harper Kinsley and Kim Oclon",
+    date: "2026-10-24",
+    start: "16:00",
+    place: "Barbara’s Bookstore, Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Harper Kinsley (“Spikes, Dice and Other Variables”) and Kim Oclon (“Man Up”) sign at Barbara’s Bookstore.",
+    href: "https://yorktowncenter.com/events/book-signings-events-at-barbaras-bookstore/",
+  },
+  // Source: https://yorktowncenter.com/events/book-signings-events-at-barbaras-bookstore/
+  {
+    id: "yt-barbaras-club-1027",
+    title: "Barbara’s Book Club",
+    date: "2026-10-27",
+    start: "18:00",
+    place: "Barbara’s Bookstore, Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "This month’s book is “Yesteryear” by Caro Claire Burke.",
+    href: "https://yorktowncenter.com/events/book-signings-events-at-barbaras-bookstore/",
+  },
+  // Source: https://yorktowncenter.com/events/howl-oween/
+  {
+    id: "yt-howloween",
+    title: "Howl-oween",
+    date: "2026-10-29",
+    start: "17:00",
+    end: "19:00",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "A dog-friendly evening with pet vendors, photo backdrops and tricks for treats. Pup costume contest at 6; sign up at the Yorktown table in Center Court.",
+    href: "https://yorktowncenter.com/events/howl-oween/",
+  },
+  // Source: https://yorktowncenter.com/events/city-2-city-card-show/
+  {
+    id: "yt-card-show-sat",
+    title: "City2City Card Show",
+    date: "2026-11-07",
+    start: "10:00",
+    end: "18:00",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Sports cards, Pokémon, Magic and more from vendors in Center Court, upper and lower levels. Free admission.",
+    href: "https://yorktowncenter.com/events/city-2-city-card-show/",
+  },
+  // Source: https://yorktowncenter.com/events/city-2-city-card-show/
+  {
+    id: "yt-card-show-sun",
+    title: "City2City Card Show",
+    date: "2026-11-08",
+    start: "11:00",
+    end: "18:00",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Second day of the card show in Center Court. Sunday hours are 11 to 6.",
+    href: "https://yorktowncenter.com/events/city-2-city-card-show/",
+  },
+  // Source: https://yorktowncenter.com/events/fall-craft-vendor-market/
+  {
+    id: "yt-fall-market-1113",
+    title: "Fall craft market",
+    date: "2026-11-13",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Hometown Vendor Market inside Yorktown Center, first day. Check the mall’s page for hours.",
+    href: "https://yorktowncenter.com/events/fall-craft-vendor-market/",
+  },
+  // Source: https://yorktowncenter.com/events/fall-craft-vendor-market/
+  {
+    id: "yt-fall-market-1114",
+    title: "Fall craft market",
+    date: "2026-11-14",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Hometown Vendor Market inside Yorktown Center, second day. Check the mall’s page for hours.",
+    href: "https://yorktowncenter.com/events/fall-craft-vendor-market/",
+  },
+  // Source: https://yorktowncenter.com/events/fall-craft-vendor-market/
+  {
+    id: "yt-fall-market-1115",
+    title: "Fall craft market",
+    date: "2026-11-15",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Hometown Vendor Market inside Yorktown Center, last day. Check the mall’s page for hours.",
+    href: "https://yorktowncenter.com/events/fall-craft-vendor-market/",
+  },
+  // Source: https://yorktowncenter.com/events/jc-penney-kids-zone/
+  {
+    id: "yt-kids-1114",
+    title: "JCPenney Kids Zone",
+    date: "2026-11-14",
+    start: "11:00",
+    end: "12:00",
+    place: "Yorktown Center, JCPenney",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Free kids’ craft on the second floor of JCPenney, near Fine Jewelry. Held the second Saturday of each month.",
+    href: "https://yorktowncenter.com/events/jc-penney-kids-zone/",
+  },
+  // Source: https://yorktowncenter.com/events/book-signings-events-at-barbaras-bookstore/
+  {
+    id: "yt-barbaras-1114",
+    title: "Book signing: A.J. Wooding",
+    date: "2026-11-14",
+    start: "14:00",
+    place: "Barbara’s Bookstore, Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "A.J. Wooding signs “If They Knew” at Barbara’s Bookstore.",
+    href: "https://yorktowncenter.com/events/book-signings-events-at-barbaras-bookstore/",
+  },
+  // Source: https://yorktowncenter.com/events/book-signings-events-at-barbaras-bookstore/
+  {
+    id: "yt-barbaras-1122",
+    title: "Book signing: Katherine Garbera",
+    date: "2026-11-22",
+    start: "14:00",
+    place: "Barbara’s Bookstore, Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Katherine Garbera signs “The Naughty List Agreement” at Barbara’s Bookstore.",
+    href: "https://yorktowncenter.com/events/book-signings-events-at-barbaras-bookstore/",
+  },
+  // Source: https://yorktowncenter.com/events/book-signings-events-at-barbaras-bookstore/
+  {
+    id: "yt-barbaras-1212",
+    title: "Book signing: Krystal Duran",
+    date: "2026-12-12",
+    start: "14:00",
+    place: "Barbara’s Bookstore, Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Krystal Duran signs “More than Just a Plant” at Barbara’s Bookstore.",
+    href: "https://yorktowncenter.com/events/book-signings-events-at-barbaras-bookstore/",
+  },
+  // Source: https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market/
+  {
+    id: "yt-winter-market-1211",
+    title: "Winter Wonderland craft market",
+    date: "2026-12-11",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Hometown Vendor Market inside Yorktown Center, first day. Check the mall’s page for hours.",
+    href: "https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market/",
+  },
+  // Source: https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market/
+  {
+    id: "yt-winter-market-1212",
+    title: "Winter Wonderland craft market",
+    date: "2026-12-12",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Hometown Vendor Market inside Yorktown Center, second day. Check the mall’s page for hours.",
+    href: "https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market/",
+  },
+  // Source: https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market/
+  {
+    id: "yt-winter-market-1213",
+    title: "Winter Wonderland craft market",
+    date: "2026-12-13",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Hometown Vendor Market inside Yorktown Center, last day. Check the mall’s page for hours.",
+    href: "https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market/",
+  },
+  // Source: https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market-2dfd1890e69b/
+  {
+    id: "yt-winter-market-1218",
+    title: "Winter Wonderland craft market",
+    date: "2026-12-18",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Hometown Vendor Market inside Yorktown Center, first day. Check the mall’s page for hours.",
+    href: "https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market-2dfd1890e69b/",
+  },
+  // Source: https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market-2dfd1890e69b/
+  {
+    id: "yt-winter-market-1219",
+    title: "Winter Wonderland craft market",
+    date: "2026-12-19",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Hometown Vendor Market inside Yorktown Center, second day. Check the mall’s page for hours.",
+    href: "https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market-2dfd1890e69b/",
+  },
+  // Source: https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market-2dfd1890e69b/
+  {
+    id: "yt-winter-market-1220",
+    title: "Winter Wonderland craft market",
+    date: "2026-12-20",
+    place: "Yorktown Center",
+    address: "203 Yorktown Shopping Center",
+    desk: "Market",
+    origin: "Yorktown",
+    blurb:
+      "Hometown Vendor Market inside Yorktown Center, last day. Check the mall’s page for hours.",
+    href: "https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market-2dfd1890e69b/",
+  },
   {
     id: "lilac-marshall",
     title: "Parade marshal meeting",
