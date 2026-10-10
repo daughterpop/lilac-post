@@ -32,10 +32,9 @@ function AboutPage() {
             parks, landmarks, and other favorite spots.
           </p>
           <p>
-            Most of what we print starts with public sources: village and park district calendars, the library’s
-            listings, school district calendars, and parish bulletins. Each story lists its sources at the bottom,
-            and each calendar entry links to the host’s own listing. Times and dates can change, so check with the
-            host before you go.
+            We follow the village, the parks, the library, the schools, and the parishes closely, so you don’t
+            have to. Every story links to where its facts came from, and every calendar entry links to the host,
+            so you’re always one tap from the details.
           </p>
         </section>
 

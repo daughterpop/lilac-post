@@ -24,8 +24,7 @@ function ParishPage() {
       <h1 className="mt-2 font-display text-4xl text-ink sm:text-5xl">Catholic corner</h1>
       <p className="mt-3 max-w-xl text-lg text-fg">
         Mass times and news from Lombard’s three Catholic parishes, Sacred Heart, St. Pius X, and Christ the
-        King, and their Knights of Columbus councils. Times come from parish websites and bulletins, so check
-        with the parish before you go.
+        King, and their Knights of Columbus councils. All are welcome.
       </p>
 
       <ul className="mt-8 divide-y divide-line border-t border-line">

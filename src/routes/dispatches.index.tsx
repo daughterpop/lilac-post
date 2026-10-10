@@ -86,7 +86,7 @@ function Dispatches() {
       <section className="mt-12">
         <h2 className="font-display text-3xl text-ink">From social media</h2>
         <p className="mt-2 max-w-xl text-muted">
-          A few recent public posts from Lombard groups on X, Facebook, and Instagram.
+          What Lombard groups are sharing around town this week.
         </p>
         <ul className="mt-4 divide-y divide-line border-t border-line">
           {newestFirst(wires)

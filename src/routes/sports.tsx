@@ -74,8 +74,7 @@ function SportsPage() {
           </h2>
           <GamesList items={upcoming} empty="No upcoming games listed right now." />
           <p className="mt-4 text-sm text-muted">
-            Schedules change, especially in the playoffs. Check the school or MaxPreps before you
-            go.
+            Game times can shift, especially come playoff time. Each game links to its source for the latest.
           </p>
         </aside>
       </div>

@@ -378,7 +378,7 @@ export const events: VillageEvent[] = [
     desk: "Park",
     origin: "Park District",
     blurb:
-      "DJ, dance games, and a dessert bar. Moms and sons both register. The park district says the event is open to all genders.",
+      "DJ, dance games, and a dessert bar. Moms and sons both register. Open to all genders.",
     href: "https://lombardparks.com/events/mom-prom-2/",
   },
   {
@@ -473,7 +473,7 @@ export const events: VillageEvent[] = [
     place: "Lombard Elementary District 44",
     desk: "Village",
     origin: "School",
-    blurb: "No school, per District 44’s 2026–27 calendar. Confirm at sd44.org.",
+    blurb: "No school for District 44 students.",
     href: "https://www.sd44.org/",
   },
   {
@@ -483,7 +483,7 @@ export const events: VillageEvent[] = [
     place: "Lombard Elementary District 44",
     desk: "Village",
     origin: "School",
-    blurb: "A holiday on the K–8 calendar. Confirm at sd44.org.",
+    blurb: "A day off for District 44’s K–8 students.",
     href: "https://www.sd44.org/",
   },
   {
@@ -493,7 +493,7 @@ export const events: VillageEvent[] = [
     place: "Lombard Elementary District 44",
     desk: "Village",
     origin: "School",
-    blurb: "A school improvement day. Confirm at sd44.org.",
+    blurb: "No regular classes for District 44 students.",
     href: "https://www.sd44.org/",
   },
   {
@@ -507,7 +507,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "School",
     blurb:
-      "Glenbard East Athletic Booster Club. The village calendar lists it through Oct. 24, 9 a.m. to 3 p.m., free, with more than 100 booths.",
+      "Hosted by the Glenbard East Athletic Booster Club. Runs through Oct. 24, 9 a.m. to 3 p.m., free, with more than 100 booths.",
     href: "https://villageoflombard.org/calendar.aspx",
   },
   {
@@ -598,7 +598,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Parish",
     blurb:
-      "Council of Catholic Women, Oct. 17 and 18. Check the parish bulletin for times and drop-off details.",
+      "Council of Catholic Women, Oct. 17 and 18. Times and drop-off details are in the parish bulletin.",
     href: "https://www.ctklombard.org/",
   },
   {
@@ -610,7 +610,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Parish",
     blurb:
-      "Second day of the Council of Catholic Women’s weekend. Check the parish bulletin for times.",
+      "Second day of the Council of Catholic Women’s weekend. Times are in the parish bulletin.",
     href: "https://www.ctklombard.org/",
   },
   {
@@ -672,7 +672,7 @@ export const events: VillageEvent[] = [
     address: "1501 S Main St",
     desk: "Village",
     origin: "Parish",
-    blurb: "Council of Catholic Women, Nov. 21 and 22. Hours haven’t been announced yet.",
+    blurb: "Council of Catholic Women, Nov. 21 and 22. Hours to come.",
     href: "https://www.ctklombard.org/",
   },
   {
@@ -778,7 +778,7 @@ export const events: VillageEvent[] = [
     desk: "Park",
     origin: "Butterfield",
     blurb:
-      "District 44 institute day, ages 5–12, kindergarten through 5th. $50. Online registration is closed, so call the district to sign up. Phone (630) 858-2229.",
+      "District 44 institute day, ages 5–12, kindergarten through 5th. $50. Call the district to sign up.",
     href: "https://www.activekids.com/lombard-il/parenting-and-family/classes/no-school-day-44-10-9-26-2026",
   },
   {
@@ -803,7 +803,7 @@ export const events: VillageEvent[] = [
     desk: "Park",
     origin: "York Center",
     blurb:
-      "9 a.m., per a legal notice in the Daily Herald. York Center is a separate park district from the Lombard Park District.",
+      "9 a.m. York Center is its own park district, separate from the Lombard Park District.",
     href: "https://marketplace.dailyherald.com/il/legals/notice-of-committee-meeting-fo/AC1E05EE16b6209CC10pl8A38373",
   },
   {
@@ -925,7 +925,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Lilac",
     blurb:
-      "Lombard Lilac Parade Committee, on its own since 1929. Steps off at 1:30. Theme: Happy 250th Birthday America. The village posted the parking rules. Phone (630) 415-2079.",
+      "Lombard’s parade since 1929, stepping off at 1:30. This year’s theme: Happy 250th Birthday America.",
     href: "https://lombardlilacparade.com/",
   },
   // --- Mid-Oct through Dec 2026 refresh (launch-prep, researched 2026-10-08). Each href is the public source. ---
@@ -1136,7 +1136,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Village",
     blurb:
-      "The village lists two possible sites: First Church of Lombard Fellowship Hall and the lower level of Yorktown outside Von Maur. Check the listing before you go.",
+      "At First Church of Lombard Fellowship Hall or the lower level of Yorktown outside Von Maur; see the listing for which.",
     href: "https://villageoflombard.org/calendar.aspx?view=list&year=2026&month=11",
   },
   {
@@ -1591,7 +1591,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "Hometown Vendor Market inside Yorktown Center, first day. Check the mall’s page for hours.",
+      "Hometown Vendor Market inside Yorktown Center, first day. Hours on the mall’s page.",
     href: "https://yorktowncenter.com/events/fall-craft-vendor-market/",
   },
   // Source: https://yorktowncenter.com/events/fall-craft-vendor-market/
@@ -1604,7 +1604,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "Hometown Vendor Market inside Yorktown Center, second day. Check the mall’s page for hours.",
+      "Hometown Vendor Market inside Yorktown Center, second day. Hours on the mall’s page.",
     href: "https://yorktowncenter.com/events/fall-craft-vendor-market/",
   },
   // Source: https://yorktowncenter.com/events/fall-craft-vendor-market/
@@ -1617,7 +1617,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "Hometown Vendor Market inside Yorktown Center, last day. Check the mall’s page for hours.",
+      "Hometown Vendor Market inside Yorktown Center, last day. Hours on the mall’s page.",
     href: "https://yorktowncenter.com/events/fall-craft-vendor-market/",
   },
   // Source: https://yorktowncenter.com/events/jc-penney-kids-zone/
@@ -1687,7 +1687,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "Hometown Vendor Market inside Yorktown Center, first day. Check the mall’s page for hours.",
+      "Hometown Vendor Market inside Yorktown Center, first day. Hours on the mall’s page.",
     href: "https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market/",
   },
   // Source: https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market/
@@ -1700,7 +1700,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "Hometown Vendor Market inside Yorktown Center, second day. Check the mall’s page for hours.",
+      "Hometown Vendor Market inside Yorktown Center, second day. Hours on the mall’s page.",
     href: "https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market/",
   },
   // Source: https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market/
@@ -1713,7 +1713,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "Hometown Vendor Market inside Yorktown Center, last day. Check the mall’s page for hours.",
+      "Hometown Vendor Market inside Yorktown Center, last day. Hours on the mall’s page.",
     href: "https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market/",
   },
   // Source: https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market-2dfd1890e69b/
@@ -1726,7 +1726,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "Hometown Vendor Market inside Yorktown Center, first day. Check the mall’s page for hours.",
+      "Hometown Vendor Market inside Yorktown Center, first day. Hours on the mall’s page.",
     href: "https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market-2dfd1890e69b/",
   },
   // Source: https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market-2dfd1890e69b/
@@ -1739,7 +1739,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "Hometown Vendor Market inside Yorktown Center, second day. Check the mall’s page for hours.",
+      "Hometown Vendor Market inside Yorktown Center, second day. Hours on the mall’s page.",
     href: "https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market-2dfd1890e69b/",
   },
   // Source: https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market-2dfd1890e69b/
@@ -1752,7 +1752,7 @@ export const events: VillageEvent[] = [
     desk: "Market",
     origin: "Yorktown",
     blurb:
-      "Hometown Vendor Market inside Yorktown Center, last day. Check the mall’s page for hours.",
+      "Hometown Vendor Market inside Yorktown Center, last day. Hours on the mall’s page.",
     href: "https://yorktowncenter.com/events/winter-wonderland-craft-vendor-market-2dfd1890e69b/",
   },
   {
@@ -1764,7 +1764,7 @@ export const events: VillageEvent[] = [
     desk: "Village",
     origin: "Lilac",
     blurb:
-      "Lombard Lilac Parade Committee. May 13, 2027, 7 p.m., at the Log Cabin. The 2027 parade date hasn’t been announced yet.",
+      "Safety meeting for parade marshals, 7 p.m. at the Log Cabin.",
     href: "https://lombardlilacparade.com/",
   },
 ];

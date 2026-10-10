@@ -61,9 +61,9 @@ export const posts: Post[] = [
     body: [
       "Helen Plum Library, 411 South Main, has a full Sunday on October 4.",
       "Family storytime is at 9:30 a.m. Preschool storytime, for ages 3–4 with an adult, is at 10:30. Studio 411 is open for drop-in making from 10 a.m. to 8 p.m. if someone in the house would rather sew, cut, or record than sit.",
-      "At 2 p.m. in the meeting rooms, classical guitarist Peter Fletcher plays Bach, Fernando Sor, Gaspar Sanz, and more. The library lists it as the Sunday Music Series. It asks adults and seniors to register.",
+      "At 2 p.m. in the meeting rooms, classical guitarist Peter Fletcher plays Bach, Fernando Sor, Gaspar Sanz, and more. It’s part of the Sunday Music Series, and the library asks adults and seniors to register.",
       "The day goes back outside at 5: evening storytime in Lilacia Park, drop-in, all ages. At 6, Kelli Marshall talks through Chicago’s turn as Gotham in The Dark Knight. Teen Advisory Board meets at 3 for grades 6–12, and a Helen Plum card is required.",
-      "Sunday hours, if you are only there for the stacks, are 1 to 5. Monday through Friday the building runs 9 to 9, Saturday 9 to 5. A few of Sunday’s programs fill, so check helenplum.org before you promise the 2 o’clock to anyone.",
+      "Sunday hours, if you are only there for the stacks, are 1 to 5. Monday through Friday the building runs 9 to 9, Saturday 9 to 5. A few of Sunday’s programs fill, so sign up early if you have your heart set on the 2 o’clock.",
     ],
     sources: [{ name: "Helen Plum Library", href: "https://www.helenplum.org/events/upcoming" }],
   },
@@ -198,7 +198,7 @@ export const posts: Post[] = [
     body: [
       "Lombard station is on Metra’s Union Pacific West line, downtown at St. Charles Road. From the platform, the rest of downtown is a short walk.",
       "The Arch, and the farmers market when it is on, sit at Park and St. Charles. Lilacia is a few blocks south on Park. Helen Plum is at 411 South Main. The Peck Homestead is east on St. Charles at Grace.",
-      "You can do library, park, and a loop without a car when the train behaves. The UP-West isn’t always on time, but the station couldn’t be better placed. Check Metra before you leave the house.",
+      "You can do library, park, and a loop without a car when the train behaves. The UP-West isn’t always on time, but the station couldn’t be better placed. A quick look at the Metra app saves a wait on the platform.",
     ],
     sources: [{ name: "Metra", href: "https://metra.com/" }],
   },
