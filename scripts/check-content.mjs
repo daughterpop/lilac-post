@@ -135,6 +135,20 @@ for (const [i, r] of (results ?? []).entries()) {
     if (r.result !== want) bad(w, `result must be "${want}" for ${r.scoreFor}-${r.scoreAgainst}`);
   }
   if (r.note !== undefined && !isText(r.note)) bad(w, "note must be text when set");
+  if (r.recap !== undefined && !isText(r.recap)) bad(w, "recap must be text when set");
+  const https = (v) => typeof v === "string" && /^https?:\/\//.test(v);
+  if (r.highlights !== undefined && !Array.isArray(r.highlights)) bad(w, "highlights must be an array");
+  for (const [j, h] of (Array.isArray(r.highlights) ? r.highlights : []).entries()) {
+    if (!isText(h?.player) || !isText(h?.school) || !isText(h?.stat))
+      bad(w, `highlights[${j}] needs player, school, and stat`);
+    if (!https(h?.sourceUrl)) bad(w, `highlights[${j}] needs an http(s) sourceUrl`);
+  }
+  if (r.quotes !== undefined && !Array.isArray(r.quotes)) bad(w, "quotes must be an array");
+  for (const [j, q] of (Array.isArray(r.quotes) ? r.quotes : []).entries()) {
+    if (!isText(q?.text) || !isText(q?.speaker) || !isText(q?.sourceName))
+      bad(w, `quotes[${j}] needs text, speaker, and sourceName`);
+    if (!https(q?.sourceUrl)) bad(w, `quotes[${j}] needs an http(s) sourceUrl`);
+  }
 }
 if (!Array.isArray(games)) bad("sports.ts", "games must be an array (it may be empty)");
 for (const [i, g] of (games ?? []).entries()) {

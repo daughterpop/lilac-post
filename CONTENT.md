@@ -107,7 +107,17 @@ Two arrays: `results` (final scores) and `games` (scheduled, not yet played). Re
 | `note`                      | no      | short, e.g. `OT`, `IHSA 6A first round`                                                             |
 | `source`                    | yes     | `{ name, href }`: IHSA, MaxPreps, a school athletics site, or the Daily Herald                      |
 
-Rules: a score goes in only when a public source shows it as final. If sources disagree, leave it out until they match. Team-level only, never player names. Never invent or estimate a score. When a game is played, remove it from `games` and add the result to `results`. `results` may be empty; `/sports` shows an empty state.
+Rules: a score goes in only when a public source shows it as final. If sources disagree, leave it out until they match. Never invent or estimate a score.
+
+Optional per-result fields: `recap` (1-3 sentences in our own words), `highlights` (array of `{ player, school, stat, sourceUrl }`), and `quotes` (array of `{ text, speaker, sourceUrl, sourceName }`, speaker like `"Coach John Walters, Glenbard East"`). The build rejects any highlight or quote without an http(s) `sourceUrl`.
+
+Player rules (most players are minors):
+
+- Player names and stats only when MaxPreps, the school, an official team source, or local press (Daily Herald, Shaw Local, etc.) has already published them. Use the name as published.
+- Quotes or reactions only from official school, team, or coach accounts (on X or the school site) and local press. Never from fans, students, or parents. Confirm an X account is official before using it.
+- Nothing negative about an individual player: no injuries, mistakes, or discipline.
+- Every highlight and quote links to its source. Never invent or paraphrase stats or quotes into something the source didn't say. Leave fields out when nothing is verifiable.
+- If a family asks to remove a name, remove it. When a game is played, remove it from `games` and add the result to `results`. `results` may be empty; `/sports` shows an empty state.
 
 ## Editions: `Edition` in `src/data/editions.ts`
 
