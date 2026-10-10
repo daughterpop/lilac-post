@@ -195,10 +195,13 @@ export const results: SportsResult[] = [
     school: "Montini",
     opponent: "De La Salle",
     site: "away",
-    scoreFor: 49,
-    scoreAgainst: 6,
+    scoreFor: 56,
+    scoreAgainst: 7,
     result: "W",
-    source: MONTINI_FOOTBALL,
+    source: {
+      name: "IHSA",
+      href: "https://beta.ihsa.org/scores/game/de-la-salle-vs-montini-4386-4553-20261002",
+    },
   },
   {
     id: "ge-football-1002",
