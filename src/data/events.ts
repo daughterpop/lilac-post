@@ -1,3 +1,4 @@
+// automerge test (no-op)
 /**
  * CALENDAR EVENTS. Field rules and publishing flow: see CONTENT.md.
  *
