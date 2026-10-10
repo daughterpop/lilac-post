@@ -74,13 +74,13 @@ function VillagePage() {
         </p>
         <p className="mt-3 text-fg">
           Colonel William Plum and his wife Helen built the lilac collection. They named the estate Lilacia.
-          The park district says he left the gardens to the people as a public park and the house, in Helen’s
-          memory, as a free library. He died in 1927. That September the town voted to accept the gift, and
+          He left the gardens to the people as a public park and the house, in Helen’s memory, as a free
+          library. He died in 1927. That September the town voted to accept the gift, and
           the Lombard Park District began. Jens Jensen designed the garden that is now Lilacia Park. The
           lilacs are why the nickname stuck.
         </p>
         <p className="mt-3 text-fg">
-          Two more names from the historical society: in 1891 attorney Ellen Martin voted here, the first woman to
+          Two more Lombard firsts worth bragging about: in 1891 attorney Ellen Martin voted here, the first woman to
           vote in Illinois, because the charter said residents over 21 and never said men. And Harold Gray,
           who drew Little Orphan Annie starting in 1924, lived in Lombard.
         </p>
@@ -148,26 +148,22 @@ function VillagePage() {
       </section>
 
       <section className="mt-10 max-w-2xl border border-line bg-paper p-5">
-        <h2 className="font-display text-2xl text-ink">Who runs the summer traditions</h2>
+        <h2 className="font-display text-2xl text-ink">Our summer traditions</h2>
         <p className="mt-2 text-fg">
-          Cruise Nights are the Village of Lombard, presented by Tommy’s Express Car Wash. The 2026 season
-          was the 27th, and it was free. Ten Saturdays, June 13 through August 22, on South Park Avenue, 6 to
-          10 p.m., with music from 6 to 9. Classic cars ran through August 15. August 22 was a concert only:
-          Hi Infidelity, 6 to 9, stage on St. Charles just west of Main, chairs after 4, no cars. Kids’ Corner
-          was Keeley’s Plumbing and Christopher B. Burke Engineering. Next year’s dates are not posted.
+          Summer Saturdays mean Cruise Nights: classic cars lined up on South Park Avenue, live music, and
+          half the town out for a stroll. The free series, hosted by the village, wrapped its 27th season in
+          August with a concert under the stars on St. Charles. Dates for next summer will be on the calendar
+          as soon as they’re set.
         </p>
         <p className="mt-3 text-fg">
-          The parade is the Lombard Lilac Parade Committee, a separate group since 1929. Phone (630)
-          415-2079. P.O. Box 82. In 2026 it stepped off Sunday, May 17, at 1:30 p.m., from Glenbard East,
-          1014 S. Main. The theme was “Happy 250th Birthday America.” The village posted the parking rules
-          for that afternoon. The committee’s next scheduled date is a marshal safety meeting, May 13, 2027,
-          at 7 p.m., at the Log Cabin. The 2027 parade date hasn’t been announced yet.
+          Every May, the Lilac Parade rolls down Main Street, as it has since 1929. This year’s stepped off
+          from Glenbard East on a Sunday afternoon in May with a “Happy 250th Birthday America” theme. Watch
+          this space for the 2027 date.
         </p>
         <p className="mt-3 text-fg">
-          The queen and the princesses are the Lombard Junior Women’s Club, since 2001. Five princesses,
-          $1,500 each, from a village tourism grant. The crowning is the first Saturday in May. In 2026 that
-          was May 2, 1 p.m., at Lilacia Park. The 2025 queen was Marisa Olas. The same club is taking new socks through Nov. 2 and is one of the groups at
-          Pumpkin Smash.
+          Before the parade comes the crowning of the Lilac Queen and her court in Lilacia Park, on the first
+          Saturday in May. The Lombard Junior Women’s Club has run it since 2001, with each princess receiving
+          a $1,500 award. This fall the club is collecting new socks for neighbors in need through Nov. 2.
         </p>
         <a
           href="https://villageoflombard.org/cruisenights"
