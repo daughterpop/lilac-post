@@ -17,7 +17,7 @@ export const places: Place[] = [
     kind: "Library",
     where: "411 S Main St",
     detail:
-      "Sunday 1–5. Monday–Friday 9–9. Saturday 9–5. Storytime, the Studio 411 makerspace, and programs in the meeting rooms fill the week. Phone (630) 627-0316.",
+      "Sunday 1–5. Monday–Friday 9–9. Saturday 9–5. Storytime, the Studio 411 makerspace, and programs in the meeting rooms fill the week.",
     href: "https://www.helenplum.org/",
     hrefLabel: "helenplum.org",
   },
@@ -27,7 +27,7 @@ export const places: Place[] = [
     kind: "Downtown",
     where: "S Park Ave and W St Charles Rd",
     detail:
-      "Downtown’s corner. The farmers market sets up here on Tuesdays from mid-May through the first Tuesday of October, 3 to 7 p.m. In 2026 the last day is October 6.",
+      "Downtown’s corner. The farmers market sets up here on Tuesdays from mid-May through the first Tuesday of October, 3 to 7 p.m.",
     href: "https://www.lombardchamber.com/farmers-market",
     hrefLabel: "Market",
   },
@@ -55,7 +55,7 @@ export const places: Place[] = [
     kind: "Metra",
     where: "Union Pacific West, at St. Charles Rd",
     detail:
-      "The downtown stop. Park, library, Arch, and the Peck house are all a short walk once you are on the platform. Check the line before you count on a train.",
+      "The downtown stop. Park, library, Arch, and the Peck house are all a short walk once you are on the platform. Hop on, and you’re in the middle of it all.",
     href: "https://metra.com/",
     hrefLabel: "Metra",
   },
@@ -65,7 +65,7 @@ export const places: Place[] = [
     kind: "Village",
     where: "Madison Meadow Athletic Center",
     detail:
-      "Home of the Village Senior Fair. The 20th is Wednesday, October 7, 2026, from 9 a.m. to 1 p.m. — screenings and community programs for older residents.",
+      "Home of the Village Senior Fair each fall, with screenings and community programs for older residents.",
     href: "https://villageoflombard.org/calendar.aspx",
     hrefLabel: "Village calendar",
   },
@@ -75,7 +75,7 @@ export const places: Place[] = [
     kind: "History",
     where: "200 S. Main St., at Maple",
     detail:
-      "The chapel of First Church of Lombard, American Gothic board-and-batten. A preservation society cares for the building and posts the days it is open for tours. The chamber’s history page dates the church’s dedication to 1870.",
+      "The chapel of First Church of Lombard, American Gothic board-and-batten. A preservation society cares for the building and opens it for tours. The church was dedicated in 1870.",
     href: "https://maplestreetchapel.org/",
     hrefLabel: "Chapel",
   },
@@ -85,7 +85,7 @@ export const places: Place[] = [
     kind: "History",
     where: "23 W. Maple St.",
     detail:
-      "The society’s office is in the Victorian Cottage. Its museum is the Peck Homestead, east on St. Charles. The society’s history page tells the town’s story in brief, and the village’s 2019 story map covers the same ground.",
+      "The society’s office is in the Victorian Cottage. Its museum is the Peck Homestead, east on St. Charles. Stop in for the town’s story, from the first settlers to the lilacs.",
     href: "https://www.lombardhistory.org/localhistory",
     hrefLabel: "Local history",
   },
@@ -104,7 +104,7 @@ export const places: Place[] = [
     kind: "Mall",
     where: "203 Yorktown Shopping Center",
     detail:
-      "JCPenney Kids Zone is Saturday, Oct. 10, 11 to noon, second floor near Fine Jewelry. Free. Hometown Vendor Market is in the center Oct. 23–25; the market runs it, not the mall. Coffee with the village president is here Oct. 24.",
+      "Lombard’s mall, and a busy one this fall: craft and vendor markets, book signings at Barbara’s Bookstore, kids’ events, and a card show. See the calendar for dates.",
     href: "https://yorktowncenter.com/events/jc-penney-kids-zone/",
     hrefLabel: "Mall events",
   },
@@ -114,7 +114,7 @@ export const places: Place[] = [
     kind: "Parks",
     where: "21W730 Butterfield Rd",
     detail:
-      "A separate district from the Lombard Park District. Offices are open weekdays 8:30 to 4:30. Phone (630) 858-2229. The board meets the second Thursday at 6:30 p.m. at the Recreation & Aquatic Center, same address. The public can attend. Next is Oct. 8. The 2026 pool season ended Labor Day weekend. Fall Fest was Oct. 3 at The Pavilion at The Glen, in Glen Ellyn.",
+      "Its own park district, separate from the Lombard Park District, based at the Recreation & Aquatic Center. Offices are open weekdays 8:30 to 4:30, and the board meets the second Thursday at 6:30 p.m., open to the public.",
     href: "https://www.butterfieldpd.com/",
     hrefLabel: "butterfieldpd.com",
   },
