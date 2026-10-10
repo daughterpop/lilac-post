@@ -62,12 +62,12 @@ export const places: Place[] = [
   {
     id: "madison",
     name: "Madison Meadow",
-    kind: "Village",
-    where: "Madison Meadow Athletic Center",
+    kind: "Park",
+    where: "E. Madison St. & S. Ahrens Ave.",
     detail:
-      "Home of the Village Senior Fair each fall, with screenings and community programs for older residents.",
-    href: "https://villageoflombard.org/calendar.aspx",
-    hrefLabel: "Village calendar",
+      "Nearly 92 acres at Madison and Ahrens, one of the largest parks in town. Ballfields and soccer pitches, playgrounds and tennis courts, a full basketball court, a skate park, an 18-hole disc golf course, a fishing and boating pond, and a mile-and-a-half walking trail, open 6 a.m. to 10 p.m. The Madison Meadow Athletic Center sits on the grounds, and the Village Senior Fair comes here each fall.",
+    href: "https://lombardparks.com/madison-meadow/",
+    hrefLabel: "Park page",
   },
   {
     id: "chapel",
