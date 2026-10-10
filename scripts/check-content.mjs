@@ -27,6 +27,10 @@ const { events } = await load("src/data/events.ts");
 const { posts } = await load("src/data/posts.ts");
 const { editions } = await load("src/data/editions.ts");
 const { results, games } = await load("src/data/sports.ts");
+const { communityResults, COMMUNITY_TEAMS, TEAM_KINDS } = await load("src/data/community.ts");
+const { records } = await load("src/data/records.ts");
+const { standings } = await load("src/data/standings.ts");
+const { pros, proUpdates } = await load("src/data/pros.ts");
 
 const problems = [];
 const bad = (where, msg) => problems.push(`${where}: ${msg}`);
@@ -137,7 +141,8 @@ for (const [i, r] of (results ?? []).entries()) {
   if (r.note !== undefined && !isText(r.note)) bad(w, "note must be text when set");
   if (r.recap !== undefined && !isText(r.recap)) bad(w, "recap must be text when set");
   const https = (v) => typeof v === "string" && /^https?:\/\//.test(v);
-  if (r.highlights !== undefined && !Array.isArray(r.highlights)) bad(w, "highlights must be an array");
+  if (r.highlights !== undefined && !Array.isArray(r.highlights))
+    bad(w, "highlights must be an array");
   for (const [j, h] of (Array.isArray(r.highlights) ? r.highlights : []).entries()) {
     if (!isText(h?.player) || !isText(h?.school) || !isText(h?.stat))
       bad(w, `highlights[${j}] needs player, school, and stat`);
@@ -169,6 +174,9 @@ const INTERNAL = new Set([
   "/village",
   "/about",
   "/sports",
+  "/sports/standings",
+  "/sports/records",
+  "/sports/pros",
   "/editions",
   "/subscribe",
 ]);
@@ -217,8 +225,86 @@ for (const [i, ed] of (editions ?? []).entries()) {
     bad(w, "sports.resultsFrom must be a YYYY-MM-DD before the edition date");
   if (ed.sports?.note !== undefined && !isText(ed.sports.note))
     bad(w, "sports.note must be text when set");
+  if (ed.sports?.recordPick !== undefined && !records.some((r) => r.id === ed.sports.recordPick))
+    bad(w, `sports.recordPick "${ed.sports.recordPick}" is not a record id`);
   if (ed.editorsNote !== undefined && !isText(ed.editorsNote))
     bad(w, "editorsNote must be text when set");
+}
+
+// Prayer line: only the two approved wordings (CONTENT.md "Prayer line").
+const PRAYERS = [
+  "Eternal rest grant unto them, O Lord. Our prayers are with their family and friends.",
+  "Eternal rest grant unto them, O Lord. Our prayers are with all who mourn.",
+];
+const { wires } = await load("src/data/wires.ts");
+const checkPrayer = (w, x) => {
+  if (x?.prayer !== undefined && !PRAYERS.includes(x.prayer))
+    bad(w, "prayer must be one of the two approved lines");
+};
+for (const p of posts) checkPrayer(`posts (${p.slug})`, p);
+for (const x of wires ?? []) checkPrayer(`wires (${x.id})`, x);
+for (const ed of editions)
+  for (const item of ed.news ?? []) checkPrayer(`editions (${ed.date})`, item);
+
+// Club/park results, records, standings, pros: every fact needs a source.
+const seen = new Set();
+const uniq = (w, id) => {
+  if (!SLUG.test(id ?? "")) bad(w, "id must be lowercase-with-dashes");
+  else if (seen.has(id)) bad(w, "duplicate id");
+  seen.add(id);
+};
+for (const [i, r] of (communityResults ?? []).entries()) {
+  const w = `community[${i}] (${r?.id ?? "?"})`;
+  uniq(w, r.id);
+  if (!isDate(r.date)) bad(w, "date must be YYYY-MM-DD");
+  if (!TEAM_KINDS.includes(r.kind)) bad(w, `kind must be one of ${TEAM_KINDS.join(", ")}`);
+  for (const f of ["team", "sport", "event", "result", "sourceName"])
+    if (!isText(r[f])) bad(w, `${f} is required`);
+  if (!isUrl(r.sourceUrl)) bad(w, "sourceUrl is required");
+}
+for (const [i, t] of (COMMUNITY_TEAMS ?? []).entries())
+  if (!isUrl(t.sourceUrl)) bad(`COMMUNITY_TEAMS[${i}]`, "sourceUrl is required");
+for (const [i, r] of (records ?? []).entries()) {
+  const w = `records[${i}] (${r?.id ?? "?"})`;
+  uniq(w, r.id);
+  for (const f of ["team", "sport", "year", "title", "sourceName"])
+    if (!isText(r[f])) bad(w, `${f} is required`);
+  if (!["school", "club", "park"].includes(r.kind)) bad(w, "kind must be school, club, or park");
+  if (!isUrl(r.sourceUrl)) bad(w, "sourceUrl is required");
+}
+const REC = /^\d+-\d+(-\d+)?$/;
+for (const [i, t] of (standings ?? []).entries()) {
+  const w = `standings[${i}] (${t?.id ?? "?"})`;
+  uniq(w, t.id);
+  if (!isDate(t.asOf)) bad(w, "asOf must be YYYY-MM-DD");
+  if (!["current", "final"].includes(t.status)) bad(w, "status must be current or final");
+  for (const f of ["sport", "conference", "season", "sourceName"])
+    if (!isText(t[f])) bad(w, `${f} is required`);
+  if (!isUrl(t.sourceUrl)) bad(w, "sourceUrl is required");
+  if (!Array.isArray(t.rows) || t.rows.length < 2) bad(w, "rows must list the full table");
+  for (const row of t.rows ?? [])
+    if (!isText(row.team) || !REC.test(row.conf ?? "") || !REC.test(row.overall ?? ""))
+      bad(w, `row "${row.team}" needs team, conf and overall like 5-1 or 2-1-2`);
+}
+const proIds = new Set();
+for (const [i, p] of (pros ?? []).entries()) {
+  const w = `pros[${i}] (${p?.id ?? "?"})`;
+  uniq(w, p.id);
+  proIds.add(p.id);
+  if (!isText(p.name) || !isText(p.sport)) bad(w, "name and sport are required");
+  if (!["active", "retired"].includes(p.status)) bad(w, "status must be active or retired");
+  if (!isText(p.connection?.text) || !isUrl(p.connection?.sourceUrl))
+    bad(w, "connection needs text and sourceUrl");
+  if (!Array.isArray(p.highlights) || p.highlights.length < 1 || p.highlights.length > 2)
+    bad(w, "highlights must list 1 or 2");
+  for (const h of p.highlights ?? [])
+    if (!isText(h.text) || !isUrl(h.sourceUrl)) bad(w, "each highlight needs text and sourceUrl");
+}
+for (const [i, u] of (proUpdates ?? []).entries()) {
+  const w = `proUpdates[${i}]`;
+  if (!isDate(u.date)) bad(w, "date must be YYYY-MM-DD");
+  if (!proIds.has(u.proId)) bad(w, `proId "${u.proId}" is not in pros`);
+  if (!isText(u.text) || !isUrl(u.sourceUrl)) bad(w, "text and sourceUrl are required");
 }
 
 if (problems.length) {
@@ -228,5 +314,5 @@ if (problems.length) {
   process.exit(1);
 }
 console.log(
-  `check-content: ok (${posts.length} posts, ${events.length} events, ${editions.length} editions, ${results.length} results, ${games.length} games)`,
+  `check-content: ok (${posts.length} posts, ${events.length} events, ${editions.length} editions, ${results.length} results, ${games.length} games, ${communityResults.length} club/park, ${records.length} records, ${standings.length} standings, ${pros.length} pros)`,
 );

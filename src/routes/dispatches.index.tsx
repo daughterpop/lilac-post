@@ -42,8 +42,8 @@ function Dispatches() {
       <p className="text-xs font-semibold tracking-widest text-lilac uppercase">The weekly paper</p>
       <h1 className="mt-2 font-display text-4xl text-ink sm:text-5xl">The paper</h1>
       <p className="mt-3 max-w-xl text-lg text-fg">
-        Our longer stories, published weekly. Search by topic, or tap “Clip” on any story to save it for
-        later on this device.
+        Our longer stories, published weekly. Search by topic, or tap “Clip” on any story to save it
+        for later on this device.
       </p>
 
       <label htmlFor="dispatch-search" className="mt-6 block text-sm font-semibold text-ink">
@@ -74,7 +74,9 @@ function Dispatches() {
       <div className="mt-6">
         {list.length === 0 ? (
           <p className="border-t border-line py-8 text-muted">
-            {clippedOnly ? "You haven’t clipped any stories on this device yet." : "No stories match that search."}
+            {clippedOnly
+              ? "You haven’t clipped any stories on this device yet."
+              : "No stories match that search."}
           </p>
         ) : (
           list.map((post) => <StoryCard key={post.slug} post={post} />)
@@ -88,7 +90,9 @@ function Dispatches() {
         </p>
         <ul className="mt-4 divide-y divide-line border-t border-line">
           {newestFirst(wires)
-            .filter((wire) => wire.desk === "X" || wire.desk === "Facebook" || wire.desk === "Instagram")
+            .filter(
+              (wire) => wire.desk === "X" || wire.desk === "Facebook" || wire.desk === "Instagram",
+            )
             .map((wire) => (
               <li key={wire.id} className="py-4">
                 <p className="text-xs font-semibold tracking-widest text-lilac uppercase">
@@ -96,6 +100,9 @@ function Dispatches() {
                 </p>
                 <h3 className="mt-1 font-display text-2xl text-ink">{wire.title}</h3>
                 <p className="mt-2 max-w-2xl text-fg">{wire.detail}</p>
+                {wire.prayer ? (
+                  <p className="mt-1 max-w-2xl text-fg/80 italic">{wire.prayer}</p>
+                ) : null}
                 <a
                   href={wire.href}
                   className="mt-1 inline-flex min-h-11 items-center text-sm font-semibold text-lilac"
@@ -110,15 +117,7 @@ function Dispatches() {
   );
 }
 
-function Chip({
-  on,
-  onClick,
-  children,
-}: {
-  on: boolean;
-  onClick: () => void;
-  children: string;
-}) {
+function Chip({ on, onClick, children }: { on: boolean; onClick: () => void; children: string }) {
   return (
     <button
       type="button"

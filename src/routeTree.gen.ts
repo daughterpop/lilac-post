@@ -27,6 +27,9 @@ import { Route as ApiCalendarDoticsRouteImport } from './routes/api/calendar[.]i
 import { Route as DispatchesIndexRouteImport } from './routes/dispatches.index'
 import { Route as DispatchesSlugRouteImport } from './routes/dispatches.$slug'
 import { Route as EditionDateRouteImport } from './routes/edition.$date'
+import { Route as SportsProsRouteImport } from './routes/sports_.pros'
+import { Route as SportsRecordsRouteImport } from './routes/sports_.records'
+import { Route as SportsStandingsRouteImport } from './routes/sports_.standings'
 import { Route as ApiEventsIdDoticsRouteImport } from './routes/api/events/$id[.]ics'
 
 const IndexRoute = IndexRouteImport.update({
@@ -119,6 +122,21 @@ const EditionDateRoute = EditionDateRouteImport.update({
   path: '/edition/$date',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SportsProsRoute = SportsProsRouteImport.update({
+  id: '/sports_/pros',
+  path: '/sports/pros',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SportsRecordsRoute = SportsRecordsRouteImport.update({
+  id: '/sports_/records',
+  path: '/sports/records',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SportsStandingsRoute = SportsStandingsRouteImport.update({
+  id: '/sports_/standings',
+  path: '/sports/standings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiEventsIdDoticsRoute = ApiEventsIdDoticsRouteImport.update({
   id: '/api/events/$id.ics',
   path: '/api/events/$id.ics',
@@ -143,6 +161,9 @@ export interface FileRoutesByFullPath {
   '/api/calendar.ics': typeof ApiCalendarDoticsRoute
   '/dispatches/$slug': typeof DispatchesSlugRoute
   '/edition/$date': typeof EditionDateRoute
+  '/sports/pros': typeof SportsProsRoute
+  '/sports/records': typeof SportsRecordsRoute
+  '/sports/standings': typeof SportsStandingsRoute
   '/dispatches/': typeof DispatchesIndexRoute
   '/api/events/$id.ics': typeof ApiEventsIdDoticsRoute
 }
@@ -164,6 +185,9 @@ export interface FileRoutesByTo {
   '/api/calendar.ics': typeof ApiCalendarDoticsRoute
   '/dispatches/$slug': typeof DispatchesSlugRoute
   '/edition/$date': typeof EditionDateRoute
+  '/sports/pros': typeof SportsProsRoute
+  '/sports/records': typeof SportsRecordsRoute
+  '/sports/standings': typeof SportsStandingsRoute
   '/dispatches': typeof DispatchesIndexRoute
   '/api/events/$id.ics': typeof ApiEventsIdDoticsRoute
 }
@@ -186,6 +210,9 @@ export interface FileRoutesById {
   '/api/calendar.ics': typeof ApiCalendarDoticsRoute
   '/dispatches/$slug': typeof DispatchesSlugRoute
   '/edition/$date': typeof EditionDateRoute
+  '/sports_/pros': typeof SportsProsRoute
+  '/sports_/records': typeof SportsRecordsRoute
+  '/sports_/standings': typeof SportsStandingsRoute
   '/dispatches/': typeof DispatchesIndexRoute
   '/api/events/$id.ics': typeof ApiEventsIdDoticsRoute
 }
@@ -209,6 +236,9 @@ export interface FileRouteTypes {
     | '/api/calendar.ics'
     | '/dispatches/$slug'
     | '/edition/$date'
+    | '/sports/pros'
+    | '/sports/records'
+    | '/sports/standings'
     | '/dispatches/'
     | '/api/events/$id.ics'
   fileRoutesByTo: FileRoutesByTo
@@ -230,6 +260,9 @@ export interface FileRouteTypes {
     | '/api/calendar.ics'
     | '/dispatches/$slug'
     | '/edition/$date'
+    | '/sports/pros'
+    | '/sports/records'
+    | '/sports/standings'
     | '/dispatches'
     | '/api/events/$id.ics'
   id:
@@ -251,6 +284,9 @@ export interface FileRouteTypes {
     | '/api/calendar.ics'
     | '/dispatches/$slug'
     | '/edition/$date'
+    | '/sports_/pros'
+    | '/sports_/records'
+    | '/sports_/standings'
     | '/dispatches/'
     | '/api/events/$id.ics'
   fileRoutesById: FileRoutesById
@@ -273,6 +309,9 @@ export interface RootRouteChildren {
   ApiCalendarDoticsRoute: typeof ApiCalendarDoticsRoute
   DispatchesSlugRoute: typeof DispatchesSlugRoute
   EditionDateRoute: typeof EditionDateRoute
+  SportsProsRoute: typeof SportsProsRoute
+  SportsRecordsRoute: typeof SportsRecordsRoute
+  SportsStandingsRoute: typeof SportsStandingsRoute
   DispatchesIndexRoute: typeof DispatchesIndexRoute
   ApiEventsIdDoticsRoute: typeof ApiEventsIdDoticsRoute
 }
@@ -405,6 +444,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EditionDateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sports_/pros': {
+      id: '/sports_/pros'
+      path: '/sports/pros'
+      fullPath: '/sports/pros'
+      preLoaderRoute: typeof SportsProsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sports_/records': {
+      id: '/sports_/records'
+      path: '/sports/records'
+      fullPath: '/sports/records'
+      preLoaderRoute: typeof SportsRecordsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sports_/standings': {
+      id: '/sports_/standings'
+      path: '/sports/standings'
+      fullPath: '/sports/standings'
+      preLoaderRoute: typeof SportsStandingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/events/$id.ics': {
       id: '/api/events/$id.ics'
       path: '/api/events/$id.ics'
@@ -433,6 +493,9 @@ const rootRouteChildren: RootRouteChildren = {
   ApiCalendarDoticsRoute: ApiCalendarDoticsRoute,
   DispatchesSlugRoute: DispatchesSlugRoute,
   EditionDateRoute: EditionDateRoute,
+  SportsProsRoute: SportsProsRoute,
+  SportsRecordsRoute: SportsRecordsRoute,
+  SportsStandingsRoute: SportsStandingsRoute,
   DispatchesIndexRoute: DispatchesIndexRoute,
   ApiEventsIdDoticsRoute: ApiEventsIdDoticsRoute,
 }

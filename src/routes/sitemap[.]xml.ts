@@ -4,7 +4,7 @@ import { allPosts } from "@/data/posts";
 import { siteUrl } from "@/lib/site";
 
 // Top-level pages. Add new static routes here so they land in the sitemap.
-const STATIC_PATHS = ["/", "/breaking", "/editions", "/dispatches", "/sports", "/calendar", "/parish", "/village", "/about", "/subscribe", "/advertise"];
+const STATIC_PATHS = ["/", "/breaking", "/editions", "/dispatches", "/sports", "/sports/standings", "/sports/records", "/sports/pros", "/calendar", "/parish", "/village", "/about", "/subscribe", "/advertise"];
 
 function escapeXml(value: string) {
   return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
