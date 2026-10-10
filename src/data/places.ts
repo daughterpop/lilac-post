@@ -124,8 +124,8 @@ export const places: Place[] = [
     kind: "Parks",
     where: "1609 S Luther Ave",
     detail:
-      "Also separate from the Lombard Park District. The office is open weekdays 9 to 5. The finance committee meets Tuesday, Oct. 6, at 9 a.m., according to a legal notice in the Daily Herald.",
-    href: "https://marketplace.dailyherald.com/il/legals/notice-of-committee-meeting-fo/AC1E05EE16b6209CC10pl8A38373",
-    hrefLabel: "Meeting notice",
+      "A separate park district from the Lombard Park District, with its community center on South Luther Avenue, four blocks south of Roosevelt Road. The office is open weekdays 9 to 5.",
+    href: "https://ycpdfun.myrec.com/info/default.aspx",
+    hrefLabel: "York Center Park District",
   },
 ];
