@@ -6,6 +6,8 @@ export type Wire = {
   when: string;
   href: string;
   hrefLabel: string;
+  /** Only for an item reporting a death; see CONTENT.md "Prayer line". */
+  prayer?: string;
 };
 
 export const wires: Wire[] = [

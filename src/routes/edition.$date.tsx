@@ -3,6 +3,11 @@ import { allEditions, editionWindows, getEdition } from "@/data/editions";
 import { events } from "@/data/events";
 import { getPost } from "@/data/posts";
 import { gamesBetween, resultsBetween } from "@/data/sports";
+import { communityBetween } from "@/data/community";
+import { standings } from "@/data/standings";
+import { proUpdates } from "@/data/pros";
+import { records } from "@/data/records";
+import { CommunityList } from "@/components/community-list";
 import type { Edition, VillageEvent } from "@/data/types";
 import { AddToCalendar } from "@/components/add-calendar";
 import { EditionHref } from "@/components/edition-link";
@@ -88,6 +93,18 @@ function EditionPage() {
   const picks = new Set(edition.eventPicks ?? []);
   const results = resultsBetween(windows.resultsFrom, windows.resultsTo);
   const games = gamesBetween(windows.weekFrom, windows.weekTo);
+  const club = communityBetween(windows.resultsFrom, windows.resultsTo);
+  const snapshot = standings
+    .filter((t) => t.status === "current")
+    .flatMap((t) =>
+      t.rows
+        .filter((r) => r.local)
+        .map((r) => ({ ...r, label: `${t.sport}, ${t.conference}`, id: t.id })),
+    );
+  const pick = records.find((r) => r.id === edition.sports?.recordPick);
+  const proNews = proUpdates.filter(
+    (u) => u.date >= windows.resultsFrom && u.date <= windows.resultsTo,
+  );
   const ordered = allEditions();
   const index = ordered.findIndex((e) => e.date === edition.date);
   const newer = ordered[index - 1];
@@ -126,6 +143,9 @@ function EditionPage() {
               <div key={item.headline} className="mb-5 break-inside-avoid">
                 <h3 className="font-display text-xl leading-snug text-ink">{item.headline}</h3>
                 <p className="mt-1 text-fg">{item.summary}</p>
+                {item.prayer ? (
+                  <p className="mt-1 max-w-2xl text-fg/80 italic">{item.prayer}</p>
+                ) : null}
                 <EditionHref
                   href={item.href}
                   className="inline-flex min-h-11 items-center text-sm font-semibold text-lilac"
@@ -206,10 +226,63 @@ function EditionPage() {
             <h3 className="mt-4 text-xs font-semibold tracking-widest text-muted uppercase">
               Final scores
             </h3>
-            <ResultsList
-              items={results}
-              empty="No verified varsity scores for this week yet. They’re added once a public source posts them."
-            />
+            <ResultsList items={results} empty="No varsity scores this week." />
+            {club.length ? (
+              <>
+                <h3 className="mt-6 text-xs font-semibold tracking-widest text-muted uppercase">
+                  Clubs and park district
+                </h3>
+                <CommunityList items={club} />
+              </>
+            ) : null}
+            {snapshot.length ? (
+              <>
+                <h3 className="mt-6 text-xs font-semibold tracking-widest text-muted uppercase">
+                  Standings
+                </h3>
+                <ul className="mt-2 text-sm text-fg">
+                  {snapshot.map((r) => (
+                    <li key={r.id}>
+                      <span className="font-semibold text-ink">{r.team}</span> {r.conf} in {r.label}{" "}
+                      ({r.overall} overall)
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : null}
+            {proNews.length ? (
+              <>
+                <h3 className="mt-6 text-xs font-semibold tracking-widest text-muted uppercase">
+                  Lombard pros
+                </h3>
+                <ul className="mt-2 text-sm text-fg">
+                  {proNews.map((u) => (
+                    <li key={`${u.date}-${u.proId}`}>
+                      {u.text}{" "}
+                      <a href={u.sourceUrl} className="text-xs text-muted underline" rel="noopener">
+                        Source
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : null}
+            {pick ? (
+              <>
+                <h3 className="mt-6 text-xs font-semibold tracking-widest text-muted uppercase">
+                  From the record books
+                </h3>
+                <p className="mt-2 text-sm text-fg">
+                  <span className="font-semibold text-ink">
+                    {pick.team}, {pick.year}:
+                  </span>{" "}
+                  {pick.title}.{pick.detail ? ` ${pick.detail}` : ""}{" "}
+                  <Link to="/sports/records" className="text-lilac">
+                    Record book
+                  </Link>
+                </p>
+              </>
+            ) : null}
             <h3 className="mt-6 text-xs font-semibold tracking-widest text-muted uppercase">
               This week
             </h3>

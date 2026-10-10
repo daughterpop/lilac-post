@@ -32,6 +32,7 @@ function BreakingPage() {
             </p>
             <h2 className="mt-1 font-display text-2xl text-ink">{wire.title}</h2>
             <p className="mt-2 max-w-2xl text-fg">{wire.detail}</p>
+            {wire.prayer ? <p className="mt-1 max-w-2xl text-fg/80 italic">{wire.prayer}</p> : null}
             <WireLink wire={wire} />
           </li>
         ))}

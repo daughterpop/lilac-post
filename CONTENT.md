@@ -117,9 +117,35 @@ Player rules (most players are minors):
 - Quotes or reactions only from official school, team, or coach accounts (on X or the school site) and local press. Never from fans, students, or parents. Confirm an X account is official before using it.
 - Nothing negative about an individual player: no injuries, mistakes, or discipline.
 - Every highlight and quote links to its source. Never invent or paraphrase stats or quotes into something the source didn't say. Leave fields out when nothing is verifiable.
-- If a family asks to remove a name, remove it. When a game is played, remove it from `games` and add the result to `results`. `results` may be empty; `/sports` shows an empty state.
+- If a family asks to remove a name, remove it. Youth club and park district players (below high school) are never named. When a game is played, remove it from `games` and add the result to `results`. `results` may be empty; `/sports` shows an empty state.
 
-## Editions: `Edition` in `src/data/editions.ts`
+## Clubs and park district: `src/data/community.ts`
+
+`communityResults`: `{ id, date, kind, team, sport, event, result, sourceName, sourceUrl }`. `kind` is `club` or `park`. Id like `park-waves-20260718`. TEAM-LEVEL results only: never name a youth club or park district player. `COMMUNITY_TEAMS` lists the clubs and park teams we follow (Lombard Waves, Firebirds Soccer Club, Lombard Thunder), each with a `sourceUrl`. Sources: the league or club site, the park district, or local press (The Lombardian, Daily Herald).
+
+## Standings: `src/data/standings.ts`
+
+One table per sport and conference: `{ id, sport, conference, season, status, asOf, sourceName, sourceUrl, rows }`. `rows` is the full table, `{ team, conf, overall, local? }`, records like `5-1` or `2-1-2`; set `local: true` for Glenbard East and Montini. `status` is `current` in season and `final` after the season ends (keep the last table). Source: the MaxPreps conference page or the conference site. Refreshed by the sports-results automation each run.
+
+## Record book: `src/data/records.ts`
+
+Evergreen records and milestones: `{ id, team, kind, sport, year, title, detail?, sourceName, sourceUrl }`. Sources: IHSA records, school athletics or hall of fame pages, league record boards, local press. Youth records: list exactly what the league or park district record board posts. Editions can feature one with `sports.recordPick`.
+
+## Lombard pros: `src/data/pros.ts`
+
+`pros`: adults only, `{ id, name, sport, status: "active" | "retired", team?, connection: { text, sourceUrl }, highlights: [1-2 { text, sourceUrl }] }`. The Lombard connection must come from a team bio, cited Wikipedia, a hall of fame page, or local press. `proUpdates`: `{ date, proId, text, sourceUrl }`, notable verified news only (big game, milestone, official signing, Olympic result). Never rumors. Updated weekly by the pros automation.
+
+The build rejects any club/park result, record, standings table, pro fact, or pro update without an http(s) `sourceUrl`.
+
+## Prayer line
+
+When a story, wire, or edition news item reports that someone died, add the optional `prayer` field. It shows as one short italic line, set apart from the reporting. Use exactly one of these:
+
+- `"Eternal rest grant unto them, O Lord. Our prayers are with their family and friends."`
+- `"Eternal rest grant unto them, O Lord. Our prayers are with all who mourn."` (when the person is unnamed or no family is mentioned)
+
+Only for deaths. Never for suspects or perpetrators, and never for political or controversial deaths. If unsure, leave it off. Never change the news text to make room for it. The build rejects any other wording.
+ `Edition` in `src/data/editions.ts`
 
 One per Sunday, newest first in the file. The week-ahead events and the sports results are **computed** from `events.ts` and `sports.ts`, so they aren't copied in.
 

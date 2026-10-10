@@ -31,6 +31,8 @@ export type Post = {
   desk: Desk;
   order: number;
   body: string[];
+  /** Only for a story reporting a death; see CONTENT.md "Prayer line". */
+  prayer?: string;
   image?: string;
   imageAlt?: string;
   imageCaption?: string;
@@ -83,7 +85,7 @@ export const SITES = ["home", "away", "neutral"] as const;
 
 export type Site = (typeof SITES)[number];
 
-/** A final varsity score, from the local school's point of view. Team-level only: no player names. */
+/** A final varsity score, from the local school's point of view. */
 export type SportsResult = {
   id: string;
   date: string;
@@ -141,6 +143,8 @@ export type EditionItem = {
   headline: string;
   /** One to three sentences. */
   summary: string;
+  /** Only for an item reporting a death; see CONTENT.md "Prayer line". */
+  prayer?: string;
   /** An internal path ("/dispatches/<slug>") or an https:// source page. */
   href: string;
   /** Link text, e.g. "Read the story" or "Village release". */
@@ -164,6 +168,8 @@ export type Edition = {
     /** Show results from this date (YYYY-MM-DD) through Saturday. Default: the previous Sunday. */
     resultsFrom?: string;
     note?: string;
+    /** Optional "From the record books" pick: a record id from src/data/records.ts. */
+    recordPick?: string;
   };
   editorsNote?: string;
 };
