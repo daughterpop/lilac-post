@@ -1,0 +1,142 @@
+# Opens and merges PRs for branches pushed by the Grok automations.
+# Automations only push a branch; this workflow builds it, opens a PR,
+# waits for the Vercel preview, then squash-merges and deletes the branch.
+# A "[hold]" in the head commit message or PR body leaves the PR open
+# with the needs-dustin label.
+name: Automation merge
+
+on:
+  push:
+    branches:
+      - "breaking/**"
+      - "sports/**"
+      - "events/**"
+      - "stories/**"
+      - "edition/**"
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  statuses: read
+  checks: read
+
+concurrency:
+  group: automation-merge-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    if: ${{ !github.event.deleted }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      BRANCH: ${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Read head commit
+        id: head
+        run: |
+          SHA=$(git rev-parse HEAD)
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+          git log -1 --format=%s > /tmp/title.txt
+          git log -1 --format=%B > /tmp/message.txt
+          if grep -qiF '[hold]' /tmp/message.txt; then echo "hold=true" >> "$GITHUB_OUTPUT"; else echo "hold=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Find or open PR
+        id: pr
+        run: |
+          SHA='${{ steps.head.outputs.sha }}'
+          # Already merged with this exact head? Nothing to do.
+          MERGED=$(gh pr list -R "$REPO" --head "$BRANCH" --state merged --json number,headRefOid \
+            --jq "map(select(.headRefOid==\"$SHA\")) | .[0].number // empty")
+          if [ -n "$MERGED" ]; then
+            echo "PR #$MERGED already merged at $SHA; nothing to do."
+            echo "done=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          NUM=$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -z "$NUM" ]; then
+            { cat /tmp/message.txt; echo; echo "_Opened automatically by the Automation merge workflow._"; } > /tmp/body.txt
+            URL=$(gh pr create -R "$REPO" --base main --head "$BRANCH" --title "$(cat /tmp/title.txt)" --body-file /tmp/body.txt)
+            NUM=${URL##*/}
+            echo "Opened $URL"
+          else
+            echo "Using existing PR #$NUM"
+          fi
+          echo "number=$NUM" >> "$GITHUB_OUTPUT"
+          echo "done=false" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node
+        if: steps.pr.outputs.done != 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install, check content, build
+        id: build
+        if: steps.pr.outputs.done != 'true'
+        run: |
+          set -o pipefail
+          ( npx -y npm@11 ci && npm run check:content && npm run build ) 2>&1 | tee /tmp/build.log
+
+      - name: Report build failure
+        if: failure() && steps.build.outcome == 'failure'
+        run: |
+          { echo "Automation merge: content check or build **failed**, so this PR was not merged."; echo; echo '```'; tail -n 40 /tmp/build.log; echo '```'; } > /tmp/c.txt
+          gh pr comment '${{ steps.pr.outputs.number }}' -R "$REPO" --body-file /tmp/c.txt
+
+      - name: Hold check
+        id: hold
+        if: steps.pr.outputs.done != 'true'
+        run: |
+          NUM='${{ steps.pr.outputs.number }}'
+          BODY=$(gh pr view "$NUM" -R "$REPO" --json body --jq .body)
+          if [ '${{ steps.head.outputs.hold }}' = 'true' ] || printf '%s' "$BODY" | grep -qiF '[hold]'; then
+            gh label create needs-dustin -R "$REPO" --color d93f0b --description "Held for Dustin's OK" 2>/dev/null || true
+            gh pr edit "$NUM" -R "$REPO" --add-label needs-dustin
+            echo "Held for Dustin: PR #$NUM left open."
+            echo "held=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "held=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Wait for Vercel
+        id: vercel
+        if: steps.pr.outputs.done != 'true' && steps.hold.outputs.held == 'false'
+        run: |
+          SHA='${{ steps.head.outputs.sha }}'
+          for i in $(seq 1 60); do
+            S=$(gh api "repos/$REPO/commits/$SHA/statuses" --jq '[.[] | select(.context | test("vercel"; "i"))] | .[0].state // "none"')
+            C=$(gh api "repos/$REPO/commits/$SHA/check-runs" --jq '[.check_runs[] | select((.app.slug // "" | test("vercel"; "i")) or (.name | test("vercel"; "i")))] | if length==0 then "none" elif any(.conclusion=="failure" or .conclusion=="cancelled" or .conclusion=="timed_out") then "failure" elif all(.status=="completed") then "success" else "pending" end')
+            echo "check $i: status=$S checks=$C"
+            if [ "$S" = "failure" ] || [ "$S" = "error" ] || [ "$C" = "failure" ]; then
+              echo "result=failure" >> "$GITHUB_OUTPUT"; exit 0
+            fi
+            if [ "$S" = "success" ] && [ "$C" != "pending" ]; then echo "result=success" >> "$GITHUB_OUTPUT"; exit 0; fi
+            if [ "$S" = "none" ] && [ "$C" = "success" ]; then echo "result=success" >> "$GITHUB_OUTPUT"; exit 0; fi
+            sleep 15
+          done
+          echo "result=timeout" >> "$GITHUB_OUTPUT"
+
+      - name: Vercel failed
+        if: steps.vercel.outputs.result == 'failure' || steps.vercel.outputs.result == 'timeout'
+        run: |
+          gh pr comment '${{ steps.pr.outputs.number }}' -R "$REPO" --body "Automation merge: the Vercel deployment for ${{ steps.head.outputs.sha }} reported **${{ steps.vercel.outputs.result }}**, so this PR was not merged."
+          exit 1
+
+      - name: Squash-merge and delete branch
+        if: steps.vercel.outputs.result == 'success'
+        run: |
+          NUM='${{ steps.pr.outputs.number }}'
+          STATE=$(gh pr view "$NUM" -R "$REPO" --json state --jq .state)
+          if [ "$STATE" = "OPEN" ]; then
+            gh pr merge "$NUM" -R "$REPO" --squash --match-head-commit '${{ steps.head.outputs.sha }}'
+          else
+            echo "PR #$NUM is $STATE; skipping merge."
+          fi
+          gh api -X DELETE "repos/$REPO/git/refs/heads/$BRANCH" 2>/dev/null || echo "Branch already deleted."
