@@ -42,9 +42,47 @@ export function ResultsList({ items, empty }: { items: SportsResult[]; empty: st
               Source: {r.source.name}
             </a>
           </div>
+          <GameExtras r={r} />
         </li>
       ))}
     </ul>
+  );
+}
+
+const linkCls = "text-xs text-muted underline decoration-line underline-offset-2 hover:text-lilac";
+
+function GameExtras({ r }: { r: SportsResult }) {
+  const hl = r.highlights ?? [];
+  const qs = r.quotes ?? [];
+  if (!r.recap && hl.length === 0 && qs.length === 0) return null;
+  return (
+    <div className="w-full space-y-2 text-sm">
+      {r.recap ? <p className="text-ink">{r.recap}</p> : null}
+      {hl.length > 0 ? (
+        <ul className="space-y-1">
+          {hl.map((h) => (
+            <li key={h.player + h.stat} className="text-ink">
+              <span className="font-semibold">{h.player}</span>
+              <span className="text-muted"> ({h.school})</span>: {h.stat}{" "}
+              <a href={h.sourceUrl} target="_blank" rel="noopener noreferrer" className={linkCls}>
+                source
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+      {qs.map((q) => (
+        <blockquote key={q.text} className="border-l-2 border-lilac pl-3 text-ink italic">
+          &ldquo;{q.text}&rdquo;
+          <footer className="mt-1 text-xs text-muted not-italic">
+            {q.speaker} &middot;{" "}
+            <a href={q.sourceUrl} target="_blank" rel="noopener noreferrer" className={linkCls}>
+              {q.sourceName}
+            </a>
+          </footer>
+        </blockquote>
+      ))}
+    </div>
   );
 }
 

@@ -2,8 +2,8 @@
  * VARSITY SPORTS. Owned by the sports-results automation. Rules: see CONTENT.md.
  *
  * Only verified final scores from public sources (IHSA, MaxPreps, school
- * athletics sites, Daily Herald), each with its source link. Team-level only:
- * never name players. Never guess a score; if sources disagree, leave it out.
+ * athletics sites, Daily Herald), each with its source link. Optional recap,
+ * highlights, and quotes follow the player rules in CONTENT.md; every one links its source. Never guess a score; if sources disagree, leave it out.
  * Every build checks this file (scripts/check-content.mjs).
  *
  *   {
@@ -18,6 +18,14 @@
  *     scoreAgainst: 8,
  *     result: "W",                           // W, L, T (must match the score)
  *     source: { name: "IHSA", href: "https://..." },
+    recap:
+      "Glenbard East led 34-0 at halftime and won its fifth straight, setting up an Upstate Eight East showdown at Riverside-Brookfield.",
+    highlights: [
+      { player: "M. Miller", school: "Glenbard East", stat: "4 catches, 117 yards, 2 TD", sourceUrl: "https://www.maxpreps.com/il/football/game/glenbard-east-lombard-vs-west-chicago/10-2-2026/?c=75e75a99-bec2-484c-9f25-cd9d79a80b7e" },
+      { player: "C. Pohlman", school: "Glenbard East", stat: "4 of 8, 130 yards, 2 TD", sourceUrl: "https://www.maxpreps.com/il/football/game/glenbard-east-lombard-vs-west-chicago/10-2-2026/?c=75e75a99-bec2-484c-9f25-cd9d79a80b7e" },
+      { player: "Max Stachura", school: "Glenbard East", stat: "15-yard TD run", sourceUrl: "https://www.dailyherald.com/20261003/prep-football/football-roundup-naperville-north-lake-park-fenton-glenbard-east-glenbard-south-secure-wins/" },
+      { player: "Montii Perry", school: "Glenbard East", stat: "20-yard TD run", sourceUrl: "https://www.dailyherald.com/20261003/prep-football/football-roundup-naperville-north-lake-park-fenton-glenbard-east-glenbard-south-secure-wins/" },
+    ],
  *   },
  */
 import type { School, SportsGame, SportsResult } from "@/data/types";
@@ -54,6 +62,33 @@ export const results: SportsResult[] = [
     scoreAgainst: 38,
     result: "L",
     source: GE_FOOTBALL,
+    recap:
+      "The Rams' five-game win streak ended at Riverside-Brookfield, which ran for 296 yards and clinched a share of the Upstate Eight East. Glenbard East (5-3) hosts South Elgin next.",
+    highlights: [
+      {
+        player: "Carter Pohlman",
+        school: "Glenbard East",
+        stat: "217 passing yards, 2 TD",
+        sourceUrl:
+          "https://www.dailyherald.com/20261009/prep-football/riverside-brookfield-denies-glenbard-easts-bid-for-3rd-straight-uec-east-title/",
+      },
+      {
+        player: "Diamond Chew",
+        school: "Glenbard East",
+        stat: "67-yard TD catch on the first play of the second half",
+        sourceUrl:
+          "https://www.dailyherald.com/20261009/prep-football/riverside-brookfield-denies-glenbard-easts-bid-for-3rd-straight-uec-east-title/",
+      },
+    ],
+    quotes: [
+      {
+        text: "They're a good football team and they played really well tonight. Hats off to them and you know, congrats on the win.",
+        speaker: "Coach John Walters, Glenbard East",
+        sourceUrl:
+          "https://www.dailyherald.com/20261009/prep-football/riverside-brookfield-denies-glenbard-easts-bid-for-3rd-straight-uec-east-title/",
+        sourceName: "Daily Herald",
+      },
+    ],
   },
   {
     id: "montini-football-1009",
@@ -67,6 +102,38 @@ export const results: SportsResult[] = [
     scoreAgainst: 7,
     result: "W",
     source: MONTINI_FOOTBALL,
+    recap:
+      "Montini (6-2) rolled past Marmion at home, building a lead big enough for a running clock the entire second half.",
+    highlights: [
+      {
+        player: "Israel Abrams",
+        school: "Montini",
+        stat: "3 TD passes and a rushing TD",
+        sourceUrl:
+          "https://www.dailyherald.com/20261009/prep-football/miami-recruit-abrams-totals-4-more-touchdowns-in-montinis-rout-of-marmion/",
+      },
+      {
+        player: "Daniel Sago",
+        school: "Montini",
+        stat: "2 TD catches",
+        sourceUrl:
+          "https://www.dailyherald.com/20261009/prep-football/miami-recruit-abrams-totals-4-more-touchdowns-in-montinis-rout-of-marmion/",
+      },
+      {
+        player: "Eddie Kowalczyk",
+        school: "Montini",
+        stat: "Rushing TD",
+        sourceUrl:
+          "https://www.dailyherald.com/20261009/prep-football/miami-recruit-abrams-totals-4-more-touchdowns-in-montinis-rout-of-marmion/",
+      },
+      {
+        player: "Julian Figueroa",
+        school: "Montini",
+        stat: "Interception",
+        sourceUrl:
+          "https://www.dailyherald.com/20261009/prep-football/miami-recruit-abrams-totals-4-more-touchdowns-in-montinis-rout-of-marmion/",
+      },
+    ],
   },
   {
     id: "ge-boys-soccer-1006",
@@ -174,6 +241,17 @@ export const results: SportsResult[] = [
     scoreAgainst: 39,
     result: "L",
     source: MONTINI_FOOTBALL,
+    recap:
+      "St. Rita rallied from 15 points down in the third quarter and scored the go-ahead touchdown and two-point conversion with 2:52 left.",
+    highlights: [
+      {
+        player: "Israel Abrams",
+        school: "Montini",
+        stat: "TD passes to Damacio Ortegon, Donovan Evans and Daniel Sago, plus a rushing TD",
+        sourceUrl:
+          "https://www.shawlocal.com/friday-night-drive/2026/09/26/high-school-football-week-6-results-recaps-for-every-game-in-the-suburban-life-area/",
+      },
+    ],
   },
   {
     id: "ge-football-0918",

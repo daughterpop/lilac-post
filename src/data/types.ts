@@ -100,6 +100,26 @@ export type SportsResult = {
   /** Short extra, e.g. "OT" or "IHSA playoffs, first round". */
   note?: string;
   source: Source;
+  /** 1-3 sentences in our own words. */
+  recap?: string;
+  /** Player lines exactly as a public source published them. */
+  highlights?: SportsHighlight[];
+  /** Quotes from coaches/officials, only from official accounts or local press. */
+  quotes?: SportsQuote[];
+};
+
+export type SportsHighlight = {
+  player: string;
+  school: string;
+  stat: string;
+  sourceUrl: string;
+};
+
+export type SportsQuote = {
+  text: string;
+  speaker: string;
+  sourceUrl: string;
+  sourceName: string;
 };
 
 /** A scheduled varsity game that hasn't been played yet. */
