@@ -106,7 +106,7 @@ export const records: SportsRecord[] = [
     sport: "Football",
     year: "2021-2025",
     title: "Five straight IHSA playoff berths",
-    detail: "Under coach John Walters, with 10-win seasons in 2018 and 2023.",
+    detail: "Under coach John Walters.",
     sourceName: "IHSA: Glenbard East football history",
     sourceUrl: "https://www.ihsa.org/schools/trends/school/1232/champions/FB",
   },
