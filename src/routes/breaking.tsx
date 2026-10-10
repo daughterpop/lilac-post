@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { WireLink } from "@/components/wire-link";
 import { Shell } from "@/components/shell";
 import { allBreaking, isBreakingLive } from "@/lib/breaking";
+import { newestFirst } from "@/lib/wire-order";
 import { chicagoNow } from "@/lib/when";
 
 export const Route = createFileRoute("/breaking")({
@@ -13,7 +14,7 @@ export const Route = createFileRoute("/breaking")({
 
 function BreakingPage() {
   const today = chicagoNow().date;
-  const items = allBreaking();
+  const items = newestFirst(allBreaking());
 
   return (
     <Shell>

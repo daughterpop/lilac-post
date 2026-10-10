@@ -14,19 +14,10 @@ export const wires: Wire[] = [
     desk: "Village",
     title: "Fatal fire on St. Regis Drive",
     detail:
-      "Friday night, Oct. 2, the fire department extinguished a fire in one unit of a multi-family building. A resident later died. The cause is under investigation. The village alert center lists no active alerts this morning.",
+      "Friday night, Oct. 2, the fire department extinguished a fire in one unit of a multi-family building. A resident later died. The cause is under investigation.",
     when: "Oct. 3",
     href: "/dispatches/st-regis-fire",
     hrefLabel: "Read the story",
-  },
-  {
-    id: "alerts",
-    desk: "Village",
-    title: "No active village alerts",
-    detail: "The Village of Lombard’s alert center shows no active alerts. Things can change quickly, so check the alert center when you hear a siren.",
-    when: "Oct. 4",
-    href: "https://www.villageoflombard.org/AlertCenter.aspx",
-    hrefLabel: "Alert center",
   },
   {
     id: "crosswalk",

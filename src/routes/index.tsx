@@ -8,6 +8,7 @@ import { SponsorSlot } from "@/components/sponsor-slot";
 import { StoryCard } from "@/components/story-card";
 import { WireLink } from "@/components/wire-link";
 import { breakingItems } from "@/lib/breaking";
+import { newestFirst } from "@/lib/wire-order";
 import { canonical } from "@/lib/seo";
 import { byDateTime, chicagoNow, formatLong, formatShort, formatSpan, isUpcoming } from "@/lib/when";
 
@@ -28,7 +29,7 @@ function plusDays(iso: string, days: number) {
 
 function Home() {
   const now = chicagoNow();
-  const breaking = breakingItems(now.date).slice(0, 2);
+  const breaking = newestFirst(breakingItems(now.date)).slice(0, 2);
   const edition = latestEdition();
   const stories = allPosts()
     .filter((post) => post.slug !== "st-regis-fire")
