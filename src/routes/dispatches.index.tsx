@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { DESKS, type Desk } from "@/data/types";
 import { allPosts } from "@/data/posts";
 import { wires } from "@/data/wires";
+import { newestFirst } from "@/lib/wire-order";
 import { Shell } from "@/components/shell";
 import { StoryCard } from "@/components/story-card";
 import { useClips, useHydrated } from "@/lib/clips";
@@ -86,7 +87,7 @@ function Dispatches() {
           A few recent public posts from Lombard groups on X, Facebook, and Instagram.
         </p>
         <ul className="mt-4 divide-y divide-line border-t border-line">
-          {wires
+          {newestFirst(wires)
             .filter((wire) => wire.desk === "X" || wire.desk === "Facebook" || wire.desk === "Instagram")
             .map((wire) => (
               <li key={wire.id} className="py-4">

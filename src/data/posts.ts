@@ -41,7 +41,7 @@ export const posts: Post[] = [
       "On Friday, Oct. 2, at about 9:52 p.m., the Lombard Fire Department was sent to St. Regis Drive for a fire in a multi-family building. Dispatch told crews, while they were still on the way, that smoke was coming from a unit and that a resident might be inside.",
       "The first crew arrived at 9:55 p.m. Firefighters put the fire down, first with an extinguisher and then with a hose line, and searchers brought the resident out to paramedics. The fire was out by about 10:20 p.m. and stayed in the unit where it started. Neighboring apartments were evacuated and searched. One resident was displaced.",
       "The resident was taken to Advocate Good Samaritan Hospital in critical condition and later died. The Lombard fire investigation unit responded with the DuPage County fire investigators’ task force and the Office of the Illinois State Fire Marshal. The cause is under investigation. Police are investigating the death with help from the DuPage County MERIT forensic unit.",
-      "The village alert center listed no active alerts on Sunday morning. For official updates, rely on the village’s release rather than secondhand reports.",
+      "For official updates, rely on the village’s release rather than secondhand reports.",
     ],
     sources: [
       {

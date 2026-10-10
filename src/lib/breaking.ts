@@ -1,6 +1,6 @@
 import { wires, type Wire } from "@/data/wires";
 
-const BREAKING_IDS = ["fire", "fire-chief", "crosswalk", "seniors", "alerts"] as const;
+const BREAKING_IDS = ["fire", "fire-chief", "crosswalk", "seniors"] as const;
 
 export function isBreakingLive(id: string, today: string) {
   if (id === "fire") return today <= "2026-10-10";
