@@ -159,10 +159,11 @@ A TypeScript syntax error also fails the build.
 
 ## Publishing flow
 
-1. Never push or commit to `main`.
-2. Branch from `main`: `events/`, `stories/`, `sports/`, or `edition/<YYYY-MM-DD>`, adding `-2` and so on if the name is taken. Commit only the file you own, plus any new `public/images/` file.
-3. Open a PR into `main`. In the body, list each item and its source links.
-4. Wait until all checks pass, including the Vercel preview (check every minute, up to 15 minutes).
-5. Squash-merge and delete the branch. Then re-read the file on `main` to confirm the change is there and nothing else changed.
-6. If a check fails or never finishes, leave the PR open and don't merge. Email dhimmer1@gmail.com that the run failed.
-7. Hold for Dustin. Anything about a real private individual, a death, a crime, or an accident gets a PR that is opened but **not** merged, plus an email asking for his OK. Never name victims or minors. Never invent facts or quotes.
+Automations only push a branch. The **Automation merge** GitHub Action (`.github/workflows/automation-merge.yml`) does the rest.
+
+1. Never push or commit to `main`, and never open or merge PRs yourself.
+2. Branch from `main` with a unique name: `breaking/`, `events/`, `stories/`, `sports/`, or `edition/`, plus the date and a time suffix (for example `events/2026-10-15-0605`). Commit only the file you own, plus any new `public/images/` file. The first line of the commit message becomes the PR title; the full message becomes the PR body, so list each item and its source links there. Push the branch and stop.
+3. The Action runs `npm run check:content` and `npm run build`, opens a PR into `main`, waits up to 15 minutes for the Vercel preview, then squash-merges and deletes the branch.
+4. If the build or Vercel fails, the Action comments on the PR and leaves it open. Pushing a fix to the same branch reruns it without making a duplicate PR.
+5. Hold for Dustin. Anything about a real private individual, a death, a crime, or an accident must include `[hold]` in the commit message. The Action then leaves the PR open with the `needs-dustin` label; email dhimmer1@gmail.com asking for his OK. Never name victims or minors. Never invent facts or quotes.
+6. Optionally, a later step can read the PR for the branch to confirm it merged.
