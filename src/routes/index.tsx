@@ -82,13 +82,6 @@ function Home() {
         )}
       </section>
 
-      <section className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <img src="/images/lilacia-park-autumn.webp" alt="Lilacia Park in autumn" className="h-32 w-full rounded object-cover sm:h-40" />
-        <img src="/images/lincoln-square-market.webp" alt="Farmers market produce" className="h-32 w-full rounded object-cover sm:h-40" />
-        <img src="/images/lombard-metra-station.webp" alt="Lombard Metra station" className="h-32 w-full rounded object-cover sm:h-40" />
-        <img src="/images/prairie-path-glen-ellyn.webp" alt="Prairie Path" className="h-32 w-full rounded object-cover sm:h-40" />
-      </section>
-
       {edition ? (
         <section
           className="mt-8 border-2 border-ink bg-paper p-5 sm:p-6"
