@@ -82,6 +82,18 @@ function Home() {
         )}
       </section>
 
+      <figure className="mt-6">
+        <img
+          src="/images/lilacia-park-autumn.webp"
+          alt="Lilacia Park entrance arch with fall color on the trees and brick path"
+          className="w-full rounded-lg object-cover"
+          style={{ maxHeight: "320px" }}
+        />
+        <figcaption className="mt-2 text-center text-sm text-muted">
+          Lilacia Park, after the bloom. The paths stay open.
+        </figcaption>
+      </figure>
+
       {edition ? (
         <section
           className="mt-8 border-2 border-ink bg-paper p-5 sm:p-6"
